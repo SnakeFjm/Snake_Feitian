@@ -32,6 +32,59 @@
 		F62A69221FFA23FC00732FAB /* ConstantStringDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69211FFA23FB00732FAB /* ConstantStringDefines.swift */; };
 		F62A69251FFA245800732FAB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69231FFA245700732FAB /* BaseTableViewCell.swift */; };
 		F62A69261FFA245800732FAB /* BaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69241FFA245700732FAB /* BaseTableViewCell.xib */; };
+		F62A692E1FFA25FD00732FAB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A692D1FFA25FD00732FAB /* MainViewController.swift */; };
+		F62A69311FFA260400732FAB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A692F1FFA260400732FAB /* LoginViewController.xib */; };
+		F62A69321FFA260400732FAB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69301FFA260400732FAB /* LoginViewController.swift */; };
+		F62A69711FFA263E00732FAB /* MineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69341FFA263E00732FAB /* MineTableViewCell.swift */; };
+		F62A69721FFA263E00732FAB /* MineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69351FFA263E00732FAB /* MineHeaderView.swift */; };
+		F62A69731FFA263E00732FAB /* MineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69361FFA263E00732FAB /* MineViewController.xib */; };
+		F62A69741FFA263E00732FAB /* MineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69371FFA263E00732FAB /* MineHeaderView.xib */; };
+		F62A69751FFA263E00732FAB /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69381FFA263E00732FAB /* MineViewController.swift */; };
+		F62A69761FFA263E00732FAB /* MineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69391FFA263E00732FAB /* MineTableViewCell.xib */; };
+		F62A69771FFA263E00732FAB /* WorkbenchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A693B1FFA263E00732FAB /* WorkbenchViewController.xib */; };
+		F62A69781FFA263E00732FAB /* WorkbenchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A693C1FFA263E00732FAB /* WorkbenchViewController.swift */; };
+		F62A69791FFA263E00732FAB /* AfterSalesManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A693F1FFA263E00732FAB /* AfterSalesManagementViewController.xib */; };
+		F62A697A1FFA263E00732FAB /* AfterSalesManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69401FFA263E00732FAB /* AfterSalesManagementViewController.swift */; };
+		F62A697B1FFA263E00732FAB /* EmployeesManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69431FFA263E00732FAB /* EmployeesManagementTableViewCell.xib */; };
+		F62A697C1FFA263E00732FAB /* EmployeesManagementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69441FFA263E00732FAB /* EmployeesManagementTableViewCell.swift */; };
+		F62A697D1FFA263E00732FAB /* EmployeesManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69451FFA263E00732FAB /* EmployeesManagementViewController.swift */; };
+		F62A697E1FFA263E00732FAB /* EmployeesManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69461FFA263E00732FAB /* EmployeesManagementViewController.xib */; };
+		F62A697F1FFA263E00732FAB /* MoreDetailCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69481FFA263E00732FAB /* MoreDetailCustomerViewController.swift */; };
+		F62A69801FFA263E00732FAB /* AddNewCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69491FFA263E00732FAB /* AddNewCustomerViewController.xib */; };
+		F62A69811FFA263E00732FAB /* DetailCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A694A1FFA263E00732FAB /* DetailCustomerViewController.xib */; };
+		F62A69821FFA263E00732FAB /* MineCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A694B1FFA263E00732FAB /* MineCustomerViewController.xib */; };
+		F62A69831FFA263E00732FAB /* DetailCustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A694D1FFA263E00732FAB /* DetailCustomerTableViewCell.swift */; };
+		F62A69841FFA263E00732FAB /* MineCustomerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A694E1FFA263E00732FAB /* MineCustomerTableViewCell.xib */; };
+		F62A69851FFA263E00732FAB /* MineCustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A694F1FFA263E00732FAB /* MineCustomerTableViewCell.swift */; };
+		F62A69861FFA263E00732FAB /* DetailCustomerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69501FFA263E00732FAB /* DetailCustomerTableViewCell.xib */; };
+		F62A69871FFA263E00732FAB /* AddNewCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69511FFA263E00732FAB /* AddNewCustomerViewController.swift */; };
+		F62A69881FFA263E00732FAB /* MoreDetailCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69521FFA263E00732FAB /* MoreDetailCustomerViewController.xib */; };
+		F62A69891FFA263E00732FAB /* DetailCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69531FFA263E00732FAB /* DetailCustomerViewController.swift */; };
+		F62A698A1FFA263E00732FAB /* MineCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69541FFA263E00732FAB /* MineCustomerViewController.swift */; };
+		F62A698B1FFA263E00732FAB /* ShopManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69561FFA263E00732FAB /* ShopManagementViewController.swift */; };
+		F62A698C1FFA263E00732FAB /* EditShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69571FFA263E00732FAB /* EditShopViewController.swift */; };
+		F62A698D1FFA263E00732FAB /* ShopManagementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69591FFA263E00732FAB /* ShopManagementTableViewCell.swift */; };
+		F62A698E1FFA263E00732FAB /* ShopManagementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A695A1FFA263E00732FAB /* ShopManagementTableViewCell.xib */; };
+		F62A698F1FFA263E00732FAB /* EditShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A695B1FFA263E00732FAB /* EditShopViewController.xib */; };
+		F62A69901FFA263E00732FAB /* DetailShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A695C1FFA263E00732FAB /* DetailShopViewController.swift */; };
+		F62A69911FFA263E00732FAB /* ShopManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A695D1FFA263E00732FAB /* ShopManagementViewController.xib */; };
+		F62A69921FFA263E00732FAB /* AddNewShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A695E1FFA263E00732FAB /* AddNewShopViewController.xib */; };
+		F62A69931FFA263E00732FAB /* AddNewShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A695F1FFA263E00732FAB /* AddNewShopViewController.swift */; };
+		F62A69941FFA263E00732FAB /* DetailShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69601FFA263E00732FAB /* DetailShopViewController.xib */; };
+		F62A69951FFA263E00732FAB /* ProductManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69621FFA263E00732FAB /* ProductManagementViewController.swift */; };
+		F62A69961FFA263E00732FAB /* ProductManagementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69631FFA263E00732FAB /* ProductManagementViewController.xib */; };
+		F62A69971FFA263E00732FAB /* NewsReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69651FFA263E00732FAB /* NewsReleaseViewController.swift */; };
+		F62A69981FFA263E00732FAB /* NewsReleaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69661FFA263E00732FAB /* NewsReleaseViewController.xib */; };
+		F62A69991FFA263E00732FAB /* workbenchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69671FFA263E00732FAB /* workbenchTableViewCell.xib */; };
+		F62A699A1FFA263E00732FAB /* workbenchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69681FFA263E00732FAB /* workbenchTableViewCell.swift */; };
+		F62A699B1FFA263E00732FAB /* DetailMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A696A1FFA263E00732FAB /* DetailMessageViewController.xib */; };
+		F62A699C1FFA263E00732FAB /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A696B1FFA263E00732FAB /* MessageViewController.xib */; };
+		F62A699D1FFA263E00732FAB /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A696D1FFA263E00732FAB /* MessageTableViewCell.swift */; };
+		F62A699E1FFA263E00732FAB /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A696E1FFA263E00732FAB /* MessageTableViewCell.xib */; };
+		F62A699F1FFA263F00732FAB /* DetailMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A696F1FFA263E00732FAB /* DetailMessageViewController.swift */; };
+		F62A69A01FFA263F00732FAB /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69701FFA263E00732FAB /* MessageViewController.swift */; };
+		F62A69A31FFA278A00732FAB /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F62A69A11FFA278A00732FAB /* Common.xcassets */; };
+		F62A69A41FFA278A00732FAB /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F62A69A21FFA278A00732FAB /* Login.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +118,59 @@
 		F62A69211FFA23FB00732FAB /* ConstantStringDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantStringDefines.swift; sourceTree = "<group>"; };
 		F62A69231FFA245700732FAB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		F62A69241FFA245700732FAB /* BaseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseTableViewCell.xib; sourceTree = "<group>"; };
+		F62A692D1FFA25FD00732FAB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F62A692F1FFA260400732FAB /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		F62A69301FFA260400732FAB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F62A69341FFA263E00732FAB /* MineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineTableViewCell.swift; sourceTree = "<group>"; };
+		F62A69351FFA263E00732FAB /* MineHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineHeaderView.swift; sourceTree = "<group>"; };
+		F62A69361FFA263E00732FAB /* MineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineViewController.xib; sourceTree = "<group>"; };
+		F62A69371FFA263E00732FAB /* MineHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeaderView.xib; sourceTree = "<group>"; };
+		F62A69381FFA263E00732FAB /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		F62A69391FFA263E00732FAB /* MineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineTableViewCell.xib; sourceTree = "<group>"; };
+		F62A693B1FFA263E00732FAB /* WorkbenchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkbenchViewController.xib; sourceTree = "<group>"; };
+		F62A693C1FFA263E00732FAB /* WorkbenchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkbenchViewController.swift; sourceTree = "<group>"; };
+		F62A693F1FFA263E00732FAB /* AfterSalesManagementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AfterSalesManagementViewController.xib; sourceTree = "<group>"; };
+		F62A69401FFA263E00732FAB /* AfterSalesManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterSalesManagementViewController.swift; sourceTree = "<group>"; };
+		F62A69431FFA263E00732FAB /* EmployeesManagementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeesManagementTableViewCell.xib; sourceTree = "<group>"; };
+		F62A69441FFA263E00732FAB /* EmployeesManagementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesManagementTableViewCell.swift; sourceTree = "<group>"; };
+		F62A69451FFA263E00732FAB /* EmployeesManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesManagementViewController.swift; sourceTree = "<group>"; };
+		F62A69461FFA263E00732FAB /* EmployeesManagementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeesManagementViewController.xib; sourceTree = "<group>"; };
+		F62A69481FFA263E00732FAB /* MoreDetailCustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreDetailCustomerViewController.swift; sourceTree = "<group>"; };
+		F62A69491FFA263E00732FAB /* AddNewCustomerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewCustomerViewController.xib; sourceTree = "<group>"; };
+		F62A694A1FFA263E00732FAB /* DetailCustomerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCustomerViewController.xib; sourceTree = "<group>"; };
+		F62A694B1FFA263E00732FAB /* MineCustomerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCustomerViewController.xib; sourceTree = "<group>"; };
+		F62A694D1FFA263E00732FAB /* DetailCustomerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCustomerTableViewCell.swift; sourceTree = "<group>"; };
+		F62A694E1FFA263E00732FAB /* MineCustomerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCustomerTableViewCell.xib; sourceTree = "<group>"; };
+		F62A694F1FFA263E00732FAB /* MineCustomerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCustomerTableViewCell.swift; sourceTree = "<group>"; };
+		F62A69501FFA263E00732FAB /* DetailCustomerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCustomerTableViewCell.xib; sourceTree = "<group>"; };
+		F62A69511FFA263E00732FAB /* AddNewCustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewCustomerViewController.swift; sourceTree = "<group>"; };
+		F62A69521FFA263E00732FAB /* MoreDetailCustomerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreDetailCustomerViewController.xib; sourceTree = "<group>"; };
+		F62A69531FFA263E00732FAB /* DetailCustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCustomerViewController.swift; sourceTree = "<group>"; };
+		F62A69541FFA263E00732FAB /* MineCustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineCustomerViewController.swift; sourceTree = "<group>"; };
+		F62A69561FFA263E00732FAB /* ShopManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopManagementViewController.swift; sourceTree = "<group>"; };
+		F62A69571FFA263E00732FAB /* EditShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditShopViewController.swift; sourceTree = "<group>"; };
+		F62A69591FFA263E00732FAB /* ShopManagementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopManagementTableViewCell.swift; sourceTree = "<group>"; };
+		F62A695A1FFA263E00732FAB /* ShopManagementTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopManagementTableViewCell.xib; sourceTree = "<group>"; };
+		F62A695B1FFA263E00732FAB /* EditShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditShopViewController.xib; sourceTree = "<group>"; };
+		F62A695C1FFA263E00732FAB /* DetailShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailShopViewController.swift; sourceTree = "<group>"; };
+		F62A695D1FFA263E00732FAB /* ShopManagementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopManagementViewController.xib; sourceTree = "<group>"; };
+		F62A695E1FFA263E00732FAB /* AddNewShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNewShopViewController.xib; sourceTree = "<group>"; };
+		F62A695F1FFA263E00732FAB /* AddNewShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewShopViewController.swift; sourceTree = "<group>"; };
+		F62A69601FFA263E00732FAB /* DetailShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailShopViewController.xib; sourceTree = "<group>"; };
+		F62A69621FFA263E00732FAB /* ProductManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductManagementViewController.swift; sourceTree = "<group>"; };
+		F62A69631FFA263E00732FAB /* ProductManagementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductManagementViewController.xib; sourceTree = "<group>"; };
+		F62A69651FFA263E00732FAB /* NewsReleaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsReleaseViewController.swift; sourceTree = "<group>"; };
+		F62A69661FFA263E00732FAB /* NewsReleaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsReleaseViewController.xib; sourceTree = "<group>"; };
+		F62A69671FFA263E00732FAB /* workbenchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = workbenchTableViewCell.xib; sourceTree = "<group>"; };
+		F62A69681FFA263E00732FAB /* workbenchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = workbenchTableViewCell.swift; sourceTree = "<group>"; };
+		F62A696A1FFA263E00732FAB /* DetailMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMessageViewController.xib; sourceTree = "<group>"; };
+		F62A696B1FFA263E00732FAB /* MessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		F62A696D1FFA263E00732FAB /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		F62A696E1FFA263E00732FAB /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		F62A696F1FFA263E00732FAB /* DetailMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMessageViewController.swift; sourceTree = "<group>"; };
+		F62A69701FFA263E00732FAB /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		F62A69A11FFA278A00732FAB /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
+		F62A69A21FFA278A00732FAB /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +248,8 @@
 		F62A68F31FFA1A4D00732FAB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				F62A69A11FFA278A00732FAB /* Common.xcassets */,
+				F62A69A21FFA278A00732FAB /* Login.xcassets */,
 				F62A68E71FFA18BB00732FAB /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -186,6 +294,9 @@
 		F62A68F71FFA1ACD00732FAB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F62A69691FFA263E00732FAB /* Message */,
+				F62A69331FFA263E00732FAB /* Mine */,
+				F62A693A1FFA263E00732FAB /* Workbench */,
 				F62A69281FFA24BC00732FAB /* Main */,
 				F62A69271FFA24AE00732FAB /* Login */,
 			);
@@ -232,6 +343,8 @@
 		F62A69271FFA24AE00732FAB /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F62A69301FFA260400732FAB /* LoginViewController.swift */,
+				F62A692F1FFA260400732FAB /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -239,8 +352,166 @@
 		F62A69281FFA24BC00732FAB /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F62A692D1FFA25FD00732FAB /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		F62A69331FFA263E00732FAB /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				F62A69341FFA263E00732FAB /* MineTableViewCell.swift */,
+				F62A69351FFA263E00732FAB /* MineHeaderView.swift */,
+				F62A69361FFA263E00732FAB /* MineViewController.xib */,
+				F62A69371FFA263E00732FAB /* MineHeaderView.xib */,
+				F62A69381FFA263E00732FAB /* MineViewController.swift */,
+				F62A69391FFA263E00732FAB /* MineTableViewCell.xib */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		F62A693A1FFA263E00732FAB /* Workbench */ = {
+			isa = PBXGroup;
+			children = (
+				F62A693B1FFA263E00732FAB /* WorkbenchViewController.xib */,
+				F62A693C1FFA263E00732FAB /* WorkbenchViewController.swift */,
+				F62A693D1FFA263E00732FAB /* DetailWorkbench */,
+				F62A69671FFA263E00732FAB /* workbenchTableViewCell.xib */,
+				F62A69681FFA263E00732FAB /* workbenchTableViewCell.swift */,
+			);
+			path = Workbench;
+			sourceTree = "<group>";
+		};
+		F62A693D1FFA263E00732FAB /* DetailWorkbench */ = {
+			isa = PBXGroup;
+			children = (
+				F62A693E1FFA263E00732FAB /* AfterSalesManagementViewController */,
+				F62A69411FFA263E00732FAB /* EmployeesManagementViewController */,
+				F62A69471FFA263E00732FAB /* MineCustomerViewController */,
+				F62A69551FFA263E00732FAB /* ShopManagementViewController */,
+				F62A69611FFA263E00732FAB /* ProductManagementViewController */,
+				F62A69641FFA263E00732FAB /* NewsReleaseViewController */,
+			);
+			path = DetailWorkbench;
+			sourceTree = "<group>";
+		};
+		F62A693E1FFA263E00732FAB /* AfterSalesManagementViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F62A693F1FFA263E00732FAB /* AfterSalesManagementViewController.xib */,
+				F62A69401FFA263E00732FAB /* AfterSalesManagementViewController.swift */,
+			);
+			path = AfterSalesManagementViewController;
+			sourceTree = "<group>";
+		};
+		F62A69411FFA263E00732FAB /* EmployeesManagementViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F62A69421FFA263E00732FAB /* Component */,
+				F62A69451FFA263E00732FAB /* EmployeesManagementViewController.swift */,
+				F62A69461FFA263E00732FAB /* EmployeesManagementViewController.xib */,
+			);
+			path = EmployeesManagementViewController;
+			sourceTree = "<group>";
+		};
+		F62A69421FFA263E00732FAB /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F62A69431FFA263E00732FAB /* EmployeesManagementTableViewCell.xib */,
+				F62A69441FFA263E00732FAB /* EmployeesManagementTableViewCell.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F62A69471FFA263E00732FAB /* MineCustomerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F62A69481FFA263E00732FAB /* MoreDetailCustomerViewController.swift */,
+				F62A69491FFA263E00732FAB /* AddNewCustomerViewController.xib */,
+				F62A694A1FFA263E00732FAB /* DetailCustomerViewController.xib */,
+				F62A694B1FFA263E00732FAB /* MineCustomerViewController.xib */,
+				F62A694C1FFA263E00732FAB /* Component */,
+				F62A69511FFA263E00732FAB /* AddNewCustomerViewController.swift */,
+				F62A69521FFA263E00732FAB /* MoreDetailCustomerViewController.xib */,
+				F62A69531FFA263E00732FAB /* DetailCustomerViewController.swift */,
+				F62A69541FFA263E00732FAB /* MineCustomerViewController.swift */,
+			);
+			path = MineCustomerViewController;
+			sourceTree = "<group>";
+		};
+		F62A694C1FFA263E00732FAB /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F62A694D1FFA263E00732FAB /* DetailCustomerTableViewCell.swift */,
+				F62A694E1FFA263E00732FAB /* MineCustomerTableViewCell.xib */,
+				F62A694F1FFA263E00732FAB /* MineCustomerTableViewCell.swift */,
+				F62A69501FFA263E00732FAB /* DetailCustomerTableViewCell.xib */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F62A69551FFA263E00732FAB /* ShopManagementViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F62A69561FFA263E00732FAB /* ShopManagementViewController.swift */,
+				F62A69571FFA263E00732FAB /* EditShopViewController.swift */,
+				F62A69581FFA263E00732FAB /* Component */,
+				F62A695B1FFA263E00732FAB /* EditShopViewController.xib */,
+				F62A695C1FFA263E00732FAB /* DetailShopViewController.swift */,
+				F62A695D1FFA263E00732FAB /* ShopManagementViewController.xib */,
+				F62A695E1FFA263E00732FAB /* AddNewShopViewController.xib */,
+				F62A695F1FFA263E00732FAB /* AddNewShopViewController.swift */,
+				F62A69601FFA263E00732FAB /* DetailShopViewController.xib */,
+			);
+			path = ShopManagementViewController;
+			sourceTree = "<group>";
+		};
+		F62A69581FFA263E00732FAB /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F62A69591FFA263E00732FAB /* ShopManagementTableViewCell.swift */,
+				F62A695A1FFA263E00732FAB /* ShopManagementTableViewCell.xib */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F62A69611FFA263E00732FAB /* ProductManagementViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F62A69621FFA263E00732FAB /* ProductManagementViewController.swift */,
+				F62A69631FFA263E00732FAB /* ProductManagementViewController.xib */,
+			);
+			path = ProductManagementViewController;
+			sourceTree = "<group>";
+		};
+		F62A69641FFA263E00732FAB /* NewsReleaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F62A69651FFA263E00732FAB /* NewsReleaseViewController.swift */,
+				F62A69661FFA263E00732FAB /* NewsReleaseViewController.xib */,
+			);
+			path = NewsReleaseViewController;
+			sourceTree = "<group>";
+		};
+		F62A69691FFA263E00732FAB /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				F62A696A1FFA263E00732FAB /* DetailMessageViewController.xib */,
+				F62A696B1FFA263E00732FAB /* MessageViewController.xib */,
+				F62A696C1FFA263E00732FAB /* Component */,
+				F62A696F1FFA263E00732FAB /* DetailMessageViewController.swift */,
+				F62A69701FFA263E00732FAB /* MessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		F62A696C1FFA263E00732FAB /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F62A696D1FFA263E00732FAB /* MessageTableViewCell.swift */,
+				F62A696E1FFA263E00732FAB /* MessageTableViewCell.xib */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,13 +577,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F62A698E1FFA263E00732FAB /* ShopManagementTableViewCell.xib in Resources */,
+				F62A697B1FFA263E00732FAB /* EmployeesManagementTableViewCell.xib in Resources */,
+				F62A698F1FFA263E00732FAB /* EditShopViewController.xib in Resources */,
+				F62A69981FFA263E00732FAB /* NewsReleaseViewController.xib in Resources */,
+				F62A69311FFA260400732FAB /* LoginViewController.xib in Resources */,
+				F62A699B1FFA263E00732FAB /* DetailMessageViewController.xib in Resources */,
 				F62A69261FFA245800732FAB /* BaseTableViewCell.xib in Resources */,
+				F62A69821FFA263E00732FAB /* MineCustomerViewController.xib in Resources */,
+				F62A69991FFA263E00732FAB /* workbenchTableViewCell.xib in Resources */,
+				F62A69791FFA263E00732FAB /* AfterSalesManagementViewController.xib in Resources */,
+				F62A69761FFA263E00732FAB /* MineTableViewCell.xib in Resources */,
+				F62A69811FFA263E00732FAB /* DetailCustomerViewController.xib in Resources */,
+				F62A69731FFA263E00732FAB /* MineViewController.xib in Resources */,
+				F62A69841FFA263E00732FAB /* MineCustomerTableViewCell.xib in Resources */,
 				F62A69161FFA21CA00732FAB /* BaseNavigationController.xib in Resources */,
 				F62A68EB1FFA18BB00732FAB /* LaunchScreen.storyboard in Resources */,
+				F62A699C1FFA263E00732FAB /* MessageViewController.xib in Resources */,
+				F62A69A31FFA278A00732FAB /* Common.xcassets in Resources */,
+				F62A699E1FFA263E00732FAB /* MessageTableViewCell.xib in Resources */,
+				F62A69A41FFA278A00732FAB /* Login.xcassets in Resources */,
+				F62A69941FFA263E00732FAB /* DetailShopViewController.xib in Resources */,
 				F62A69151FFA21CA00732FAB /* BaseViewController.xib in Resources */,
+				F62A69741FFA263E00732FAB /* MineHeaderView.xib in Resources */,
+				F62A69801FFA263E00732FAB /* AddNewCustomerViewController.xib in Resources */,
 				F62A690D1FFA20DD00732FAB /* YTNibPlaceHolderView.xib in Resources */,
 				F62A68E81FFA18BB00732FAB /* Assets.xcassets in Resources */,
+				F62A69961FFA263E00732FAB /* ProductManagementViewController.xib in Resources */,
+				F62A69921FFA263E00732FAB /* AddNewShopViewController.xib in Resources */,
+				F62A69861FFA263E00732FAB /* DetailCustomerTableViewCell.xib in Resources */,
+				F62A69771FFA263E00732FAB /* WorkbenchViewController.xib in Resources */,
+				F62A697E1FFA263E00732FAB /* EmployeesManagementViewController.xib in Resources */,
 				F62A68E61FFA18BB00732FAB /* Main.storyboard in Resources */,
+				F62A69911FFA263E00732FAB /* ShopManagementViewController.xib in Resources */,
+				F62A69881FFA263E00732FAB /* MoreDetailCustomerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,21 +669,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F62A69831FFA263E00732FAB /* DetailCustomerTableViewCell.swift in Sources */,
 				F62A69091FFA209A00732FAB /* StringMd5.swift in Sources */,
+				F62A697D1FFA263E00732FAB /* EmployeesManagementViewController.swift in Sources */,
+				F62A69891FFA263E00732FAB /* DetailCustomerViewController.swift in Sources */,
+				F62A697A1FFA263E00732FAB /* AfterSalesManagementViewController.swift in Sources */,
+				F62A69751FFA263E00732FAB /* MineViewController.swift in Sources */,
 				F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */,
 				F62A69171FFA21CA00732FAB /* BaseViewController.swift in Sources */,
 				F62A69201FFA239500732FAB /* AlertHelper.swift in Sources */,
+				F62A69321FFA260400732FAB /* LoginViewController.swift in Sources */,
+				F62A698A1FFA263E00732FAB /* MineCustomerViewController.swift in Sources */,
+				F62A699F1FFA263F00732FAB /* DetailMessageViewController.swift in Sources */,
 				F62A690F1FFA20DD00732FAB /* YTNibPlaceHolderView.swift in Sources */,
+				F62A69721FFA263E00732FAB /* MineHeaderView.swift in Sources */,
+				F62A69901FFA263E00732FAB /* DetailShopViewController.swift in Sources */,
+				F62A697C1FFA263E00732FAB /* EmployeesManagementTableViewCell.swift in Sources */,
 				F62A69221FFA23FC00732FAB /* ConstantStringDefines.swift in Sources */,
 				F62A68E11FFA18BB00732FAB /* AppDelegate.swift in Sources */,
+				F62A698C1FFA263E00732FAB /* EditShopViewController.swift in Sources */,
 				F62A68FB1FFA1BB200732FAB /* URLManager.swift in Sources */,
 				F62A691B1FFA231700732FAB /* UIViewExtension.swift in Sources */,
 				F62A68FF1FFA1BE500732FAB /* SessionManager.swift in Sources */,
+				F62A699A1FFA263E00732FAB /* workbenchTableViewCell.swift in Sources */,
 				F62A69071FFA206F00732FAB /* NotificationDefineds.swift in Sources */,
+				F62A69781FFA263E00732FAB /* WorkbenchViewController.swift in Sources */,
 				F62A691C1FFA231700732FAB /* UIViewControllerExtension.swift in Sources */,
 				F62A69251FFA245800732FAB /* BaseTableViewCell.swift in Sources */,
+				F62A697F1FFA263E00732FAB /* MoreDetailCustomerViewController.swift in Sources */,
+				F62A69711FFA263E00732FAB /* MineTableViewCell.swift in Sources */,
+				F62A69A01FFA263F00732FAB /* MessageViewController.swift in Sources */,
 				F62A68FD1FFA1BCF00732FAB /* HttpManager.swift in Sources */,
+				F62A69851FFA263E00732FAB /* MineCustomerTableViewCell.swift in Sources */,
+				F62A698D1FFA263E00732FAB /* ShopManagementTableViewCell.swift in Sources */,
+				F62A69931FFA263E00732FAB /* AddNewShopViewController.swift in Sources */,
+				F62A699D1FFA263E00732FAB /* MessageTableViewCell.swift in Sources */,
+				F62A69971FFA263E00732FAB /* NewsReleaseViewController.swift in Sources */,
 				F62A691F1FFA239500732FAB /* ToolHelper.swift in Sources */,
+				F62A698B1FFA263E00732FAB /* ShopManagementViewController.swift in Sources */,
+				F62A692E1FFA25FD00732FAB /* MainViewController.swift in Sources */,
+				F62A69871FFA263E00732FAB /* AddNewCustomerViewController.swift in Sources */,
+				F62A69951FFA263E00732FAB /* ProductManagementViewController.swift in Sources */,
 				F62A69141FFA21CA00732FAB /* BaseNavigationController.swift in Sources */,
 				F62A690E1FFA20DD00732FAB /* CreatAlertViewController.swift in Sources */,
 			);
