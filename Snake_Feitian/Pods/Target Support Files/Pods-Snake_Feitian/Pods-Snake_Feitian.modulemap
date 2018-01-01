@@ -1,0 +1,6 @@
+framework module Pods_Snake_Feitian {
+  umbrella header "Pods-Snake_Feitian-umbrella.h"
+
+  export *
+  module * { export * }
+}
