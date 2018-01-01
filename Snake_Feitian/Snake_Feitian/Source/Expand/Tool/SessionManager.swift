@@ -8,16 +8,6 @@
 
 import UIKit
 
-//
-//  SessionManager.swift
-//  Snake-OrderSystem
-//
-//  Created by Snake on 2017/11/13.
-//  Copyright © 2017年 Snake. All rights reserved.
-//
-
-import UIKit
-
 //基本信息
 let K_BasicInformation = "K_BasicInformation"
 
