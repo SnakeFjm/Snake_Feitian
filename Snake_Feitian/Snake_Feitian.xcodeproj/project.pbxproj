@@ -85,6 +85,8 @@
 		F62A69A01FFA263F00732FAB /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69701FFA263E00732FAB /* MessageViewController.swift */; };
 		F62A69A31FFA278A00732FAB /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F62A69A11FFA278A00732FAB /* Common.xcassets */; };
 		F62A69A41FFA278A00732FAB /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F62A69A21FFA278A00732FAB /* Login.xcassets */; };
+		F62A69A71FFA286A00732FAB /* RefreshTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69A51FFA286A00732FAB /* RefreshTableViewController.swift */; };
+		F62A69A81FFA286A00732FAB /* RefreshTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69A61FFA286A00732FAB /* RefreshTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -171,6 +173,8 @@
 		F62A69701FFA263E00732FAB /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		F62A69A11FFA278A00732FAB /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
 		F62A69A21FFA278A00732FAB /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
+		F62A69A51FFA286A00732FAB /* RefreshTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTableViewController.swift; sourceTree = "<group>"; };
+		F62A69A61FFA286A00732FAB /* RefreshTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefreshTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +310,8 @@
 		F62A68F81FFA1AFC00732FAB /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				F62A69A51FFA286A00732FAB /* RefreshTableViewController.swift */,
+				F62A69A61FFA286A00732FAB /* RefreshTableViewController.xib */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -604,6 +610,7 @@
 				F62A690D1FFA20DD00732FAB /* YTNibPlaceHolderView.xib in Resources */,
 				F62A68E81FFA18BB00732FAB /* Assets.xcassets in Resources */,
 				F62A69961FFA263E00732FAB /* ProductManagementViewController.xib in Resources */,
+				F62A69A81FFA286A00732FAB /* RefreshTableViewController.xib in Resources */,
 				F62A69921FFA263E00732FAB /* AddNewShopViewController.xib in Resources */,
 				F62A69861FFA263E00732FAB /* DetailCustomerTableViewCell.xib in Resources */,
 				F62A69771FFA263E00732FAB /* WorkbenchViewController.xib in Resources */,
@@ -679,6 +686,7 @@
 				F62A69171FFA21CA00732FAB /* BaseViewController.swift in Sources */,
 				F62A69201FFA239500732FAB /* AlertHelper.swift in Sources */,
 				F62A69321FFA260400732FAB /* LoginViewController.swift in Sources */,
+				F62A69A71FFA286A00732FAB /* RefreshTableViewController.swift in Sources */,
 				F62A698A1FFA263E00732FAB /* MineCustomerViewController.swift in Sources */,
 				F62A699F1FFA263F00732FAB /* DetailMessageViewController.swift in Sources */,
 				F62A690F1FFA20DD00732FAB /* YTNibPlaceHolderView.swift in Sources */,

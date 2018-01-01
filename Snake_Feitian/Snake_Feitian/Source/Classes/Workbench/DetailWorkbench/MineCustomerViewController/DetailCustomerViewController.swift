@@ -45,7 +45,7 @@ class DetailCustomerViewController: BaseViewController, UITableViewDelegate, UIT
     // MARK:
     // =================================
     
-    override func loadDataFromServer() {
+    func loadDataFromServer() {
     
         let apiName: String = "http://123.207.68.190:21026/api/v1/customer/" + "\(self.customerId)"
 //        HttpRequestManager.sharedManager.getRequest(apiName: apiName, paramDict: [:]) { (isSuccess: Bool, resultObject: Any) in

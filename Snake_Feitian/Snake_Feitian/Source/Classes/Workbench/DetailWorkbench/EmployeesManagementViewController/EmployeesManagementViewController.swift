@@ -39,7 +39,7 @@ class EmployeesManagementViewController: BaseViewController, UITableViewDelegate
     // MARK:
     // =================================
     
-    override func loadDataFromServer() {
+    func loadDataFromServer() {
         
     }
     

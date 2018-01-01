@@ -39,7 +39,7 @@ class MoreDetailCustomerViewController: BaseViewController, UITableViewDelegate,
     // MARK:
     // =================================
     
-    override func loadDataFromServer() {
+    func loadDataFromServer() {
         
         let userId: Int = SessionManager.share.userId
         let apiName: String = "http://123.207.68.190:21026/api/v1/customer/user/" + "\(userId)" + "more-detail/" + "\(self.customerId)"

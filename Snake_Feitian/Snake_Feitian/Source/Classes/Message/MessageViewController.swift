@@ -57,7 +57,7 @@ class MessageViewController: BaseViewController, UITableViewDelegate, UITableVie
     // MARK:
     // =================================
     
-    override func loadDataFromServer() {
+    func loadDataFromServer() {
         
         let userId = SessionManager.share.userId
         let dict = ["userId": 1, "isRead": self.messageState, "type": self.messageType, "pageNum": 0, "pageSize": 10]

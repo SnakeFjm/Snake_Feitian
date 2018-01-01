@@ -53,11 +53,6 @@ class BaseViewController: QMUICommonViewController {
         
     }
     
-    func loadDataFromServer() {
-        
-    }
-    
-    
     // =================================
     // MARK:
     // =================================
