@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		477988A8B7626992B8A8AA5C /* Pods_Snake_Feitian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F196A3E7F6A3179653236CD4 /* Pods_Snake_Feitian.framework */; };
 		F62A68E11FFA18BB00732FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E01FFA18BB00732FAB /* AppDelegate.swift */; };
 		F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E21FFA18BB00732FAB /* ViewController.swift */; };
 		F62A68E61FFA18BB00732FAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62A68E41FFA18BB00732FAB /* Main.storyboard */; };
 		F62A68E81FFA18BB00732FAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F62A68E71FFA18BB00732FAB /* Assets.xcassets */; };
 		F62A68EB1FFA18BB00732FAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62A68E91FFA18BB00732FAB /* LaunchScreen.storyboard */; };
+		F62A68FB1FFA1BB200732FAB /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68FA1FFA1BB200732FAB /* URLManager.swift */; };
+		F62A68FD1FFA1BCF00732FAB /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68FC1FFA1BCF00732FAB /* HttpManager.swift */; };
+		F62A68FF1FFA1BE500732FAB /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68FE1FFA1BE500732FAB /* SessionManager.swift */; };
+		F62A69071FFA206F00732FAB /* NotificationDefineds.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69061FFA206F00732FAB /* NotificationDefineds.swift */; };
+		F62A69091FFA209A00732FAB /* StringMd5.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69081FFA209A00732FAB /* StringMd5.swift */; };
+		F62A690D1FFA20DD00732FAB /* YTNibPlaceHolderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A690A1FFA20DC00732FAB /* YTNibPlaceHolderView.xib */; };
+		F62A690E1FFA20DD00732FAB /* CreatAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A690B1FFA20DC00732FAB /* CreatAlertViewController.swift */; };
+		F62A690F1FFA20DD00732FAB /* YTNibPlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A690C1FFA20DD00732FAB /* YTNibPlaceHolderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35B2270EBECD62CF3B8FD52E /* Pods-Snake_Feitian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake_Feitian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian.debug.xcconfig"; sourceTree = "<group>"; };
+		563B6C29904E0D01D0C23E19 /* Pods-Snake_Feitian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake_Feitian.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian.release.xcconfig"; sourceTree = "<group>"; };
+		F196A3E7F6A3179653236CD4 /* Pods_Snake_Feitian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snake_Feitian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68DD1FFA18BB00732FAB /* Snake_Feitian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake_Feitian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68E01FFA18BB00732FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62A68E21FFA18BB00732FAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +34,15 @@
 		F62A68E71FFA18BB00732FAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F62A68EA1FFA18BB00732FAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F62A68EC1FFA18BB00732FAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F62A68FA1FFA1BB200732FAB /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
+		F62A68FC1FFA1BCF00732FAB /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
+		F62A68FE1FFA1BE500732FAB /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		F62A69011FFA1F9F00732FAB /* Snake_Feitian-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snake_Feitian-Bridging-Header.h"; sourceTree = "<group>"; };
+		F62A69061FFA206F00732FAB /* NotificationDefineds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDefineds.swift; sourceTree = "<group>"; };
+		F62A69081FFA209A00732FAB /* StringMd5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringMd5.swift; sourceTree = "<group>"; };
+		F62A690A1FFA20DC00732FAB /* YTNibPlaceHolderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTNibPlaceHolderView.xib; sourceTree = "<group>"; };
+		F62A690B1FFA20DC00732FAB /* CreatAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatAlertViewController.swift; sourceTree = "<group>"; };
+		F62A690C1FFA20DD00732FAB /* YTNibPlaceHolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTNibPlaceHolderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +50,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				477988A8B7626992B8A8AA5C /* Pods_Snake_Feitian.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57790387DE68FC49BD08609A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F196A3E7F6A3179653236CD4 /* Pods_Snake_Feitian.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C66615876CDECC84B198FDDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35B2270EBECD62CF3B8FD52E /* Pods-Snake_Feitian.debug.xcconfig */,
+				563B6C29904E0D01D0C23E19 /* Pods-Snake_Feitian.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F62A68D41FFA18BB00732FAB = {
 			isa = PBXGroup;
 			children = (
 				F62A68DF1FFA18BB00732FAB /* Snake_Feitian */,
 				F62A68DE1FFA18BB00732FAB /* Products */,
+				C66615876CDECC84B198FDDD /* Pods */,
+				57790387DE68FC49BD08609A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +95,95 @@
 		F62A68DF1FFA18BB00732FAB /* Snake_Feitian */ = {
 			isa = PBXGroup;
 			children = (
+				F62A68F31FFA1A4D00732FAB /* Resource */,
+				F62A68F21FFA1A2100732FAB /* Source */,
 				F62A68E01FFA18BB00732FAB /* AppDelegate.swift */,
 				F62A68E21FFA18BB00732FAB /* ViewController.swift */,
-				F62A68E41FFA18BB00732FAB /* Main.storyboard */,
-				F62A68E71FFA18BB00732FAB /* Assets.xcassets */,
-				F62A68E91FFA18BB00732FAB /* LaunchScreen.storyboard */,
 				F62A68EC1FFA18BB00732FAB /* Info.plist */,
+				F62A68E41FFA18BB00732FAB /* Main.storyboard */,
+				F62A68E91FFA18BB00732FAB /* LaunchScreen.storyboard */,
+				F62A69011FFA1F9F00732FAB /* Snake_Feitian-Bridging-Header.h */,
 			);
 			path = Snake_Feitian;
+			sourceTree = "<group>";
+		};
+		F62A68F21FFA1A2100732FAB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F62A68F51FFA1A9F00732FAB /* Supporting Files */,
+				F62A68F71FFA1ACD00732FAB /* Classes */,
+				F62A68F61FFA1AB100732FAB /* Expand */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F62A68F31FFA1A4D00732FAB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F62A68E71FFA18BB00732FAB /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F62A68F41FFA1A7200732FAB /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				F62A68FA1FFA1BB200732FAB /* URLManager.swift */,
+				F62A68FC1FFA1BCF00732FAB /* HttpManager.swift */,
+				F62A68FE1FFA1BE500732FAB /* SessionManager.swift */,
+				F62A69061FFA206F00732FAB /* NotificationDefineds.swift */,
+				F62A69081FFA209A00732FAB /* StringMd5.swift */,
+				F62A690B1FFA20DC00732FAB /* CreatAlertViewController.swift */,
+				F62A690C1FFA20DD00732FAB /* YTNibPlaceHolderView.swift */,
+				F62A690A1FFA20DC00732FAB /* YTNibPlaceHolderView.xib */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		F62A68F51FFA1A9F00732FAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F62A68F61FFA1AB100732FAB /* Expand */ = {
+			isa = PBXGroup;
+			children = (
+				F62A69001FFA1F8700732FAB /* Macros */,
+				F62A68F91FFA1B2000732FAB /* Base */,
+				F62A68F81FFA1AFC00732FAB /* CommonViews */,
+				F62A68F41FFA1A7200732FAB /* Tool */,
+			);
+			path = Expand;
+			sourceTree = "<group>";
+		};
+		F62A68F71FFA1ACD00732FAB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F62A68F81FFA1AFC00732FAB /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		F62A68F91FFA1B2000732FAB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F62A69001FFA1F8700732FAB /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Macros;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +193,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F62A68EF1FFA18BB00732FAB /* Build configuration list for PBXNativeTarget "Snake_Feitian" */;
 			buildPhases = (
+				79871A9AB060104E69D5BD03 /* [CP] Check Pods Manifest.lock */,
 				F62A68D91FFA18BB00732FAB /* Sources */,
 				F62A68DA1FFA18BB00732FAB /* Frameworks */,
 				F62A68DB1FFA18BB00732FAB /* Resources */,
+				53A4841F1DA8CCFD92F0A510 /* [CP] Embed Pods Frameworks */,
+				227D583E0BBF3614A37C3A0A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +221,7 @@
 				TargetAttributes = {
 					F62A68DC1FFA18BB00732FAB = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F62A68EB1FFA18BB00732FAB /* LaunchScreen.storyboard in Resources */,
+				F62A690D1FFA20DD00732FAB /* YTNibPlaceHolderView.xib in Resources */,
 				F62A68E81FFA18BB00732FAB /* Assets.xcassets in Resources */,
 				F62A68E61FFA18BB00732FAB /* Main.storyboard in Resources */,
 			);
@@ -131,13 +258,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		227D583E0BBF3614A37C3A0A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53A4841F1DA8CCFD92F0A510 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79871A9AB060104E69D5BD03 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F62A68D91FFA18BB00732FAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F62A69091FFA209A00732FAB /* StringMd5.swift in Sources */,
 				F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */,
+				F62A690F1FFA20DD00732FAB /* YTNibPlaceHolderView.swift in Sources */,
 				F62A68E11FFA18BB00732FAB /* AppDelegate.swift in Sources */,
+				F62A68FB1FFA1BB200732FAB /* URLManager.swift in Sources */,
+				F62A68FF1FFA1BE500732FAB /* SessionManager.swift in Sources */,
+				F62A69071FFA206F00732FAB /* NotificationDefineds.swift in Sources */,
+				F62A68FD1FFA1BCF00732FAB /* HttpManager.swift in Sources */,
+				F62A690E1FFA20DD00732FAB /* CreatAlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,13 +454,17 @@
 		};
 		F62A68F01FFA18BB00732FAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35B2270EBECD62CF3B8FD52E /* Pods-Snake_Feitian.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Snake_Feitian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "snake.Snake-Feitian";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Snake_Feitian/Snake_Feitian-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,13 +472,16 @@
 		};
 		F62A68F11FFA18BB00732FAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 563B6C29904E0D01D0C23E19 /* Pods-Snake_Feitian.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Snake_Feitian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "snake.Snake-Feitian";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Snake_Feitian/Snake_Feitian-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
