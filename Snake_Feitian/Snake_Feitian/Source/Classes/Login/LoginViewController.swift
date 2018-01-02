@@ -91,49 +91,6 @@ class LoginViewController: BaseViewController {
                     SessionManager.share.saveBasicInformation(dict: dict)
                 }
             })
-            
-//            Alamofire.request(apiName, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
-//                if let result = HttpManager.parseDataResponse(response: response) {
-//                    //
-//                    let dict: NSDictionary = result.dictionaryValue as NSDictionary
-//                    if !result["token"].stringValue.isEmpty {
-//                        self.loginSuccessfully(phoneValue: phoneValue, pwdValue: pwdValue)
-//                    }
-//                    //保存基本信息
-//                    SessionManager.share.saveBasicInformation(dict: dict)
-//                }
-//            })
-//
-//            HttpManager.shareManager.getRequest("https://api.douban.com/v2/book/1220562", parameters: nil).responseJSON(completionHandler: { (response) in
-//                if let result = HttpManager.parseDataResponse(response: response) {
-//                    let dict: NSDictionary = result.dictionaryValue as NSDictionary
-//
-//                }
-//            })
-            
-//            HttpRequestManager.sharedManager.postRequest(apiName: apiName, paramDict: dict, resultCallback: { (isSuccess: Bool, resultObject: Any) in
-//
-//                if isSuccess {
-//
-//                    let dict: NSDictionary = resultObject as! NSDictionary
-//                    if let _: String = dict.value(forKey: "token") as? String {
-//                        self.loginSuccessfully(phoneValue: phoneValue, pwdValue: pwdValue)
-//                        //保存基本信息
-//                        SessionManager.share.saveBasicInformation(dict: dict)
-//                    }
-//
-//                } else {
-//
-//                    let dict: NSDictionary = resultObject as! NSDictionary
-//                    let message: String = dict.value(forKey: "message") as! String
-//
-//                    let alertVC: UIAlertController = UIAlertController.init(title: message, message: "", preferredStyle: .alert)
-//                    let cancelAction: UIAlertAction = UIAlertAction.init(title: "确认", style: .cancel, handler: nil)
-//                    alertVC.addAction(cancelAction)
-//                    self.present(alertVC, animated: true, completion: nil)
-//                }
-//
-//            })
         }
         
     }
@@ -143,7 +100,7 @@ class LoginViewController: BaseViewController {
     }
     
     func loginSuccessfully(phoneValue: String, pwdValue: String) {
-        
+        //
         SessionManager.share.isLogin = true
         
         SessionManager.share.rememberPhone = phoneValue
@@ -155,7 +112,7 @@ class LoginViewController: BaseViewController {
         } else {
             SessionManager.share.rememberPassword = ""
         }
-        
+        //
         NotificationCenter.default.post(name: K_LOGIN_CHECK_STATUS, object: nil, userInfo: nil)
         
     }

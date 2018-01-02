@@ -369,11 +369,11 @@
 			isa = PBXGroup;
 			children = (
 				F62A69341FFA263E00732FAB /* MineTableViewCell.swift */,
-				F62A69351FFA263E00732FAB /* MineHeaderView.swift */,
-				F62A69361FFA263E00732FAB /* MineViewController.xib */,
-				F62A69371FFA263E00732FAB /* MineHeaderView.xib */,
-				F62A69381FFA263E00732FAB /* MineViewController.swift */,
 				F62A69391FFA263E00732FAB /* MineTableViewCell.xib */,
+				F62A69381FFA263E00732FAB /* MineViewController.swift */,
+				F62A69361FFA263E00732FAB /* MineViewController.xib */,
+				F62A69351FFA263E00732FAB /* MineHeaderView.swift */,
+				F62A69371FFA263E00732FAB /* MineHeaderView.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";

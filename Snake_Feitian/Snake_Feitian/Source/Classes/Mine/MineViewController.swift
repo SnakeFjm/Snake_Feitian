@@ -59,6 +59,20 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        // 退出登录
+        if indexPath.row == 1 {
+            //
+            SessionManager.share.cleanBasicInformation()
+            //
+            SessionManager.share.isLogin = false
+            //
+            NotificationCenter.default.post(name: K_LOGIN_CHECK_STATUS, object: nil)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 20
     }

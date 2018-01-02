@@ -82,9 +82,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if SessionManager.share.isLogin == true {
             jumpToMainViewController()
-            
-            NotificationCenter.default.removeObserver(self, name: K_LOGIN_CHECK_STATUS, object: nil)
-            
         } else {
             jumpToLoginViewController()
         }
