@@ -87,6 +87,7 @@
 		F62A69A41FFA278A00732FAB /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F62A69A21FFA278A00732FAB /* Login.xcassets */; };
 		F62A69A71FFA286A00732FAB /* RefreshTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69A51FFA286A00732FAB /* RefreshTableViewController.swift */; };
 		F62A69A81FFA286A00732FAB /* RefreshTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69A61FFA286A00732FAB /* RefreshTableViewController.xib */; };
+		F62A876F1FFBD269003A2F33 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A876E1FFBD269003A2F33 /* MessageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +176,7 @@
 		F62A69A21FFA278A00732FAB /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Login.xcassets; sourceTree = "<group>"; };
 		F62A69A51FFA286A00732FAB /* RefreshTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTableViewController.swift; sourceTree = "<group>"; };
 		F62A69A61FFA286A00732FAB /* RefreshTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefreshTableViewController.xib; sourceTree = "<group>"; };
+		F62A876E1FFBD269003A2F33 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,11 +504,12 @@
 		F62A69691FFA263E00732FAB /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				F62A696A1FFA263E00732FAB /* DetailMessageViewController.xib */,
-				F62A696B1FFA263E00732FAB /* MessageViewController.xib */,
 				F62A696C1FFA263E00732FAB /* Component */,
-				F62A696F1FFA263E00732FAB /* DetailMessageViewController.swift */,
 				F62A69701FFA263E00732FAB /* MessageViewController.swift */,
+				F62A696B1FFA263E00732FAB /* MessageViewController.xib */,
+				F62A696F1FFA263E00732FAB /* DetailMessageViewController.swift */,
+				F62A696A1FFA263E00732FAB /* DetailMessageViewController.xib */,
+				F62A876E1FFBD269003A2F33 /* MessageModel.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				F62A68FF1FFA1BE500732FAB /* SessionManager.swift in Sources */,
 				F62A699A1FFA263E00732FAB /* workbenchTableViewCell.swift in Sources */,
 				F62A69071FFA206F00732FAB /* NotificationDefineds.swift in Sources */,
+				F62A876F1FFBD269003A2F33 /* MessageModel.swift in Sources */,
 				F62A69781FFA263E00732FAB /* WorkbenchViewController.swift in Sources */,
 				F62A691C1FFA231700732FAB /* UIViewControllerExtension.swift in Sources */,
 				F62A69251FFA245800732FAB /* BaseTableViewCell.swift in Sources */,

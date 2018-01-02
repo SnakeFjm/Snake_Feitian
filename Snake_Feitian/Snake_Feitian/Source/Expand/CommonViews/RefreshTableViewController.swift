@@ -215,13 +215,13 @@ class RefreshTableViewController: BaseViewController, UITableViewDelegate, UITab
         }
         
         // 判断数据源是否有数据，没有数据则显示 空数据提示
-        let count = self.dataArray.count
-        self.tableView.isHidden = (self.needShowEmptyViewWhenNoneData && count <= 0)
-        if self.needShowEmptyViewWhenNoneData && count == 0 {
-            self.showEmptyView()
-        } else {
-            self.hideEmptyView()
-        }
+//        let count = self.dataArray.count
+//        self.tableView.isHidden = (self.needShowEmptyViewWhenNoneData && count <= 0)
+//        if self.needShowEmptyViewWhenNoneData && count == 0 {
+//            self.showEmptyView()
+//        } else {
+//            self.hideEmptyView()
+//        }
         
     }
     

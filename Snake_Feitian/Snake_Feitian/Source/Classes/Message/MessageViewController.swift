@@ -7,20 +7,16 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class MessageViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class MessageViewController: RefreshTableViewController {
 
     @IBOutlet weak var leftLabel: UILabel!
-    
     @IBOutlet weak var rightLabel: UILabel!
-    
     @IBOutlet weak var topView: UIView!
     
-    @IBOutlet weak var messageTableView: UITableView!
-    
     var messageDict: NSDictionary = [:]
-    
-    var messageArray: NSMutableArray = []
     
     var messageState: Int = 2   //1=已读，0=未读，2=全部
     var messageType: Int = 4    //1=工作消息，2=售后消息，3=其他消息，4=全部
@@ -30,15 +26,22 @@ class MessageViewController: BaseViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "我的消息"
+        self.title = "我的消息"
         
         self.dateFormatter.dateFormat = "yyyy年MM月dd日 hh:mm"
         
         self.topView.layer.borderColor = UIColor.lightGray.cgColor
         self.topView.layer.borderWidth = 1
         
-        self.messageTableView.register(UINib.init(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
-        self.messageTableView.tableFooterView = UIView()
+        //
+        self.addMJHeaderView()
+        self.addMJFooterView()
+        //
+        self.registerCellNib(nibName: "MessageTableViewCell")
+        self.tableView.rowHeight = 100
+        self.tableView.tableHeaderView = self.topView
+        
+        self.reloadTableViewData()
         
     }
 
@@ -57,23 +60,27 @@ class MessageViewController: BaseViewController, UITableViewDelegate, UITableVie
     // MARK:
     // =================================
     
-    func loadDataFromServer() {
+    override func loadDataFromServer() {
         
         let userId = SessionManager.share.userId
-        let dict = ["userId": 1, "isRead": self.messageState, "type": self.messageType, "pageNum": 0, "pageSize": 10]
-        let apiName = "http://123.207.68.190:21026/api/v1/message"
+        let parameters: Parameters = ["userId": userId, "isRead": self.messageState, "type": self.messageType, "pageNum": 0, "pageSize": 10]
+        let apiName = URLManager.feitian_message()
         
-//        HttpRequestManager.sharedManager.getRequest(apiName: apiName, paramDict: dict) { (isSuccess, resultObject) in
-//            
-//            if isSuccess {
-//                
-//                self.messageDict = NSDictionary.init(dictionary: resultObject as! NSDictionary)
-//                self.messageArray = NSMutableArray.init(array: (self.messageDict.object(forKey: "elements") as! NSArray))
-//                
-//                self.messageTableView.reloadData()
-//            }
-//        }
-        
+        HttpManager.shareManager.getRequest(apiName, pageNum: self.currentPage, pageSize: self.pageSize, parameters: parameters).responseJSON { (response) in
+            if let result = HttpManager.parseDataResponse(response: response) {
+                self.dataArray = result["elements"].arrayValue
+                // 数据更新
+                if self.pullType == .pullDown {
+                    self.dataArray = result["elements"].arrayValue
+                } else {
+                    self.dataArray.append(contentsOf: result["elements"].arrayValue)
+                }
+                // 是否能够加载更多
+                self.canLoadMore = HttpManager.checkIfCanLoadMOre(currentPage: self.currentPage, result: result)
+                // 刷新数据
+                self.reloadTableViewData()
+            }
+        }
         
     }
     
@@ -81,49 +88,41 @@ class MessageViewController: BaseViewController, UITableViewDelegate, UITableVie
     // MARK:
     // =================================
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.messageArray.count
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = self.messageTableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell", for: indexPath) as! MessageTableViewCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell", for: indexPath) as! MessageTableViewCell
         
-        let dict: NSDictionary = self.messageArray[indexPath.row] as! NSDictionary
+        cell.titleLabel.text = self.dataArray[indexPath.row]["title"].stringValue
+        cell.contentLabel.text = self.dataArray[indexPath.row]["content"].stringValue
         
-        cell.titleLabel.text = dict.object(forKey: "title") as? String
-        cell.contentLabel.text = dict.object(forKey: "content") as? String
-        
-        let date = dict.object(forKey: "modifyTime") as? Int
-        let dateValue = self.dateFormatter.string(from: Date.init(timeIntervalSince1970: TimeInterval.init(date!/1000)))
+        //
+        let date = self.dataArray[indexPath.row]["modifyTime"].intValue
+        let dateValue = self.dateFormatter.string(from: Date.init(timeIntervalSince1970: TimeInterval.init(date/1000)))
         cell.dateLabel.text = dateValue
         
         return cell
         
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let dict: NSDictionary = self.messageArray[indexPath.row] as! NSDictionary
-        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        super.tableView(tableView, didSelectRowAt: indexPath)
+        //
         let detailMessageVC = DetailMessageViewController()
-        
-        detailMessageVC.titleValue = dict.object(forKey: "title") as! String
-        detailMessageVC.contentValue = dict.object(forKey: "content") as! String
-        
-        let date = dict.object(forKey: "modifyTime") as? Int
-        let dateValue = self.dateFormatter.string(from: Date.init(timeIntervalSince1970: TimeInterval.init(date!/1000)))
+        //
+        detailMessageVC.titleValue = self.dataArray[indexPath.row]["title"].stringValue
+        detailMessageVC.contentValue = self.dataArray[indexPath.row]["content"].stringValue
+        //
+        let date = self.dataArray[indexPath.row]["modifyTime"].intValue
+        let dateValue = self.dateFormatter.string(from: Date.init(timeIntervalSince1970: TimeInterval.init(date/1000)))
         detailMessageVC.dateValue = dateValue
-
     
         self.navigationController?.pushViewController(detailMessageVC, animated: true)
         
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
     
     // =================================
     // MARK:
