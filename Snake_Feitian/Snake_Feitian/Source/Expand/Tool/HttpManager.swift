@@ -13,16 +13,20 @@ import SVProgressHUD
 
 class HttpManager: NSObject {
 
-    private static let _share: HttpManager = HttpManager.init()
-    class var shareManager: HttpManager {
-        return _share
+     static let shareManager: HttpManager = HttpManager.init()
+    
+    override init() {
+        super.init()
+        //
+        self.updateHttpsSession()
     }
     
-    func headers() -> HTTPHeaders {
-        let tempHeaders: HTTPHeaders = ["Authorization" : SessionManager.share.basicInformation.object(forKey: "token") as! String]
-        
-        return tempHeaders
-    }
+//    func headers() -> HTTPHeaders {
+//        var tempHeaders: HTTPHeaders = ["Content-Type": "application/json;charset=UTF-8"]
+////        tempHeaders["Authorization"] = SessionManager.share.basicInformation.object(forKey: "token") as? String
+//
+//        return tempHeaders
+//    }
     
     //更改https信任
     func updateHttpsSession() {
@@ -41,7 +45,7 @@ class HttpManager: NSObject {
     
     func request(url: URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil) -> DataRequest {
         //
-//        let currentHeaders: HTTPHeaders = (headers == nil) ? self.headers() : headers!
+        //let currentHeaders: HTTPHeaders = (headers == nil) ? self.headers() : headers!
         self.printRequestInfo(url, method: method, headers: headers)
         //
         return Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
@@ -65,7 +69,7 @@ class HttpManager: NSObject {
     // =================================
     
     func getRequest(_ url: URLConvertible, parameters: Parameters? = nil) -> DataRequest {
-        return self.request(url: url, method: .get, parameters: parameters, encoding: URLEncoding(destination: .methodDependent))
+        return self.request(url: url, method: .get, parameters: parameters, encoding: URLEncoding.default)
     }
     
     //分页
@@ -100,13 +104,13 @@ class HttpManager: NSObject {
     // =================================
     
     func multipartRequest(_ url: URLConvertible, imageData: Data, name: String, fileName: String, mimeType: String, method: HTTPMethod = .post, encodingCompletion: ((Alamofire.SessionManager.MultipartFormDataEncodingResult) -> Void)?) {
-        //
-        let headers = self.headers()
-        self.printRequestInfo(url, method: method, parameters: nil, headers: headers)
-        //
-        Alamofire.upload(multipartFormData: { (multipartFormData) in
-            multipartFormData.append(imageData, withName: name, fileName: fileName, mimeType: mimeType)
-        }, to: url, method: method, headers: headers, encodingCompletion: encodingCompletion)
+//        //
+//        let headers = self.headers()
+//        self.printRequestInfo(url, method: method, parameters: nil, headers: headers)
+//        //
+//        Alamofire.upload(multipartFormData: { (multipartFormData) in
+//            multipartFormData.append(imageData, withName: name, fileName: fileName, mimeType: mimeType)
+//        }, to: url, method: method, headers: headers, encodingCompletion: encodingCompletion)
     }
     
     // =================================
@@ -151,7 +155,7 @@ class HttpManager: NSObject {
             let result: JSON = JSON.init(obj)
             printResponseData(result: result)
             //
-            if let code = result["code"].int, code != 0, let msg: String = result["msg"].string {
+            if let code = result["code"].int, code != 0, let msg: String = result["message"].string {
                 self.handlerError(code: code, msg: msg)
             } else {
                 return result
@@ -177,6 +181,25 @@ class HttpManager: NSObject {
         
         default:
             break
+        }
+
+    }
+    
+    // =================================
+    // MARK:
+    // =================================
+    
+    // json转NSDictionay
+    static func jsonToNSDictionary(result: JSON) -> NSDictionary {
+        //
+        let jsonString = result.rawString(String.Encoding.utf8, options: JSONSerialization.WritingOptions.prettyPrinted)
+        let jsonData = jsonString?.data(using: String.Encoding.utf8)
+        //
+        let dictionary = try? JSONSerialization.jsonObject(with: jsonData!, options: JSONSerialization.ReadingOptions.mutableContainers)
+        if dictionary != nil {
+            return dictionary as! NSDictionary
+        } else {
+            return NSDictionary.init()
         }
     }
     

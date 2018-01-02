@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class LoginViewController: BaseViewController {
 
@@ -64,8 +66,10 @@ class LoginViewController: BaseViewController {
         let pwdValue: String = self.passwordTextField.text ?? ""
         let pwdValueMd5: String = pwdValue.md5()
 
-        let dict: NSDictionary = ["username": phoneValue, "password": pwdValueMd5]
-        let apiName: String = "http://123.207.68.190:21026/api/v1/user/login"
+        let parameter: Parameters = ["password": pwdValueMd5, "username": phoneValue]
+            //["username": phoneValue, "password": pwdValueMd5]
+        let apiName: String = URLManager.feitian_userLogin()
+        //"http://123.207.68.190:21026/api/v1/user/login"
         
         if phoneValue.isEmpty || pwdValue.isEmpty {
             let alertVC: UIAlertController = UIAlertController.init(title: "提示：手机号或密码不能为空", message: "", preferredStyle: .alert)
@@ -73,8 +77,40 @@ class LoginViewController: BaseViewController {
             
             alertVC.addAction(alertAction)
             self.present(alertVC, animated: true, completion: nil)
-            
+
         } else {
+            
+            HttpManager.shareManager.postRequest(apiName, parameters: parameter, encoding: JSONEncoding.default).responseJSON(completionHandler: { (response) in
+                if let result = HttpManager.parseDataResponse(response: response) {
+                    //
+                    let dict = HttpManager.jsonToNSDictionary(result: result)
+                    if !result["token"].stringValue.isEmpty {
+                        self.loginSuccessfully(phoneValue: phoneValue, pwdValue: pwdValue)
+                    }
+                    //保存基本信息
+                    SessionManager.share.saveBasicInformation(dict: dict)
+                }
+            })
+            
+//            Alamofire.request(apiName, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { (response) in
+//                if let result = HttpManager.parseDataResponse(response: response) {
+//                    //
+//                    let dict: NSDictionary = result.dictionaryValue as NSDictionary
+//                    if !result["token"].stringValue.isEmpty {
+//                        self.loginSuccessfully(phoneValue: phoneValue, pwdValue: pwdValue)
+//                    }
+//                    //保存基本信息
+//                    SessionManager.share.saveBasicInformation(dict: dict)
+//                }
+//            })
+//
+//            HttpManager.shareManager.getRequest("https://api.douban.com/v2/book/1220562", parameters: nil).responseJSON(completionHandler: { (response) in
+//                if let result = HttpManager.parseDataResponse(response: response) {
+//                    let dict: NSDictionary = result.dictionaryValue as NSDictionary
+//
+//                }
+//            })
+            
 //            HttpRequestManager.sharedManager.postRequest(apiName: apiName, paramDict: dict, resultCallback: { (isSuccess: Bool, resultObject: Any) in
 //
 //                if isSuccess {
