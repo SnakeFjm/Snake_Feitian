@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ShopManagementViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var shopTableView: UITableView!
     
-    var dataList: NSMutableArray = []
+    var shopManagementJson: [JSON] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,17 +47,16 @@ class ShopManagementViewController: BaseViewController, UITableViewDelegate, UIT
     
     func loadDataFromServer() {
         
-        let apiName: String = "http://123.207.68.190:21026/api/v1/branch"
-//        HttpRequestManager.sharedManager.getRequest(apiName: apiName, paramDict: [:]) { (isSuccess: Bool, resultObject: Any) in
-//
-//            if isSuccess {
-//                let array: NSArray = resultObject as! NSArray
-//                self.dataList = NSMutableArray.init(array: array)
-//
-//                self.shopTableView.reloadData()
-//
-//            }
-//        }
+        let apiName: String = URLManager.Feitian_branch()
+        //
+        HttpManager.shareManager.getRequest(apiName).responseJSON { (response) in
+            if let result = HttpManager.parseDataResponse(response: response) {
+                //
+                self.shopManagementJson = result.arrayValue
+                //
+                self.shopTableView.reloadData()
+            }
+        }
         
     }
     
@@ -64,11 +65,9 @@ class ShopManagementViewController: BaseViewController, UITableViewDelegate, UIT
     // =================================
     
     @objc func addNewShop() {
-        
         let addNewShopVC: AddNewShopViewController = AddNewShopViewController()
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(addNewShopVC, animated: true)
-        
     }
     
     // =================================
@@ -76,14 +75,14 @@ class ShopManagementViewController: BaseViewController, UITableViewDelegate, UIT
     // =================================
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataList.count
+        return self.shopManagementJson.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ShopManagementTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ShopManagementTableViewCell", for: indexPath) as! ShopManagementTableViewCell
         
-        let dict: NSDictionary = self.dataList[indexPath.row] as! NSDictionary
-        cell.updateUI(dict: dict)
+        let result = self.shopManagementJson[indexPath.row]
+        cell.updateCellUI(result: result)
         
         return cell
     }
@@ -95,16 +94,14 @@ class ShopManagementViewController: BaseViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let cancelAction: UITableViewRowAction = UITableViewRowAction.init(style: .destructive, title: "删除") { (_, _) in
-            let branchId: Int = (self.dataList[indexPath.row] as! NSDictionary)["id"] as! Int
-            let apiName: String = "http://123.207.68.190:21026/api/v1/branch/" + "\(branchId)"
+            let branchId: Int = self.shopManagementJson[indexPath.row]["id"].intValue
+            let apiName: String = URLManager.Feitian_branch(branchId: branchId)
             
-//            HttpRequestManager.sharedManager.deleteRequest(apiName: apiName, paramDict: [:], resultCallback: { (isSuccess: Bool, resultObject: Any) in
-//
-//                if isSuccess {
-//                    self.loadDataFromServer()
-//                }
-//            })
-            
+            HttpManager.shareManager.deleteRequest(apiName).responseJSON(completionHandler: { (response) in
+                if let _ = HttpManager.parseDataResponse(response: response) {
+                    self.loadDataFromServer()
+                }
+            })
         }
         
         let editAction: UITableViewRowAction = UITableViewRowAction.init(style: .normal, title: "修改") { (_, _) in

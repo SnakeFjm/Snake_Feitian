@@ -7,15 +7,14 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class AddNewShopViewController: BaseViewController, UITextFieldDelegate {
 
     @IBOutlet weak var shopNameTextField: UITextField!
-    
     @IBOutlet weak var shopManagerNameTextField: UITextField!
-    
     @IBOutlet weak var shopPlaceTextField: UITextField!
-    
     @IBOutlet weak var phoneTextField: UITextField!
     
     override func viewDidLoad() {
@@ -43,17 +42,18 @@ class AddNewShopViewController: BaseViewController, UITextFieldDelegate {
         let phone: String = self.phoneTextField.text!
 //        let shopManagerId =
         
-        let apiName: String = "http://123.207.68.190:21026/api/v1/branch"
-        let dict: NSDictionary = [ "address": shopPlace,
+        let parameters: Parameters = [ "address": shopPlace,
                                    "contact": phone,
                                    "name": shopName,
                                    "shopManagerId": 55]
         
-//        HttpRequestManager.sharedManager.postRequest(apiName: apiName, paramDict: dict) { (isSuccess: Bool, resultObject: Any) in
-//            if isSuccess {
-//                self.navigationController?.popViewController(animated: true)
-//            }
-//        }
+        let apiName: String = URLManager.Feitian_branch()
+        //
+        HttpManager.shareManager.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
+            if let _ = HttpManager.parseDataResponse(response: response) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
         
     }
     
