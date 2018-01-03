@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class DetailCustomerViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -16,9 +18,9 @@ class DetailCustomerViewController: BaseViewController, UITableViewDelegate, UIT
     var detailKeyArray: [String] = ["name", "contact", "productsUsingCount", "phyStatusUpdateTime", "followingEmployees"]
     
     var detailDict: NSMutableDictionary = [:]
-    
     let dateFormatter: DateFormatter = DateFormatter.init()
     
+    var customerJson: JSON = []
     var customerId: Int = 0 //客户id
     
     override func viewDidLoad() {
@@ -47,18 +49,19 @@ class DetailCustomerViewController: BaseViewController, UITableViewDelegate, UIT
     
     func loadDataFromServer() {
     
-        let apiName: String = "http://123.207.68.190:21026/api/v1/customer/" + "\(self.customerId)"
-//        HttpRequestManager.sharedManager.getRequest(apiName: apiName, paramDict: [:]) { (isSuccess: Bool, resultObject: Any) in
-//
-//            if isSuccess {
-//                let array: NSArray = resultObject as! NSArray
-//                let dict: NSDictionary = array[0] as! NSDictionary
-//
-//                self.detailDict = NSMutableDictionary.init(dictionary: dict)
-//
-//                self.DetailCustomerTabelView.reloadData()
-//            }
-//        }
+        let apiName: String = URLManager.feitian_customer(customerId: self.customerId)
+        //
+        HttpManager.shareManager.getRequest(apiName).responseJSON { (response) in
+            if let result = HttpManager.parseDataResponse(response: response) {
+                //
+                self.customerJson = result
+                //
+                let dict: NSDictionary = HttpManager.jsonToNSDictionary(result: result[0])
+                self.detailDict = NSMutableDictionary.init(dictionary: dict)
+                
+                self.DetailCustomerTabelView.reloadData()
+            }
+        }
 
     }
     
@@ -81,20 +84,20 @@ class DetailCustomerViewController: BaseViewController, UITableViewDelegate, UIT
         let cell: DetailCustomerTableViewCell = self.DetailCustomerTabelView.dequeueReusableCell(withIdentifier: "DetailCustomerTableViewCell", for: indexPath) as! DetailCustomerTableViewCell
         
         if indexPath.section == 0 {
-            
+            //
             cell.title.text = self.titleArray[indexPath.row]
-            
+            //
             let key: String = self.detailKeyArray[indexPath.row]
-            if let detail: String = self.detailDict.object(forKey: key) as? String {
-                cell.detail.text = detail
-            } else if let detail: Int = self.detailDict.object(forKey: key) as? Int {
-                if key == "phyStatusUpdateTime" {
-                    cell.detail.text = self.dateFormatter.string(from: Date.init(timeIntervalSince1970: TimeInterval(detail / 1000))) + "更新"
-                } else if key == "productsUsingCount" {
-                    cell.detail.text = "\(detail)" + "件"
-                }
+            let detail = self.customerJson[0][key].stringValue
+            cell.detail.text = detail
+            //
+            if key == "phyStatusUpdateTime" {
+                let detail = self.customerJson[0][key].intValue
+                cell.detail.text = self.dateFormatter.string(from: Date.init(timeIntervalSince1970: TimeInterval.init(detail / 1000))) + "更新"
+            } else if key == "productsUsingCount" {
+                let detail = self.customerJson[0][key].intValue
+                cell.detail.text = "\(detail)" + "件"
             }
-
         } else {
             cell.accessoryType = .disclosureIndicator
             cell.title.text = "更多"
@@ -109,7 +112,7 @@ class DetailCustomerViewController: BaseViewController, UITableViewDelegate, UIT
             
             let moreDetailVC: MoreDetailCustomerViewController = MoreDetailCustomerViewController()
             moreDetailVC.customerId = customerId
-            
+            //
             self.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(moreDetailVC, animated: true)
         }

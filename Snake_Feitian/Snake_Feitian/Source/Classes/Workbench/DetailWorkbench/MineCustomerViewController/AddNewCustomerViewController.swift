@@ -7,17 +7,15 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class AddNewCustomerViewController: BaseViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
-    
     @IBOutlet weak var contactTextField: UITextField!
-    
     @IBOutlet weak var birthdayTextField: UITextField!
-    
     @IBOutlet weak var bodySituationTextView: UITextView!
-    
     @IBOutlet weak var remarksTextView: UITextView!
     
     override func viewDidLoad() {
@@ -41,7 +39,8 @@ class AddNewCustomerViewController: BaseViewController, UITextFieldDelegate, UIT
         if !self.checkIfEmpty() {
             
             let userId = SessionManager.share.userId
-            let apiName = "http://123.207.68.190:21026/api/v1/customer"
+            let apiName = URLManager.feitian_customer()
+            //"http://123.207.68.190:21026/api/v1/customer"
             
             let name = self.nameTextField.text!
             let contact = self.contactTextField.text!
@@ -50,36 +49,26 @@ class AddNewCustomerViewController: BaseViewController, UITextFieldDelegate, UIT
             let remarkName = self.remarksTextView.text!
             let sex = 1
             
-            let dict: NSDictionary = ["adderId": userId,
-                                      "name": name,
-                                      "contact": contact,
-                                      "birthday": birthday,
-                                      "physicalStatus": physicalStatus,
-                                      "remarkName": remarkName,
-                                      "sex": sex]
+            let parameters: Parameters = ["adderId": userId,
+                                          "name": name,
+                                          "contact": contact,
+                                          "birthday": birthday,
+                                          "physicalStatus": physicalStatus,
+                                          "remarkName": remarkName,
+                                          "sex": sex]
             
-//            HttpRequestManager.sharedManager.postRequest(apiName: apiName, paramDict: dict) { (isSuccess, resultObject) in
-//
-//                if isSuccess {
-//
-//                    let alertVC = showConfirmAlertViewVC(titleVC: "新增成功", message: "返回上一页面", confirmHandler: { (_) in
-//                        self.navigationController?.popViewController(animated: true)
-//                    })
-//                    self.present(alertVC, animated: true, completion: nil)
-//
-//                } else {
-//
-//                    let alertVC = showConfirmAlertViewVC(titleVC: "新增失败", message: "", confirmHandler: nil)
-//                    self.present(alertVC, animated: true, completion: nil)
-//
-//                }
-//            }
-            
+            HttpManager.shareManager.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { (response) in
+                if let _ = HttpManager.parseDataResponse(response: response) {
+                    let alertVC = showConfirmAlertViewVC(titleVC: "新增成功", message: "返回上一页面", confirmHandler: { (_) in
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                    self.present(alertVC, animated: true, completion: nil)
+                } else {
+                    let alertVC = showConfirmAlertViewVC(titleVC: "新增失败", message: "", confirmHandler: nil)
+                    self.present(alertVC, animated: true, completion: nil)
+                }
+            })
         }
-
-        
-        
-        
     }
     
     func checkIfEmpty() -> Bool {

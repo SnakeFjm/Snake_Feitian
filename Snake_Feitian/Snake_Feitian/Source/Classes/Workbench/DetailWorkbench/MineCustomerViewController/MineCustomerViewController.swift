@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class MineCustomerViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var MineCustomerTableView: UITableView!
     
-    var dataList: NSMutableArray = []
-
+//    var dataList: NSMutableArray = []
+    
+    var dataArray: [JSON] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,18 +49,18 @@ class MineCustomerViewController: BaseViewController, UITableViewDataSource, UIT
     func loadDataFromServer() {
         
         let userId: Int = SessionManager.share.userId
-        let apiName: String = "http://123.207.68.190:21026/api/v1/customer/user/" + "\(userId)"
-//        HttpRequestManager.sharedManager.getRequest(apiName: apiName, paramDict: [:]) { (isSuccess: Bool, resultObject: Any) in
-//            
-//            if isSuccess {
-//                let array: NSArray = resultObject as! NSArray
-//                self.dataList = NSMutableArray.init(array: array)
-//                
-//                self.MineCustomerTableView.reloadData()
-//
-//            }
-//            
-//        }
+        let apiName: String = URLManager.feitian_customerUser(userId: userId)
+        
+        //
+        HttpManager.shareManager.getRequest(apiName).responseJSON { (response) in
+            if let result = HttpManager.parseDataResponse(response: response) {
+                //
+                self.dataArray = result.arrayValue
+                //
+                self.MineCustomerTableView.reloadData()
+            }
+        }
+
     }
     
     // =================================
@@ -74,16 +78,16 @@ class MineCustomerViewController: BaseViewController, UITableViewDataSource, UIT
     // =================================
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataList.count
+        return self.dataArray.count
     }
  
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: MineCustomerTableViewCell = self.MineCustomerTableView.dequeueReusableCell(withIdentifier: "MineCustomerTableViewCell", for: indexPath) as! MineCustomerTableViewCell
-        
-        let dict: NSDictionary = self.dataList[indexPath.row] as! NSDictionary
-        cell.updateUI(dict: dict)
+        //
+        let result = self.dataArray[indexPath.row]
+        cell.updateCellUI(result: result)
         
         return cell
     }
@@ -93,9 +97,9 @@ class MineCustomerViewController: BaseViewController, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let dict: NSDictionary = self.dataList[indexPath.row] as! NSDictionary
-        let customerId: Int = dict.object(forKey: "id") as! Int
+        tableView.deselectRow(at: indexPath, animated: true)
+        //
+        let customerId: Int = self.dataArray[indexPath.row]["id"].intValue
         
         let detailCustomerVC: DetailCustomerViewController = DetailCustomerViewController()
         detailCustomerVC.customerId = customerId
@@ -107,33 +111,40 @@ class MineCustomerViewController: BaseViewController, UITableViewDataSource, UIT
         return true
     }
     
- /*
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        let cancelAction: UITableViewRowAction = UITableViewRowAction.init(style: .destructive, title: "删除") { (_, _) in
-            let branchId: Int = (self.dataList[indexPath.row] as! NSDictionary)["id"] as! Int
-            let apiName: String = "http://123.207.68.190:21026/api/v1/branch/" + "\(branchId)"
-            
-            HttpRequestManager.sharedManager.deleteRequest(apiName: apiName, paramDict: [:], resultCallback: { (isSuccess: Bool, resultObject: Any) in
-                
-                if isSuccess {
-                    self.loadDataFromServer()
-                }
-            })
-        }
-        
-        let editAction: UITableViewRowAction = UITableViewRowAction.init(style: .normal, title: "修改") { (_, _) in
-            
-            //TODO
-            let editVC: EditShopViewController = EditShopViewController()
-            self.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(editVC, animated: true)
-            
-        }
-        
-        return [cancelAction,editAction]
-    }
-    */
+ 
+//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//
+//        let cancelAction: UITableViewRowAction = UITableViewRowAction.init(style: .destructive, title: "删除") { (_, _) in
+//            let branchId: Int = self.dataArray[indexPath.row]["id"].intValue
+//            let apiName: String = URLManager.Feitian_branch(branchId: branchId)
+//                //"http://123.207.68.190:21026/api/v1/branch/" + "\(branchId)"
+//
+//            HttpManager.shareManager.deleteRequest(apiName).responseJSON(completionHandler: { (response) in
+//                if let _ = HttpManager.parseDataResponse(response: response) {
+//                    self.loadDataFromServer()
+//                }
+//            })
+//
+////            HttpRequestManager.sharedManager.deleteRequest(apiName: apiName, paramDict: [:], resultCallback: { (isSuccess: Bool, resultObject: Any) in
+////
+////                if isSuccess {
+////                    self.loadDataFromServer()
+////                }
+////            })
+//        }
+//
+//        let editAction: UITableViewRowAction = UITableViewRowAction.init(style: .normal, title: "修改") { (_, _) in
+//
+//            //TODO
+//            let editVC: EditShopViewController = EditShopViewController()
+//            self.hidesBottomBarWhenPushed = true
+//            self.navigationController?.pushViewController(editVC, animated: true)
+//
+//        }
+//
+//        return [cancelAction,editAction]
+//    }
+ 
     
 
 }

@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class MineCustomerTableViewCell: UITableViewCell {
+class MineCustomerTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var headImageView: UIImageView!
     
@@ -29,18 +31,16 @@ class MineCustomerTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func updateUI(dict: NSDictionary) {
-        
+    override func updateCellUI(result: JSON) {
         self.headImageView.layer.cornerRadius = self.headImageView.frame.size.width/2
         self.headImageView.layer.masksToBounds = true
         self.headImageView.backgroundColor = UIColor.green
         
-        let name: String = dict["name"] as! String
-        let remarkName: String = dict["remarkName"] as! String
+        let name: String = result["name"].stringValue
+        let remarkName: String = result["remarkName"].stringValue
         
         self.nameLabel.text = name
         self.remarkLabel.text = remarkName
-        
     }
     
 }

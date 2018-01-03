@@ -52,12 +52,12 @@ class URLManager: NSObject {
     
     // 获取某个员工跟进的客户
     static func feitian_customerUser(userId: Int) -> String {
-        return self.apiPath(apiName: "/customer/follower/\(userId)")
+        return self.apiPath(apiName: "/customer/user/\(userId)")
     }
     
     // 更多客户信息
     static func feitian_customerUser(userId: Int, customerId: Int) -> String {
-        return self.apiPath(apiName: "/customer/follower/\(userId)/more-detail/\(customerId)")
+        return self.apiPath(apiName: "/customer/user/\(userId)/more-detail/\(customerId)")
     }
     
     // 获取客户详情

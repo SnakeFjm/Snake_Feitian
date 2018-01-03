@@ -381,11 +381,11 @@
 		F62A693A1FFA263E00732FAB /* Workbench */ = {
 			isa = PBXGroup;
 			children = (
-				F62A693B1FFA263E00732FAB /* WorkbenchViewController.xib */,
-				F62A693C1FFA263E00732FAB /* WorkbenchViewController.swift */,
 				F62A693D1FFA263E00732FAB /* DetailWorkbench */,
-				F62A69671FFA263E00732FAB /* workbenchTableViewCell.xib */,
+				F62A693C1FFA263E00732FAB /* WorkbenchViewController.swift */,
+				F62A693B1FFA263E00732FAB /* WorkbenchViewController.xib */,
 				F62A69681FFA263E00732FAB /* workbenchTableViewCell.swift */,
+				F62A69671FFA263E00732FAB /* workbenchTableViewCell.xib */,
 			);
 			path = Workbench;
 			sourceTree = "<group>";
@@ -393,12 +393,12 @@
 		F62A693D1FFA263E00732FAB /* DetailWorkbench */ = {
 			isa = PBXGroup;
 			children = (
-				F62A693E1FFA263E00732FAB /* AfterSalesManagementViewController */,
-				F62A69411FFA263E00732FAB /* EmployeesManagementViewController */,
 				F62A69471FFA263E00732FAB /* MineCustomerViewController */,
-				F62A69551FFA263E00732FAB /* ShopManagementViewController */,
+				F62A693E1FFA263E00732FAB /* AfterSalesManagementViewController */,
 				F62A69611FFA263E00732FAB /* ProductManagementViewController */,
+				F62A69411FFA263E00732FAB /* EmployeesManagementViewController */,
 				F62A69641FFA263E00732FAB /* NewsReleaseViewController */,
+				F62A69551FFA263E00732FAB /* ShopManagementViewController */,
 			);
 			path = DetailWorkbench;
 			sourceTree = "<group>";
@@ -406,8 +406,8 @@
 		F62A693E1FFA263E00732FAB /* AfterSalesManagementViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F62A693F1FFA263E00732FAB /* AfterSalesManagementViewController.xib */,
 				F62A69401FFA263E00732FAB /* AfterSalesManagementViewController.swift */,
+				F62A693F1FFA263E00732FAB /* AfterSalesManagementViewController.xib */,
 			);
 			path = AfterSalesManagementViewController;
 			sourceTree = "<group>";
@@ -434,15 +434,15 @@
 		F62A69471FFA263E00732FAB /* MineCustomerViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F62A69481FFA263E00732FAB /* MoreDetailCustomerViewController.swift */,
-				F62A69491FFA263E00732FAB /* AddNewCustomerViewController.xib */,
-				F62A694A1FFA263E00732FAB /* DetailCustomerViewController.xib */,
-				F62A694B1FFA263E00732FAB /* MineCustomerViewController.xib */,
 				F62A694C1FFA263E00732FAB /* Component */,
-				F62A69511FFA263E00732FAB /* AddNewCustomerViewController.swift */,
-				F62A69521FFA263E00732FAB /* MoreDetailCustomerViewController.xib */,
-				F62A69531FFA263E00732FAB /* DetailCustomerViewController.swift */,
 				F62A69541FFA263E00732FAB /* MineCustomerViewController.swift */,
+				F62A694B1FFA263E00732FAB /* MineCustomerViewController.xib */,
+				F62A69531FFA263E00732FAB /* DetailCustomerViewController.swift */,
+				F62A694A1FFA263E00732FAB /* DetailCustomerViewController.xib */,
+				F62A69481FFA263E00732FAB /* MoreDetailCustomerViewController.swift */,
+				F62A69521FFA263E00732FAB /* MoreDetailCustomerViewController.xib */,
+				F62A69511FFA263E00732FAB /* AddNewCustomerViewController.swift */,
+				F62A69491FFA263E00732FAB /* AddNewCustomerViewController.xib */,
 			);
 			path = MineCustomerViewController;
 			sourceTree = "<group>";
@@ -450,9 +450,9 @@
 		F62A694C1FFA263E00732FAB /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				F62A694D1FFA263E00732FAB /* DetailCustomerTableViewCell.swift */,
-				F62A694E1FFA263E00732FAB /* MineCustomerTableViewCell.xib */,
 				F62A694F1FFA263E00732FAB /* MineCustomerTableViewCell.swift */,
+				F62A694E1FFA263E00732FAB /* MineCustomerTableViewCell.xib */,
+				F62A694D1FFA263E00732FAB /* DetailCustomerTableViewCell.swift */,
 				F62A69501FFA263E00732FAB /* DetailCustomerTableViewCell.xib */,
 			);
 			path = Component;
@@ -461,15 +461,15 @@
 		F62A69551FFA263E00732FAB /* ShopManagementViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F62A69561FFA263E00732FAB /* ShopManagementViewController.swift */,
-				F62A69571FFA263E00732FAB /* EditShopViewController.swift */,
 				F62A69581FFA263E00732FAB /* Component */,
-				F62A695B1FFA263E00732FAB /* EditShopViewController.xib */,
-				F62A695C1FFA263E00732FAB /* DetailShopViewController.swift */,
+				F62A69561FFA263E00732FAB /* ShopManagementViewController.swift */,
 				F62A695D1FFA263E00732FAB /* ShopManagementViewController.xib */,
-				F62A695E1FFA263E00732FAB /* AddNewShopViewController.xib */,
-				F62A695F1FFA263E00732FAB /* AddNewShopViewController.swift */,
+				F62A695C1FFA263E00732FAB /* DetailShopViewController.swift */,
 				F62A69601FFA263E00732FAB /* DetailShopViewController.xib */,
+				F62A69571FFA263E00732FAB /* EditShopViewController.swift */,
+				F62A695B1FFA263E00732FAB /* EditShopViewController.xib */,
+				F62A695F1FFA263E00732FAB /* AddNewShopViewController.swift */,
+				F62A695E1FFA263E00732FAB /* AddNewShopViewController.xib */,
 			);
 			path = ShopManagementViewController;
 			sourceTree = "<group>";

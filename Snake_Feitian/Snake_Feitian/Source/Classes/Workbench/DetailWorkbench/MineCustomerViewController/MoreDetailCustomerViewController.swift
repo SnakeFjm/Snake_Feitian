@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class MoreDetailCustomerViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,6 +19,7 @@ class MoreDetailCustomerViewController: BaseViewController, UITableViewDelegate,
     
     var detailDict: NSMutableDictionary = [:]
     
+    var moreCustomerJson: JSON = []
     var customerId: Int = 0
     
     override func viewDidLoad() {
@@ -42,19 +45,15 @@ class MoreDetailCustomerViewController: BaseViewController, UITableViewDelegate,
     func loadDataFromServer() {
         
         let userId: Int = SessionManager.share.userId
-        let apiName: String = "http://123.207.68.190:21026/api/v1/customer/user/" + "\(userId)" + "more-detail/" + "\(self.customerId)"
-        
-//        HttpRequestManager.sharedManager.getRequest(apiName: apiName, paramDict: [:]) { (isSuccess: Bool, resultObject: Any) in
-//            
-//            if isSuccess {
-//                
-//                let dict: NSDictionary = resultObject as! NSDictionary
-//                
-//                self.detailDict = NSMutableDictionary.init(dictionary: dict)
-//                
-//                self.moreDetailCustomerTableView.reloadData()
-//            }
-//        }
+        let apiName: String = URLManager.feitian_customerUser(userId: userId, customerId: self.customerId)
+        //
+        HttpManager.shareManager.getRequest(apiName).responseJSON { (response) in
+            if let result = HttpManager.parseDataResponse(response: response) {
+                self.moreCustomerJson = result
+                //
+                self.moreDetailCustomerTableView.reloadData()
+            }
+        }
     }
     
     // =================================
@@ -70,11 +69,12 @@ class MoreDetailCustomerViewController: BaseViewController, UITableViewDelegate,
         let cell: DetailCustomerTableViewCell = self.moreDetailCustomerTableView.dequeueReusableCell(withIdentifier: "DetailCustomerTableViewCell", for: indexPath) as! DetailCustomerTableViewCell
         
         cell.title.text = self.titleArray[indexPath.row]
-        
         let key: String = self.detailKeyArray[indexPath.row]
-        if let detail: String = self.detailDict.object(forKey: key) as? String {
-            cell.detail.text = detail
-        } else if let detail: Int = self.detailDict.object(forKey: key) as? Int {
+        //
+        let detail = self.moreCustomerJson[key].stringValue
+        cell.detail.text = detail
+        if key == "sex" {
+            let detail = self.moreCustomerJson["sex"].intValue
             if detail == 1 {
                 cell.detail.text = "男"
             } else {

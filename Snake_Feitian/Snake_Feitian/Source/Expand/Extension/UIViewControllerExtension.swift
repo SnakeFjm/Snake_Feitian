@@ -19,6 +19,7 @@ extension UIViewController {
     
     // 推入控制器
     func push(_ viewController: UIViewController) {
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
