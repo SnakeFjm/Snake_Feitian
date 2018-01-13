@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		477988A8B7626992B8A8AA5C /* Pods_Snake_Feitian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F196A3E7F6A3179653236CD4 /* Pods_Snake_Feitian.framework */; };
+		F611DC432009E07B009A1203 /* ChooseManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611DC412009E07B009A1203 /* ChooseManagerViewController.swift */; };
+		F611DC442009E07B009A1203 /* ChooseManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F611DC422009E07B009A1203 /* ChooseManagerViewController.xib */; };
+		F611DC472009EBD9009A1203 /* BaseTitleDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611DC452009EBD9009A1203 /* BaseTitleDetailTableViewCell.swift */; };
+		F611DC482009EBD9009A1203 /* BaseTitleDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F611DC462009EBD9009A1203 /* BaseTitleDetailTableViewCell.xib */; };
+		F611DC532009FDD7009A1203 /* RegisterEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611DC512009FDD7009A1203 /* RegisterEmployeeViewController.swift */; };
+		F611DC542009FDD7009A1203 /* RegisterEmployeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F611DC522009FDD7009A1203 /* RegisterEmployeeViewController.xib */; };
 		F62A68E11FFA18BB00732FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E01FFA18BB00732FAB /* AppDelegate.swift */; };
 		F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E21FFA18BB00732FAB /* ViewController.swift */; };
 		F62A68E61FFA18BB00732FAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62A68E41FFA18BB00732FAB /* Main.storyboard */; };
@@ -94,6 +100,12 @@
 		35B2270EBECD62CF3B8FD52E /* Pods-Snake_Feitian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake_Feitian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian.debug.xcconfig"; sourceTree = "<group>"; };
 		563B6C29904E0D01D0C23E19 /* Pods-Snake_Feitian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake_Feitian.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian.release.xcconfig"; sourceTree = "<group>"; };
 		F196A3E7F6A3179653236CD4 /* Pods_Snake_Feitian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snake_Feitian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F611DC412009E07B009A1203 /* ChooseManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseManagerViewController.swift; sourceTree = "<group>"; };
+		F611DC422009E07B009A1203 /* ChooseManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseManagerViewController.xib; sourceTree = "<group>"; };
+		F611DC452009EBD9009A1203 /* BaseTitleDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTitleDetailTableViewCell.swift; sourceTree = "<group>"; };
+		F611DC462009EBD9009A1203 /* BaseTitleDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseTitleDetailTableViewCell.xib; sourceTree = "<group>"; };
+		F611DC512009FDD7009A1203 /* RegisterEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmployeeViewController.swift; sourceTree = "<group>"; };
+		F611DC522009FDD7009A1203 /* RegisterEmployeeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterEmployeeViewController.xib; sourceTree = "<group>"; };
 		F62A68DD1FFA18BB00732FAB /* Snake_Feitian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake_Feitian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68E01FFA18BB00732FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62A68E21FFA18BB00732FAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -264,11 +276,11 @@
 		F62A68F41FFA1A7200732FAB /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				F62A691E1FFA239500732FAB /* AlertHelper.swift */,
-				F62A691D1FFA239500732FAB /* ToolHelper.swift */,
+				F62A68FE1FFA1BE500732FAB /* SessionManager.swift */,
 				F62A68FA1FFA1BB200732FAB /* URLManager.swift */,
 				F62A68FC1FFA1BCF00732FAB /* HttpManager.swift */,
-				F62A68FE1FFA1BE500732FAB /* SessionManager.swift */,
+				F62A691E1FFA239500732FAB /* AlertHelper.swift */,
+				F62A691D1FFA239500732FAB /* ToolHelper.swift */,
 				F62A69061FFA206F00732FAB /* NotificationDefineds.swift */,
 				F62A69081FFA209A00732FAB /* StringMd5.swift */,
 				F62A690B1FFA20DC00732FAB /* CreatAlertViewController.swift */,
@@ -323,6 +335,8 @@
 			children = (
 				F62A69231FFA245700732FAB /* BaseTableViewCell.swift */,
 				F62A69241FFA245700732FAB /* BaseTableViewCell.xib */,
+				F611DC452009EBD9009A1203 /* BaseTitleDetailTableViewCell.swift */,
+				F611DC462009EBD9009A1203 /* BaseTitleDetailTableViewCell.xib */,
 				F62A69101FFA21CA00732FAB /* BaseNavigationController.swift */,
 				F62A69121FFA21CA00732FAB /* BaseNavigationController.xib */,
 				F62A69131FFA21CA00732FAB /* BaseViewController.swift */,
@@ -418,6 +432,8 @@
 				F62A69421FFA263E00732FAB /* Component */,
 				F62A69451FFA263E00732FAB /* EmployeesManagementViewController.swift */,
 				F62A69461FFA263E00732FAB /* EmployeesManagementViewController.xib */,
+				F611DC512009FDD7009A1203 /* RegisterEmployeeViewController.swift */,
+				F611DC522009FDD7009A1203 /* RegisterEmployeeViewController.xib */,
 			);
 			path = EmployeesManagementViewController;
 			sourceTree = "<group>";
@@ -425,8 +441,8 @@
 		F62A69421FFA263E00732FAB /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				F62A69431FFA263E00732FAB /* EmployeesManagementTableViewCell.xib */,
 				F62A69441FFA263E00732FAB /* EmployeesManagementTableViewCell.swift */,
+				F62A69431FFA263E00732FAB /* EmployeesManagementTableViewCell.xib */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -470,6 +486,8 @@
 				F62A695B1FFA263E00732FAB /* EditShopViewController.xib */,
 				F62A695F1FFA263E00732FAB /* AddNewShopViewController.swift */,
 				F62A695E1FFA263E00732FAB /* AddNewShopViewController.xib */,
+				F611DC412009E07B009A1203 /* ChooseManagerViewController.swift */,
+				F611DC422009E07B009A1203 /* ChooseManagerViewController.xib */,
 			);
 			path = ShopManagementViewController;
 			sourceTree = "<group>";
@@ -588,7 +606,9 @@
 			files = (
 				F62A698E1FFA263E00732FAB /* ShopManagementTableViewCell.xib in Resources */,
 				F62A697B1FFA263E00732FAB /* EmployeesManagementTableViewCell.xib in Resources */,
+				F611DC482009EBD9009A1203 /* BaseTitleDetailTableViewCell.xib in Resources */,
 				F62A698F1FFA263E00732FAB /* EditShopViewController.xib in Resources */,
+				F611DC442009E07B009A1203 /* ChooseManagerViewController.xib in Resources */,
 				F62A69981FFA263E00732FAB /* NewsReleaseViewController.xib in Resources */,
 				F62A69311FFA260400732FAB /* LoginViewController.xib in Resources */,
 				F62A699B1FFA263E00732FAB /* DetailMessageViewController.xib in Resources */,
@@ -617,6 +637,7 @@
 				F62A69921FFA263E00732FAB /* AddNewShopViewController.xib in Resources */,
 				F62A69861FFA263E00732FAB /* DetailCustomerTableViewCell.xib in Resources */,
 				F62A69771FFA263E00732FAB /* WorkbenchViewController.xib in Resources */,
+				F611DC542009FDD7009A1203 /* RegisterEmployeeViewController.xib in Resources */,
 				F62A697E1FFA263E00732FAB /* EmployeesManagementViewController.xib in Resources */,
 				F62A68E61FFA18BB00732FAB /* Main.storyboard in Resources */,
 				F62A69911FFA263E00732FAB /* ShopManagementViewController.xib in Resources */,
@@ -687,6 +708,7 @@
 				F62A69751FFA263E00732FAB /* MineViewController.swift in Sources */,
 				F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */,
 				F62A69171FFA21CA00732FAB /* BaseViewController.swift in Sources */,
+				F611DC472009EBD9009A1203 /* BaseTitleDetailTableViewCell.swift in Sources */,
 				F62A69201FFA239500732FAB /* AlertHelper.swift in Sources */,
 				F62A69321FFA260400732FAB /* LoginViewController.swift in Sources */,
 				F62A69A71FFA286A00732FAB /* RefreshTableViewController.swift in Sources */,
@@ -702,6 +724,7 @@
 				F62A68FB1FFA1BB200732FAB /* URLManager.swift in Sources */,
 				F62A691B1FFA231700732FAB /* UIViewExtension.swift in Sources */,
 				F62A68FF1FFA1BE500732FAB /* SessionManager.swift in Sources */,
+				F611DC432009E07B009A1203 /* ChooseManagerViewController.swift in Sources */,
 				F62A699A1FFA263E00732FAB /* workbenchTableViewCell.swift in Sources */,
 				F62A69071FFA206F00732FAB /* NotificationDefineds.swift in Sources */,
 				F62A876F1FFBD269003A2F33 /* MessageModel.swift in Sources */,
@@ -712,6 +735,7 @@
 				F62A69711FFA263E00732FAB /* MineTableViewCell.swift in Sources */,
 				F62A69A01FFA263F00732FAB /* MessageViewController.swift in Sources */,
 				F62A68FD1FFA1BCF00732FAB /* HttpManager.swift in Sources */,
+				F611DC532009FDD7009A1203 /* RegisterEmployeeViewController.swift in Sources */,
 				F62A69851FFA263E00732FAB /* MineCustomerTableViewCell.swift in Sources */,
 				F62A698D1FFA263E00732FAB /* ShopManagementTableViewCell.swift in Sources */,
 				F62A69931FFA263E00732FAB /* AddNewShopViewController.swift in Sources */,

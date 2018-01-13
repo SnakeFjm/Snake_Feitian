@@ -8,11 +8,9 @@
 
 import UIKit
 
-class EmployeesManagementViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var EmployeesManagementTableView: UITableView!
+class EmployeesManagementViewController: RefreshTableViewController {
     
-    var dataList: NSMutableArray = []
+    var branchId: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +19,11 @@ class EmployeesManagementViewController: BaseViewController, UITableViewDelegate
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "员工注册", style: .plain, target: self, action: #selector(addEmployees))
 
-        self.EmployeesManagementTableView.register(UINib.init(nibName: "EmployeesManagementTableViewCell", bundle: nil), forCellReuseIdentifier: "EmployeesManagementTableViewCell")
+        self.registerCellNib(nibName: "EmployeesManagementTableViewCell")
+        self.tableView.separatorStyle = .singleLine
+        self.tableView.rowHeight = 100
+        self.tableView.tableFooterView = UIView.init()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,8 +41,21 @@ class EmployeesManagementViewController: BaseViewController, UITableViewDelegate
     // MARK:
     // =================================
     
-    func loadDataFromServer() {
-        
+    override func loadDataFromServer() {
+        if self.branchId == 0 {
+            if let id = SessionManager.share.basicInformation["branchId"] as? Int {
+                self.branchId = id
+            }
+        }
+        let apiName = URLManager.feitian_userBranch(branchId: self.branchId)
+        //
+        HttpManager.shareManager.getRequest(apiName).responseJSON { (response) in
+            if let result = HttpManager.parseDataResponse(response: response) {
+                self.dataArray = result.arrayValue
+                
+                self.reloadTableViewData()
+            }
+        }
     }
     
     // =================================
@@ -48,21 +63,21 @@ class EmployeesManagementViewController: BaseViewController, UITableViewDelegate
     // =================================
     
     @objc func addEmployees() {
-    
+        
     }
     
     // =================================
     // MARK:
     // =================================
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataList.count
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataArray.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: EmployeesManagementTableViewCell = self.EmployeesManagementTableView.dequeueReusableCell(withIdentifier: "EmployeesManagementTableViewCell", for: indexPath) as! EmployeesManagementTableViewCell
-        
+        let cell: EmployeesManagementTableViewCell = tableView.dequeueReusableCell(withIdentifier: "EmployeesManagementTableViewCell", for: indexPath) as! EmployeesManagementTableViewCell
+        cell.updateCellUI(result: self.dataArray[indexPath.row])
         return cell
     }
 

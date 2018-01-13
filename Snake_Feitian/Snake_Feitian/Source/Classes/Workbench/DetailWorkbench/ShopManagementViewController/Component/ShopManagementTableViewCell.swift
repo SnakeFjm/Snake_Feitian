@@ -36,7 +36,7 @@ class ShopManagementTableViewCell: BaseTableViewCell {
         
         self.placeLabel.text = place
         self.statusLabel.text = status
-        self.statusNumberLabel.text = "1"
+        self.statusNumberLabel.text = ""
     }
     
 }

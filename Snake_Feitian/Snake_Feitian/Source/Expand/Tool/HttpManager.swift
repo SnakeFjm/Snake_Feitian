@@ -21,12 +21,16 @@ class HttpManager: NSObject {
         self.updateHttpsSession()
     }
     
-//    func headers() -> HTTPHeaders {
+    func headers() -> HTTPHeaders? {
 //        var tempHeaders: HTTPHeaders = ["Content-Type": "application/json;charset=UTF-8"]
-////        tempHeaders["Authorization"] = SessionManager.share.basicInformation.object(forKey: "token") as? String
-//
-//        return tempHeaders
-//    }
+//        tempHeaders["Authorization"] = SessionManager.share.basicInformation.object(forKey: "token") as? String
+        //
+        if let token: String = SessionManager.share.basicInformation.object(forKey: "token") as? String {
+            let tempHeaders: HTTPHeaders = ["Authorization": token]
+            return tempHeaders
+        }
+        return nil
+    }
     
     //更改https信任
     func updateHttpsSession() {
@@ -45,10 +49,10 @@ class HttpManager: NSObject {
     
     func request(url: URLConvertible, method: HTTPMethod = .get, parameters: Parameters? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil) -> DataRequest {
         //
-        //let currentHeaders: HTTPHeaders = (headers == nil) ? self.headers() : headers!
-        self.printRequestInfo(url, method: method, headers: headers)
+        let currentHeaders: HTTPHeaders? = self.headers()
+        self.printRequestInfo(url, method: method, headers: currentHeaders)
         //
-        return Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
+        return Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: currentHeaders)
         
     }
     

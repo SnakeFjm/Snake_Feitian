@@ -93,13 +93,14 @@ class ShopManagementViewController: BaseViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let cancelAction: UITableViewRowAction = UITableViewRowAction.init(style: .destructive, title: "删除") { (_, _) in
+        let deleteAction: UITableViewRowAction = UITableViewRowAction.init(style: .destructive, title: "删除") { (_, _) in
             let branchId: Int = self.shopManagementJson[indexPath.row]["id"].intValue
             let apiName: String = URLManager.Feitian_branch(branchId: branchId)
-            
+            //
             HttpManager.shareManager.deleteRequest(apiName).responseJSON(completionHandler: { (response) in
                 if let _ = HttpManager.parseDataResponse(response: response) {
                     self.loadDataFromServer()
+                    tableView.deleteRows(at: [indexPath], with: .top)
                 }
             })
         }
@@ -113,12 +114,14 @@ class ShopManagementViewController: BaseViewController, UITableViewDelegate, UIT
             
         }
         
-        return [cancelAction,editAction]
+        return [deleteAction,editAction]
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let detailShopVC: DetailShopViewController = DetailShopViewController()
+        detailShopVC.branchId = self.shopManagementJson[indexPath.row]["id"].intValue
+        //
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailShopVC, animated: true)
     }

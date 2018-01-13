@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class EmployeesManagementTableViewCell: UITableViewCell {
+class EmployeesManagementTableViewCell: BaseTableViewCell {
 
+    @IBOutlet weak var headImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +23,16 @@ class EmployeesManagementTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func updateCellUI(result: JSON) {
+        self.headImageView.layer.cornerRadius = self.headImageView.frame.size.width/2
+        self.headImageView.layer.masksToBounds = true
+        self.headImageView.backgroundColor = UIColor.green
+        
+        let place: String = result["name"].stringValue
+        
+        self.nameLabel.text = place
     }
     
 }

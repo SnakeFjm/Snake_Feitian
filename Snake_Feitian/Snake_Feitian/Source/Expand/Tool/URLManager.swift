@@ -126,6 +126,10 @@ class URLManager: NSObject {
         return self.apiPath(apiName: "/user/verifyToken")
     }
     
+//    账号：
+    //    Jack:总经理，id=1
+    //    James:经理助理，id=6
+    //    Wade:店长，id=5
     // 获取用户列表, 注册用户
     static func feitian_user() -> String {
         return self.apiPath(apiName: "/user")

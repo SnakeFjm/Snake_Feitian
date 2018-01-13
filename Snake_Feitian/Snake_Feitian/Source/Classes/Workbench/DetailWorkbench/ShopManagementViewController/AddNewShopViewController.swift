@@ -40,12 +40,12 @@ class AddNewShopViewController: BaseViewController, UITextFieldDelegate {
         let shopName: String = self.shopNameTextField.text!
         let shopPlace: String = self.shopPlaceTextField.text!
         let phone: String = self.phoneTextField.text!
-//        let shopManagerId =
+        let shopManagerId: Int = Int(self.shopManagerNameTextField.text!) ?? 0
         
         let parameters: Parameters = [ "address": shopPlace,
-                                   "contact": phone,
-                                   "name": shopName,
-                                   "shopManagerId": 55]
+                                       "contact": phone,
+                                       "name": shopName,
+                                       "shopManagerId": shopManagerId]
         
         let apiName: String = URLManager.Feitian_branch()
         //
@@ -65,11 +65,17 @@ class AddNewShopViewController: BaseViewController, UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if textField == self.shopManagerNameTextField {
-            let alertVC: UIAlertController = UIAlertController.init(title: "请选择要分配的店长", message: "选择后自动填入对应的id", preferredStyle: .actionSheet)
-            let cancelAction: UIAlertAction = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
             
-            alertVC.addAction(cancelAction)
-            self.present(alertVC, animated: true, completion: nil)
+            let chooseManagerVC = ChooseManagerViewController()
+            chooseManagerVC.choooseMangerCallback = { (shopManagerId: Int) in
+                self.shopManagerNameTextField.text = "\(shopManagerId)"
+            }
+            self.push(chooseManagerVC)
+            
+//            let alertVC: UIAlertController = UIAlertController.init(title: "请选择要分配的店长", message: "选择后自动填入对应的id", preferredStyle: .actionSheet)
+//            let cancelAction: UIAlertAction = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
+//            alertVC.addAction(cancelAction)
+//            self.present(alertVC, animated: true, completion: nil)
         } else {
             //textField.resignFirstResponder()
         }
