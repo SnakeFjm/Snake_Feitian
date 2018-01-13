@@ -95,6 +95,8 @@
 		F62A69A81FFA286A00732FAB /* RefreshTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69A61FFA286A00732FAB /* RefreshTableViewController.xib */; };
 		F62A876F1FFBD269003A2F33 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A876E1FFBD269003A2F33 /* MessageModel.swift */; };
 		F69167AE200A06F5003D3165 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69167AD200A06F5003D3165 /* UserModel.swift */; };
+		F69167B1200A0D5B003D3165 /* ChooseShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69167AF200A0D5B003D3165 /* ChooseShopViewController.swift */; };
+		F69167B2200A0D5B003D3165 /* ChooseShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69167B0200A0D5B003D3165 /* ChooseShopViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +193,8 @@
 		F62A69A61FFA286A00732FAB /* RefreshTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefreshTableViewController.xib; sourceTree = "<group>"; };
 		F62A876E1FFBD269003A2F33 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		F69167AD200A06F5003D3165 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		F69167AF200A0D5B003D3165 /* ChooseShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseShopViewController.swift; sourceTree = "<group>"; };
+		F69167B0200A0D5B003D3165 /* ChooseShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseShopViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -437,6 +441,8 @@
 				F62A69461FFA263E00732FAB /* EmployeesManagementViewController.xib */,
 				F611DC512009FDD7009A1203 /* RegisterEmployeeViewController.swift */,
 				F611DC522009FDD7009A1203 /* RegisterEmployeeViewController.xib */,
+				F69167AF200A0D5B003D3165 /* ChooseShopViewController.swift */,
+				F69167B0200A0D5B003D3165 /* ChooseShopViewController.xib */,
 			);
 			path = EmployeesManagementViewController;
 			sourceTree = "<group>";
@@ -636,6 +642,7 @@
 				F62A690D1FFA20DD00732FAB /* YTNibPlaceHolderView.xib in Resources */,
 				F62A68E81FFA18BB00732FAB /* Assets.xcassets in Resources */,
 				F62A69961FFA263E00732FAB /* ProductManagementViewController.xib in Resources */,
+				F69167B2200A0D5B003D3165 /* ChooseShopViewController.xib in Resources */,
 				F62A69A81FFA286A00732FAB /* RefreshTableViewController.xib in Resources */,
 				F62A69921FFA263E00732FAB /* AddNewShopViewController.xib in Resources */,
 				F62A69861FFA263E00732FAB /* DetailCustomerTableViewCell.xib in Resources */,
@@ -704,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F62A69831FFA263E00732FAB /* DetailCustomerTableViewCell.swift in Sources */,
+				F69167B1200A0D5B003D3165 /* ChooseShopViewController.swift in Sources */,
 				F69167AE200A06F5003D3165 /* UserModel.swift in Sources */,
 				F62A69091FFA209A00732FAB /* StringMd5.swift in Sources */,
 				F62A697D1FFA263E00732FAB /* EmployeesManagementViewController.swift in Sources */,

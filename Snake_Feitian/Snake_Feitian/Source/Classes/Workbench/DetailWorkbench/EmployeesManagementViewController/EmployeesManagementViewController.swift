@@ -63,7 +63,8 @@ class EmployeesManagementViewController: RefreshTableViewController {
     // =================================
     
     @objc func addEmployees() {
-        
+        let registerEmployeeVC = RegisterEmployeeViewController()
+        self.push(registerEmployeeVC)
     }
     
     // =================================

@@ -15,8 +15,8 @@ enum role_FeiTian: Int {
     case generalManager = 0
     case executiveAssistant = 1
     case regionalManager = 2
-    case Shopowner = 3
-    case Clerk = 4
+    case shopowner = 3
+    case clerk = 4
 }
 
 class UserModel: NSObject {
