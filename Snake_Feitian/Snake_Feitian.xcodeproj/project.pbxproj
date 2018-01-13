@@ -94,6 +94,7 @@
 		F62A69A71FFA286A00732FAB /* RefreshTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69A51FFA286A00732FAB /* RefreshTableViewController.swift */; };
 		F62A69A81FFA286A00732FAB /* RefreshTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69A61FFA286A00732FAB /* RefreshTableViewController.xib */; };
 		F62A876F1FFBD269003A2F33 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A876E1FFBD269003A2F33 /* MessageModel.swift */; };
+		F69167AE200A06F5003D3165 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69167AD200A06F5003D3165 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -189,6 +190,7 @@
 		F62A69A51FFA286A00732FAB /* RefreshTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTableViewController.swift; sourceTree = "<group>"; };
 		F62A69A61FFA286A00732FAB /* RefreshTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefreshTableViewController.xib; sourceTree = "<group>"; };
 		F62A876E1FFBD269003A2F33 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		F69167AD200A06F5003D3165 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				F62A68FE1FFA1BE500732FAB /* SessionManager.swift */,
+				F69167AD200A06F5003D3165 /* UserModel.swift */,
 				F62A68FA1FFA1BB200732FAB /* URLManager.swift */,
 				F62A68FC1FFA1BCF00732FAB /* HttpManager.swift */,
 				F62A691E1FFA239500732FAB /* AlertHelper.swift */,
@@ -701,6 +704,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F62A69831FFA263E00732FAB /* DetailCustomerTableViewCell.swift in Sources */,
+				F69167AE200A06F5003D3165 /* UserModel.swift in Sources */,
 				F62A69091FFA209A00732FAB /* StringMd5.swift in Sources */,
 				F62A697D1FFA263E00732FAB /* EmployeesManagementViewController.swift in Sources */,
 				F62A69891FFA263E00732FAB /* DetailCustomerViewController.swift in Sources */,

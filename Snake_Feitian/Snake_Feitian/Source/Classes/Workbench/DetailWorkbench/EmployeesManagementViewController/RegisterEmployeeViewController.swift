@@ -36,6 +36,29 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
     // MARK:
     // =================================
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == self.branchNameTextField {
+            // 所在店铺
+            
+        } else if textField == self.genderTextField {
+            // 性别
+            
+        } else if textField == self.staffPositionsTextField {
+            // 员工职位
+        }
+        
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // =================================
+    // MARK:
+    // =================================
+    
     @IBAction func confirmButtonDidtouch(_ sender: Any) {
     }
     
