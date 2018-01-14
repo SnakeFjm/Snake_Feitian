@@ -38,8 +38,10 @@ class MessageViewController: RefreshTableViewController {
         self.addMJFooterView()
         //
         self.registerCellNib(nibName: "MessageTableViewCell")
+        self.tableView.separatorStyle = .singleLine
         self.tableView.rowHeight = 100
         self.tableView.tableHeaderView = self.topView
+        self.tableView.tableFooterView = UIView.init()
         
         self.reloadTableViewData()
         

@@ -33,6 +33,8 @@
 		F6268C5E200B64910036FC2B /* AddBodyStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C5C200B64910036FC2B /* AddBodyStatusViewController.xib */; };
 		F6268C61200B64AF0036FC2B /* AddFollowingEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C5F200B64AF0036FC2B /* AddFollowingEmployeesViewController.swift */; };
 		F6268C62200B64AF0036FC2B /* AddFollowingEmployeesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C60200B64AF0036FC2B /* AddFollowingEmployeesViewController.xib */; };
+		F6268C65200B698A0036FC2B /* AddNewsReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C63200B698A0036FC2B /* AddNewsReleaseViewController.swift */; };
+		F6268C66200B698A0036FC2B /* AddNewsReleaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C64200B698A0036FC2B /* AddNewsReleaseViewController.xib */; };
 		F62A68E11FFA18BB00732FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E01FFA18BB00732FAB /* AppDelegate.swift */; };
 		F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E21FFA18BB00732FAB /* ViewController.swift */; };
 		F62A68E61FFA18BB00732FAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62A68E41FFA18BB00732FAB /* Main.storyboard */; };
@@ -147,6 +149,8 @@
 		F6268C5C200B64910036FC2B /* AddBodyStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddBodyStatusViewController.xib; sourceTree = "<group>"; };
 		F6268C5F200B64AF0036FC2B /* AddFollowingEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFollowingEmployeesViewController.swift; sourceTree = "<group>"; };
 		F6268C60200B64AF0036FC2B /* AddFollowingEmployeesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFollowingEmployeesViewController.xib; sourceTree = "<group>"; };
+		F6268C63200B698A0036FC2B /* AddNewsReleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsReleaseViewController.swift; sourceTree = "<group>"; };
+		F6268C64200B698A0036FC2B /* AddNewsReleaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewsReleaseViewController.xib; sourceTree = "<group>"; };
 		F62A68DD1FFA18BB00732FAB /* Snake_Feitian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake_Feitian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68E01FFA18BB00732FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62A68E21FFA18BB00732FAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -597,6 +601,8 @@
 			children = (
 				F62A69651FFA263E00732FAB /* NewsReleaseViewController.swift */,
 				F62A69661FFA263E00732FAB /* NewsReleaseViewController.xib */,
+				F6268C63200B698A0036FC2B /* AddNewsReleaseViewController.swift */,
+				F6268C64200B698A0036FC2B /* AddNewsReleaseViewController.xib */,
 			);
 			path = NewsReleaseViewController;
 			sourceTree = "<group>";
@@ -706,6 +712,7 @@
 				F62A69731FFA263E00732FAB /* MineViewController.xib in Resources */,
 				F62A69841FFA263E00732FAB /* MineCustomerTableViewCell.xib in Resources */,
 				F62A69161FFA21CA00732FAB /* BaseNavigationController.xib in Resources */,
+				F6268C66200B698A0036FC2B /* AddNewsReleaseViewController.xib in Resources */,
 				F6268C5A200B646A0036FC2B /* AlterBodyStatusViewController.xib in Resources */,
 				F62A68EB1FFA18BB00732FAB /* LaunchScreen.storyboard in Resources */,
 				F6268C47200B541D0036FC2B /* ProductsUsingViewController.xib in Resources */,
@@ -820,6 +827,7 @@
 				F62A68E11FFA18BB00732FAB /* AppDelegate.swift in Sources */,
 				F6268C51200B58C70036FC2B /* CustomerModel.swift in Sources */,
 				F62A698C1FFA263E00732FAB /* EditShopViewController.swift in Sources */,
+				F6268C65200B698A0036FC2B /* AddNewsReleaseViewController.swift in Sources */,
 				F62A68FB1FFA1BB200732FAB /* URLManager.swift in Sources */,
 				F62A691B1FFA231700732FAB /* UIViewExtension.swift in Sources */,
 				F6268C4A200B54420036FC2B /* BodyStatusViewController.swift in Sources */,
