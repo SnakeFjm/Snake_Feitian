@@ -31,7 +31,6 @@ class EmployeesManagementTableViewCell: BaseTableViewCell {
         self.headImageView.backgroundColor = UIColor.green
         
         let place: String = result["name"].stringValue
-        
         self.nameLabel.text = place
     }
     

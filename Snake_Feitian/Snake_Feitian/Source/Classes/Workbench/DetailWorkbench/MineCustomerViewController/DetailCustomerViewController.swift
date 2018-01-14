@@ -23,6 +23,8 @@ class DetailCustomerViewController: BaseViewController, UITableViewDelegate, UIT
     var customerJson: JSON = []
     var customerId: Int = 0 //客户id
     
+    var customerModel: CustomerModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -108,8 +110,33 @@ class DetailCustomerViewController: BaseViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
+        
+        let model = CustomerModel.init()
+        model.id = self.customerId
+        model.name = self.customerJson[indexPath.row]["name"].stringValue
+        
+        if indexPath.section == 0 && indexPath.row == 2 {
+            // 在用产品
+            let vc = ProductsUsingViewController()
+            vc.customerModel = model
+            self.push(vc)
             
+        } else if indexPath.section == 0 && indexPath.row == 3 {
+            // 身体状况
+            let vc = BodyStatusViewController()
+            vc.customerModel = model
+            self.push(vc)
+            
+        } else if indexPath.section == 0 && indexPath.row == 4 {
+            // 跟进员工
+            let vc = FollowingEmployeesViewController()
+            vc.customerModel = model
+            self.push(vc)
+            
+        }
+        
+        if indexPath.section == 1 {
+            // 更多
             let moreDetailVC: MoreDetailCustomerViewController = MoreDetailCustomerViewController()
             moreDetailVC.customerId = customerId
             //

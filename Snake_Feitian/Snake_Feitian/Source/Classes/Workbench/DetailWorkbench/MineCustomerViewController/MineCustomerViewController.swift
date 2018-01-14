@@ -14,7 +14,7 @@ class MineCustomerViewController: BaseViewController, UITableViewDataSource, UIT
 
     @IBOutlet weak var MineCustomerTableView: UITableView!
     
-//    var dataList: NSMutableArray = []
+    var customerModel: CustomerModel!
     
     var dataArray: [JSON] = []
     
@@ -56,6 +56,7 @@ class MineCustomerViewController: BaseViewController, UITableViewDataSource, UIT
             if let result = HttpManager.parseDataResponse(response: response) {
                 //
                 self.dataArray = result.arrayValue
+                
                 //
                 self.MineCustomerTableView.reloadData()
             }

@@ -18,6 +18,13 @@
 		F6268C3E200B43150036FC2B /* AlterPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C3C200B43150036FC2B /* AlterPasswordViewController.xib */; };
 		F6268C41200B43290036FC2B /* CheckPersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C3F200B43290036FC2B /* CheckPersonalInfoViewController.swift */; };
 		F6268C42200B43290036FC2B /* CheckPersonalInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C40200B43290036FC2B /* CheckPersonalInfoViewController.xib */; };
+		F6268C46200B541D0036FC2B /* ProductsUsingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C44200B541D0036FC2B /* ProductsUsingViewController.swift */; };
+		F6268C47200B541D0036FC2B /* ProductsUsingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C45200B541D0036FC2B /* ProductsUsingViewController.xib */; };
+		F6268C4A200B54420036FC2B /* BodyStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C48200B54420036FC2B /* BodyStatusViewController.swift */; };
+		F6268C4B200B54420036FC2B /* BodyStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C49200B54420036FC2B /* BodyStatusViewController.xib */; };
+		F6268C4E200B545A0036FC2B /* FollowingEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C4C200B545A0036FC2B /* FollowingEmployeesViewController.swift */; };
+		F6268C4F200B545A0036FC2B /* FollowingEmployeesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C4D200B545A0036FC2B /* FollowingEmployeesViewController.xib */; };
+		F6268C51200B58C70036FC2B /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C50200B58C70036FC2B /* CustomerModel.swift */; };
 		F62A68E11FFA18BB00732FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E01FFA18BB00732FAB /* AppDelegate.swift */; };
 		F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E21FFA18BB00732FAB /* ViewController.swift */; };
 		F62A68E61FFA18BB00732FAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62A68E41FFA18BB00732FAB /* Main.storyboard */; };
@@ -117,6 +124,13 @@
 		F6268C3C200B43150036FC2B /* AlterPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlterPasswordViewController.xib; sourceTree = "<group>"; };
 		F6268C3F200B43290036FC2B /* CheckPersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPersonalInfoViewController.swift; sourceTree = "<group>"; };
 		F6268C40200B43290036FC2B /* CheckPersonalInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckPersonalInfoViewController.xib; sourceTree = "<group>"; };
+		F6268C44200B541D0036FC2B /* ProductsUsingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsUsingViewController.swift; sourceTree = "<group>"; };
+		F6268C45200B541D0036FC2B /* ProductsUsingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsUsingViewController.xib; sourceTree = "<group>"; };
+		F6268C48200B54420036FC2B /* BodyStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyStatusViewController.swift; sourceTree = "<group>"; };
+		F6268C49200B54420036FC2B /* BodyStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyStatusViewController.xib; sourceTree = "<group>"; };
+		F6268C4C200B545A0036FC2B /* FollowingEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingEmployeesViewController.swift; sourceTree = "<group>"; };
+		F6268C4D200B545A0036FC2B /* FollowingEmployeesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingEmployeesViewController.xib; sourceTree = "<group>"; };
+		F6268C50200B58C70036FC2B /* CustomerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
 		F62A68DD1FFA18BB00732FAB /* Snake_Feitian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake_Feitian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68E01FFA18BB00732FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62A68E21FFA18BB00732FAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +246,19 @@
 				563B6C29904E0D01D0C23E19 /* Pods-Snake_Feitian.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F6268C43200B53B60036FC2B /* DetailCustomer */ = {
+			isa = PBXGroup;
+			children = (
+				F6268C44200B541D0036FC2B /* ProductsUsingViewController.swift */,
+				F6268C45200B541D0036FC2B /* ProductsUsingViewController.xib */,
+				F6268C48200B54420036FC2B /* BodyStatusViewController.swift */,
+				F6268C49200B54420036FC2B /* BodyStatusViewController.xib */,
+				F6268C4C200B545A0036FC2B /* FollowingEmployeesViewController.swift */,
+				F6268C4D200B545A0036FC2B /* FollowingEmployeesViewController.xib */,
+			);
+			path = DetailCustomer;
 			sourceTree = "<group>";
 		};
 		F62A68D41FFA18BB00732FAB = {
@@ -472,14 +499,16 @@
 			isa = PBXGroup;
 			children = (
 				F62A694C1FFA263E00732FAB /* Component */,
+				F6268C50200B58C70036FC2B /* CustomerModel.swift */,
 				F62A69541FFA263E00732FAB /* MineCustomerViewController.swift */,
 				F62A694B1FFA263E00732FAB /* MineCustomerViewController.xib */,
-				F62A69531FFA263E00732FAB /* DetailCustomerViewController.swift */,
-				F62A694A1FFA263E00732FAB /* DetailCustomerViewController.xib */,
 				F62A69481FFA263E00732FAB /* MoreDetailCustomerViewController.swift */,
 				F62A69521FFA263E00732FAB /* MoreDetailCustomerViewController.xib */,
 				F62A69511FFA263E00732FAB /* AddNewCustomerViewController.swift */,
 				F62A69491FFA263E00732FAB /* AddNewCustomerViewController.xib */,
+				F62A69531FFA263E00732FAB /* DetailCustomerViewController.swift */,
+				F62A694A1FFA263E00732FAB /* DetailCustomerViewController.xib */,
+				F6268C43200B53B60036FC2B /* DetailCustomer */,
 			);
 			path = MineCustomerViewController;
 			sourceTree = "<group>";
@@ -633,6 +662,7 @@
 				F62A69981FFA263E00732FAB /* NewsReleaseViewController.xib in Resources */,
 				F62A69311FFA260400732FAB /* LoginViewController.xib in Resources */,
 				F62A699B1FFA263E00732FAB /* DetailMessageViewController.xib in Resources */,
+				F6268C4F200B545A0036FC2B /* FollowingEmployeesViewController.xib in Resources */,
 				F62A69261FFA245800732FAB /* BaseTableViewCell.xib in Resources */,
 				F6268C42200B43290036FC2B /* CheckPersonalInfoViewController.xib in Resources */,
 				F62A69821FFA263E00732FAB /* MineCustomerViewController.xib in Resources */,
@@ -644,12 +674,14 @@
 				F62A69841FFA263E00732FAB /* MineCustomerTableViewCell.xib in Resources */,
 				F62A69161FFA21CA00732FAB /* BaseNavigationController.xib in Resources */,
 				F62A68EB1FFA18BB00732FAB /* LaunchScreen.storyboard in Resources */,
+				F6268C47200B541D0036FC2B /* ProductsUsingViewController.xib in Resources */,
 				F62A699C1FFA263E00732FAB /* MessageViewController.xib in Resources */,
 				F62A69A31FFA278A00732FAB /* Common.xcassets in Resources */,
 				F62A699E1FFA263E00732FAB /* MessageTableViewCell.xib in Resources */,
 				F62A69A41FFA278A00732FAB /* Login.xcassets in Resources */,
 				F62A69941FFA263E00732FAB /* DetailShopViewController.xib in Resources */,
 				F62A69151FFA21CA00732FAB /* BaseViewController.xib in Resources */,
+				F6268C4B200B54420036FC2B /* BodyStatusViewController.xib in Resources */,
 				F62A69741FFA263E00732FAB /* MineHeaderView.xib in Resources */,
 				F62A69801FFA263E00732FAB /* AddNewCustomerViewController.xib in Resources */,
 				F6268C3E200B43150036FC2B /* AlterPasswordViewController.xib in Resources */,
@@ -736,6 +768,7 @@
 				F62A69751FFA263E00732FAB /* MineViewController.swift in Sources */,
 				F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */,
 				F62A69171FFA21CA00732FAB /* BaseViewController.swift in Sources */,
+				F6268C46200B541D0036FC2B /* ProductsUsingViewController.swift in Sources */,
 				F611DC472009EBD9009A1203 /* BaseTitleDetailTableViewCell.swift in Sources */,
 				F62A69201FFA239500732FAB /* AlertHelper.swift in Sources */,
 				F62A69321FFA260400732FAB /* LoginViewController.swift in Sources */,
@@ -748,11 +781,14 @@
 				F62A697C1FFA263E00732FAB /* EmployeesManagementTableViewCell.swift in Sources */,
 				F62A69221FFA23FC00732FAB /* ConstantStringDefines.swift in Sources */,
 				F62A68E11FFA18BB00732FAB /* AppDelegate.swift in Sources */,
+				F6268C51200B58C70036FC2B /* CustomerModel.swift in Sources */,
 				F62A698C1FFA263E00732FAB /* EditShopViewController.swift in Sources */,
 				F62A68FB1FFA1BB200732FAB /* URLManager.swift in Sources */,
 				F62A691B1FFA231700732FAB /* UIViewExtension.swift in Sources */,
+				F6268C4A200B54420036FC2B /* BodyStatusViewController.swift in Sources */,
 				F62A68FF1FFA1BE500732FAB /* SessionManager.swift in Sources */,
 				F611DC432009E07B009A1203 /* ChooseManagerViewController.swift in Sources */,
+				F6268C4E200B545A0036FC2B /* FollowingEmployeesViewController.swift in Sources */,
 				F62A699A1FFA263E00732FAB /* workbenchTableViewCell.swift in Sources */,
 				F62A69071FFA206F00732FAB /* NotificationDefineds.swift in Sources */,
 				F62A876F1FFBD269003A2F33 /* MessageModel.swift in Sources */,
