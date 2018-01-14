@@ -83,12 +83,40 @@ class BodyStatusViewController: RefreshTableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction: UITableViewRowAction = UITableViewRowAction.init(style: .destructive, title: "删除") { (_, _) in
+
+            let customerId = self.customerModel.id
+            let apiName: String = URLManager.feitian_physicalStatusCustomer(customerId: customerId)
+            //
+            HttpManager.shareManager.deleteRequest(apiName).responseJSON(completionHandler: { (response) in
+                if let _ = HttpManager.parseDataResponse(response: response) {
+                    self.loadDataFromServer()
+                    tableView.deleteRows(at: [indexPath], with: .top)
+                }
+            })
+        }
+        
+        let editAction: UITableViewRowAction = UITableViewRowAction.init(style: .normal, title: "修改") { (_, _) in
+            
+            //TODO
+            let editVC: AlterBodyStatusViewController = AlterBodyStatusViewController()
+            self.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(editVC, animated: true)
+            
+        }
+        
+        return [deleteAction,editAction]
+    }
+    
     // =================================
     // MARK:
     // =================================
     
     override func navBarRightBarButtonDidTouch(_ sender: Any) {
-        
+        let vc = AddBodyStatusViewController()
+        self.push(vc)
     }
 
 }

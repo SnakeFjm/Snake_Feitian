@@ -27,6 +27,12 @@
 		F6268C51200B58C70036FC2B /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C50200B58C70036FC2B /* CustomerModel.swift */; };
 		F6268C54200B5CEC0036FC2B /* BodyStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C52200B5CEC0036FC2B /* BodyStatusTableViewCell.swift */; };
 		F6268C55200B5CEC0036FC2B /* BodyStatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C53200B5CEC0036FC2B /* BodyStatusTableViewCell.xib */; };
+		F6268C59200B646A0036FC2B /* AlterBodyStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C57200B646A0036FC2B /* AlterBodyStatusViewController.swift */; };
+		F6268C5A200B646A0036FC2B /* AlterBodyStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C58200B646A0036FC2B /* AlterBodyStatusViewController.xib */; };
+		F6268C5D200B64910036FC2B /* AddBodyStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C5B200B64910036FC2B /* AddBodyStatusViewController.swift */; };
+		F6268C5E200B64910036FC2B /* AddBodyStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C5C200B64910036FC2B /* AddBodyStatusViewController.xib */; };
+		F6268C61200B64AF0036FC2B /* AddFollowingEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C5F200B64AF0036FC2B /* AddFollowingEmployeesViewController.swift */; };
+		F6268C62200B64AF0036FC2B /* AddFollowingEmployeesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C60200B64AF0036FC2B /* AddFollowingEmployeesViewController.xib */; };
 		F62A68E11FFA18BB00732FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E01FFA18BB00732FAB /* AppDelegate.swift */; };
 		F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E21FFA18BB00732FAB /* ViewController.swift */; };
 		F62A68E61FFA18BB00732FAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62A68E41FFA18BB00732FAB /* Main.storyboard */; };
@@ -135,6 +141,12 @@
 		F6268C50200B58C70036FC2B /* CustomerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
 		F6268C52200B5CEC0036FC2B /* BodyStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyStatusTableViewCell.swift; sourceTree = "<group>"; };
 		F6268C53200B5CEC0036FC2B /* BodyStatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyStatusTableViewCell.xib; sourceTree = "<group>"; };
+		F6268C57200B646A0036FC2B /* AlterBodyStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlterBodyStatusViewController.swift; sourceTree = "<group>"; };
+		F6268C58200B646A0036FC2B /* AlterBodyStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlterBodyStatusViewController.xib; sourceTree = "<group>"; };
+		F6268C5B200B64910036FC2B /* AddBodyStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBodyStatusViewController.swift; sourceTree = "<group>"; };
+		F6268C5C200B64910036FC2B /* AddBodyStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddBodyStatusViewController.xib; sourceTree = "<group>"; };
+		F6268C5F200B64AF0036FC2B /* AddFollowingEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFollowingEmployeesViewController.swift; sourceTree = "<group>"; };
+		F6268C60200B64AF0036FC2B /* AddFollowingEmployeesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFollowingEmployeesViewController.xib; sourceTree = "<group>"; };
 		F62A68DD1FFA18BB00732FAB /* Snake_Feitian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake_Feitian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68E01FFA18BB00732FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62A68E21FFA18BB00732FAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -260,8 +272,14 @@
 				F6268C45200B541D0036FC2B /* ProductsUsingViewController.xib */,
 				F6268C48200B54420036FC2B /* BodyStatusViewController.swift */,
 				F6268C49200B54420036FC2B /* BodyStatusViewController.xib */,
+				F6268C5B200B64910036FC2B /* AddBodyStatusViewController.swift */,
+				F6268C5C200B64910036FC2B /* AddBodyStatusViewController.xib */,
+				F6268C57200B646A0036FC2B /* AlterBodyStatusViewController.swift */,
+				F6268C58200B646A0036FC2B /* AlterBodyStatusViewController.xib */,
 				F6268C4C200B545A0036FC2B /* FollowingEmployeesViewController.swift */,
 				F6268C4D200B545A0036FC2B /* FollowingEmployeesViewController.xib */,
+				F6268C5F200B64AF0036FC2B /* AddFollowingEmployeesViewController.swift */,
+				F6268C60200B64AF0036FC2B /* AddFollowingEmployeesViewController.xib */,
 			);
 			path = DetailCustomer;
 			sourceTree = "<group>";
@@ -682,11 +700,13 @@
 				F62A69821FFA263E00732FAB /* MineCustomerViewController.xib in Resources */,
 				F62A69991FFA263E00732FAB /* workbenchTableViewCell.xib in Resources */,
 				F62A69791FFA263E00732FAB /* AfterSalesManagementViewController.xib in Resources */,
+				F6268C5E200B64910036FC2B /* AddBodyStatusViewController.xib in Resources */,
 				F62A69761FFA263E00732FAB /* MineTableViewCell.xib in Resources */,
 				F62A69811FFA263E00732FAB /* DetailCustomerViewController.xib in Resources */,
 				F62A69731FFA263E00732FAB /* MineViewController.xib in Resources */,
 				F62A69841FFA263E00732FAB /* MineCustomerTableViewCell.xib in Resources */,
 				F62A69161FFA21CA00732FAB /* BaseNavigationController.xib in Resources */,
+				F6268C5A200B646A0036FC2B /* AlterBodyStatusViewController.xib in Resources */,
 				F62A68EB1FFA18BB00732FAB /* LaunchScreen.storyboard in Resources */,
 				F6268C47200B541D0036FC2B /* ProductsUsingViewController.xib in Resources */,
 				F62A699C1FFA263E00732FAB /* MessageViewController.xib in Resources */,
@@ -702,6 +722,7 @@
 				F62A690D1FFA20DD00732FAB /* YTNibPlaceHolderView.xib in Resources */,
 				F62A68E81FFA18BB00732FAB /* Assets.xcassets in Resources */,
 				F62A69961FFA263E00732FAB /* ProductManagementViewController.xib in Resources */,
+				F6268C62200B64AF0036FC2B /* AddFollowingEmployeesViewController.xib in Resources */,
 				F69167B2200A0D5B003D3165 /* ChooseShopViewController.xib in Resources */,
 				F62A69A81FFA286A00732FAB /* RefreshTableViewController.xib in Resources */,
 				F6268C55200B5CEC0036FC2B /* BodyStatusTableViewCell.xib in Resources */,
@@ -788,6 +809,7 @@
 				F62A69201FFA239500732FAB /* AlertHelper.swift in Sources */,
 				F62A69321FFA260400732FAB /* LoginViewController.swift in Sources */,
 				F62A69A71FFA286A00732FAB /* RefreshTableViewController.swift in Sources */,
+				F6268C59200B646A0036FC2B /* AlterBodyStatusViewController.swift in Sources */,
 				F62A698A1FFA263E00732FAB /* MineCustomerViewController.swift in Sources */,
 				F62A699F1FFA263F00732FAB /* DetailMessageViewController.swift in Sources */,
 				F62A690F1FFA20DD00732FAB /* YTNibPlaceHolderView.swift in Sources */,
@@ -802,7 +824,9 @@
 				F62A691B1FFA231700732FAB /* UIViewExtension.swift in Sources */,
 				F6268C4A200B54420036FC2B /* BodyStatusViewController.swift in Sources */,
 				F62A68FF1FFA1BE500732FAB /* SessionManager.swift in Sources */,
+				F6268C61200B64AF0036FC2B /* AddFollowingEmployeesViewController.swift in Sources */,
 				F611DC432009E07B009A1203 /* ChooseManagerViewController.swift in Sources */,
+				F6268C5D200B64910036FC2B /* AddBodyStatusViewController.swift in Sources */,
 				F6268C4E200B545A0036FC2B /* FollowingEmployeesViewController.swift in Sources */,
 				F62A699A1FFA263E00732FAB /* workbenchTableViewCell.swift in Sources */,
 				F62A69071FFA206F00732FAB /* NotificationDefineds.swift in Sources */,
