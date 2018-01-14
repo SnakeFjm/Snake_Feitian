@@ -83,6 +83,8 @@ class SessionManager: NSObject {
     func saveBasicInformation(dict: NSDictionary) {
         
         self.basicInformation = NSMutableDictionary.init(dictionary: dict)
+        //
+        self.userModel = UserModel.init(dict: basicInformation)
         
         UserDefaults.standard.set(self.basicInformation, forKey: K_BasicInformation)
         UserDefaults.standard.synchronize()

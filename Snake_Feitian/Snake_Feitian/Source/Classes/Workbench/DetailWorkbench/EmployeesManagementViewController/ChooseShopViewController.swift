@@ -8,12 +8,21 @@
 
 import UIKit
 
-class ChooseShopViewController: BaseViewController {
+class ChooseShopViewController: RefreshTableViewController {
 
+    var chooseShopCallback = {(branchId: Int) -> () in}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "选择店铺"
+        
+        self.registerCellNib(nibName: "ShopManagementTableViewCell")
+        self.tableView.rowHeight = 80
+        self.tableView.tableFooterView = UIView()
+        //
+        self.loadDataFromServer()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +30,44 @@ class ChooseShopViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // =================================
+    // MARK:
+    // =================================
+    
+    override func loadDataFromServer() {
+        let apiName: String = URLManager.Feitian_branch()
+        //
+        HttpManager.shareManager.getRequest(apiName).responseJSON { (response) in
+            if let result = HttpManager.parseDataResponse(response: response) {
+                //
+                self.dataArray = result.arrayValue
+                //
+                self.reloadTableViewData()
+            }
+        }
     }
-    */
+    
+    // =================================
+    // MARK:
+    // =================================
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return self.dataArray.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: ShopManagementTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ShopManagementTableViewCell", for: indexPath) as! ShopManagementTableViewCell
+        
+        let result = self.dataArray[indexPath.row]
+        cell.updateCellUI(result: result)
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let branchId = self.dataArray[indexPath.row]["id"].intValue
+        self.chooseShopCallback(branchId)
+        self.back()
+    }
 
 }

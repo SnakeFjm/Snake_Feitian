@@ -15,7 +15,7 @@ class EmployeesManagementViewController: RefreshTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "员工管理"
+        self.title = "员工管理"
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "员工注册", style: .plain, target: self, action: #selector(addEmployees))
 

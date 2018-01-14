@@ -25,9 +25,9 @@ class MineHeaderView: YTNibPlaceHolderView {
         self.headImageView.layer.masksToBounds = true
         
         self.headImageView.backgroundColor = UIColor.red
-        self.nameLabel.text = "name"
-        self.placeLabel.text = "place"
-        self.phoneLabel.text = "phone"
+        self.nameLabel.text = "查看个人信息"
+        self.placeLabel.text = ""
+        self.phoneLabel.text = ""
     }
 
 }

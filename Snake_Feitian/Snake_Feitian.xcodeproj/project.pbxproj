@@ -14,6 +14,10 @@
 		F611DC482009EBD9009A1203 /* BaseTitleDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F611DC462009EBD9009A1203 /* BaseTitleDetailTableViewCell.xib */; };
 		F611DC532009FDD7009A1203 /* RegisterEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611DC512009FDD7009A1203 /* RegisterEmployeeViewController.swift */; };
 		F611DC542009FDD7009A1203 /* RegisterEmployeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F611DC522009FDD7009A1203 /* RegisterEmployeeViewController.xib */; };
+		F6268C3D200B43150036FC2B /* AlterPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C3B200B43150036FC2B /* AlterPasswordViewController.swift */; };
+		F6268C3E200B43150036FC2B /* AlterPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C3C200B43150036FC2B /* AlterPasswordViewController.xib */; };
+		F6268C41200B43290036FC2B /* CheckPersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C3F200B43290036FC2B /* CheckPersonalInfoViewController.swift */; };
+		F6268C42200B43290036FC2B /* CheckPersonalInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C40200B43290036FC2B /* CheckPersonalInfoViewController.xib */; };
 		F62A68E11FFA18BB00732FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E01FFA18BB00732FAB /* AppDelegate.swift */; };
 		F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E21FFA18BB00732FAB /* ViewController.swift */; };
 		F62A68E61FFA18BB00732FAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62A68E41FFA18BB00732FAB /* Main.storyboard */; };
@@ -109,6 +113,10 @@
 		F611DC462009EBD9009A1203 /* BaseTitleDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseTitleDetailTableViewCell.xib; sourceTree = "<group>"; };
 		F611DC512009FDD7009A1203 /* RegisterEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmployeeViewController.swift; sourceTree = "<group>"; };
 		F611DC522009FDD7009A1203 /* RegisterEmployeeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterEmployeeViewController.xib; sourceTree = "<group>"; };
+		F6268C3B200B43150036FC2B /* AlterPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlterPasswordViewController.swift; sourceTree = "<group>"; };
+		F6268C3C200B43150036FC2B /* AlterPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlterPasswordViewController.xib; sourceTree = "<group>"; };
+		F6268C3F200B43290036FC2B /* CheckPersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPersonalInfoViewController.swift; sourceTree = "<group>"; };
+		F6268C40200B43290036FC2B /* CheckPersonalInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckPersonalInfoViewController.xib; sourceTree = "<group>"; };
 		F62A68DD1FFA18BB00732FAB /* Snake_Feitian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake_Feitian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68E01FFA18BB00732FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62A68E21FFA18BB00732FAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -391,10 +399,14 @@
 			children = (
 				F62A69341FFA263E00732FAB /* MineTableViewCell.swift */,
 				F62A69391FFA263E00732FAB /* MineTableViewCell.xib */,
-				F62A69381FFA263E00732FAB /* MineViewController.swift */,
-				F62A69361FFA263E00732FAB /* MineViewController.xib */,
 				F62A69351FFA263E00732FAB /* MineHeaderView.swift */,
 				F62A69371FFA263E00732FAB /* MineHeaderView.xib */,
+				F62A69381FFA263E00732FAB /* MineViewController.swift */,
+				F62A69361FFA263E00732FAB /* MineViewController.xib */,
+				F6268C3B200B43150036FC2B /* AlterPasswordViewController.swift */,
+				F6268C3C200B43150036FC2B /* AlterPasswordViewController.xib */,
+				F6268C3F200B43290036FC2B /* CheckPersonalInfoViewController.swift */,
+				F6268C40200B43290036FC2B /* CheckPersonalInfoViewController.xib */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -622,6 +634,7 @@
 				F62A69311FFA260400732FAB /* LoginViewController.xib in Resources */,
 				F62A699B1FFA263E00732FAB /* DetailMessageViewController.xib in Resources */,
 				F62A69261FFA245800732FAB /* BaseTableViewCell.xib in Resources */,
+				F6268C42200B43290036FC2B /* CheckPersonalInfoViewController.xib in Resources */,
 				F62A69821FFA263E00732FAB /* MineCustomerViewController.xib in Resources */,
 				F62A69991FFA263E00732FAB /* workbenchTableViewCell.xib in Resources */,
 				F62A69791FFA263E00732FAB /* AfterSalesManagementViewController.xib in Resources */,
@@ -639,6 +652,7 @@
 				F62A69151FFA21CA00732FAB /* BaseViewController.xib in Resources */,
 				F62A69741FFA263E00732FAB /* MineHeaderView.xib in Resources */,
 				F62A69801FFA263E00732FAB /* AddNewCustomerViewController.xib in Resources */,
+				F6268C3E200B43150036FC2B /* AlterPasswordViewController.xib in Resources */,
 				F62A690D1FFA20DD00732FAB /* YTNibPlaceHolderView.xib in Resources */,
 				F62A68E81FFA18BB00732FAB /* Assets.xcassets in Resources */,
 				F62A69961FFA263E00732FAB /* ProductManagementViewController.xib in Resources */,
@@ -711,9 +725,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F62A69831FFA263E00732FAB /* DetailCustomerTableViewCell.swift in Sources */,
+				F6268C3D200B43150036FC2B /* AlterPasswordViewController.swift in Sources */,
 				F69167B1200A0D5B003D3165 /* ChooseShopViewController.swift in Sources */,
 				F69167AE200A06F5003D3165 /* UserModel.swift in Sources */,
 				F62A69091FFA209A00732FAB /* StringMd5.swift in Sources */,
+				F6268C41200B43290036FC2B /* CheckPersonalInfoViewController.swift in Sources */,
 				F62A697D1FFA263E00732FAB /* EmployeesManagementViewController.swift in Sources */,
 				F62A69891FFA263E00732FAB /* DetailCustomerViewController.swift in Sources */,
 				F62A697A1FFA263E00732FAB /* AfterSalesManagementViewController.swift in Sources */,

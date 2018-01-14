@@ -39,6 +39,8 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         let headView = MineHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120))
         headView.updateUI(dict: [:])
         self.mineTableView.tableHeaderView = headView
+        //
+        self.mineTableView.tableHeaderView?.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(checkPersonalInfo)))
         
     }
     
@@ -46,7 +48,14 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     // MARK:
     // =================================
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
         return self.dataList.count
     }
     
@@ -54,7 +63,11 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         let cell: MineTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MineCell", for: indexPath) as! MineTableViewCell
         
-        cell.textLabel?.text = self.dataList[indexPath.row]
+        if indexPath.section == 0 {
+            cell.textLabel?.text = "修改密码"
+        } else {
+            cell.textLabel?.text = self.dataList[indexPath.row]
+        }
         
         return cell
     }
@@ -62,8 +75,14 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        // 修改密码
+        if indexPath.section == 0 && indexPath.row == 0 {
+            let alterVC: AlterPasswordViewController = AlterPasswordViewController()
+            self.push(alterVC)
+        }
+        
         // 退出登录
-        if indexPath.row == 1 {
+        if indexPath.section == 1 && indexPath.row == 1 {
             //
             SessionManager.share.cleanBasicInformation()
             //
@@ -75,6 +94,16 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 20
+    }
+    
+    // =================================
+    // MARK:
+    // =================================
+    
+    // 查看个人信息
+    @objc func checkPersonalInfo() {
+        let infoVC = CheckPersonalInfoViewController()
+        self.push(infoVC)
     }
 
 }

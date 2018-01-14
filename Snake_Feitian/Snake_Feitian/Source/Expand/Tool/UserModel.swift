@@ -22,6 +22,7 @@ enum role_FeiTian: Int {
 class UserModel: NSObject {
     //
     var token: String = ""
+    //
     var id: Int = 0
     var name: String = ""
     var password: String = ""
@@ -39,7 +40,61 @@ class UserModel: NSObject {
     var createTime: Int = 0
     var modifyTime: Int = 0
     
-    //    convenience init(dict: NSMutableDictionary) {
-    //        self.id = dict["id"] ?? 0 as! Int
-    //    }
+    convenience init(dict: NSMutableDictionary) {
+        self.init()
+        
+        if let token = dict["token"] as? String {
+            self.token = token
+        }
+        
+        if let id = dict["id"] as? Int {
+            self.id = id
+        }
+        
+        if let name = dict["name"] as? String {
+            self.name = name
+        }
+        
+        if let password = dict["password"] as? String {
+            self.password = password
+        }
+        
+        if let role = dict["role"] as? Int {
+            self.role = role
+        }
+        
+        if let sex = dict["sex"] as? String {
+            self.sex = sex
+        }
+        
+        if let contact = dict["contact"] as? String {
+            self.contact = contact
+        }
+        
+        if let branchId = dict["branchId"] as? Int {
+            self.branchId = branchId
+        }
+        
+        if let birthday = dict["birthday"] as? String {
+            self.birthday = birthday
+        }
+        
+        if let address = dict["address"] as? String {
+            self.address = address
+        }
+        
+        if let status = dict["status"] as? String {
+            self.status = status
+        }
+        
+        if let createTime = dict["createTime"] as? Int {
+            self.createTime = createTime
+        }
+        
+        if let modifyTime = dict["modifyTime"] as? Int {
+            self.modifyTime = modifyTime
+        }
+        
+    }
+    
 }

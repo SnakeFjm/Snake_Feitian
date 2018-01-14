@@ -40,6 +40,10 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
         if textField == self.branchNameTextField {
             // 所在店铺
             let chooseShopVC = ChooseShopViewController()
+            chooseShopVC.chooseShopCallback = {
+                (branchId: Int) in
+                self.branchNameTextField.text = "\(branchId)"
+            }
             self.push(chooseShopVC)
             
         } else if textField == self.staffPositionsTextField {
@@ -47,20 +51,20 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
             let alertVC = UIAlertController.init(title: "请选择员工职位", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
             //
             let generalManagerAction = UIAlertAction.init(title: "总经理", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "总经理"
+                self.genderTextField.text = "0"
             })
             //
             let executiveAssistantAction = UIAlertAction.init(title: "经理助理", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "经理助理"
+                self.genderTextField.text = "1"
             })
             let regionalManagerAction = UIAlertAction.init(title: "区域经理", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "区域经理"
+                self.genderTextField.text = "2"
             })
             let shopownerAction = UIAlertAction.init(title: "店长", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "店长"
+                self.genderTextField.text = "3"
             })
             let clerkAction = UIAlertAction.init(title: "店员", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "店员"
+                self.genderTextField.text = "4"
             })
             let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
             //
@@ -115,8 +119,6 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
             || (self.birthdayTextField.text?.isEmpty)!
             || (self.addressTextField.text?.isEmpty)! {
             self.showErrorTips("内容不能为空")
-            sleep(1)
-            self.hideTips()
             return
         }
         //
