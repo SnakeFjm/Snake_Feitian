@@ -25,6 +25,8 @@
 		F6268C4E200B545A0036FC2B /* FollowingEmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C4C200B545A0036FC2B /* FollowingEmployeesViewController.swift */; };
 		F6268C4F200B545A0036FC2B /* FollowingEmployeesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C4D200B545A0036FC2B /* FollowingEmployeesViewController.xib */; };
 		F6268C51200B58C70036FC2B /* CustomerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C50200B58C70036FC2B /* CustomerModel.swift */; };
+		F6268C54200B5CEC0036FC2B /* BodyStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6268C52200B5CEC0036FC2B /* BodyStatusTableViewCell.swift */; };
+		F6268C55200B5CEC0036FC2B /* BodyStatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6268C53200B5CEC0036FC2B /* BodyStatusTableViewCell.xib */; };
 		F62A68E11FFA18BB00732FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E01FFA18BB00732FAB /* AppDelegate.swift */; };
 		F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A68E21FFA18BB00732FAB /* ViewController.swift */; };
 		F62A68E61FFA18BB00732FAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F62A68E41FFA18BB00732FAB /* Main.storyboard */; };
@@ -131,6 +133,8 @@
 		F6268C4C200B545A0036FC2B /* FollowingEmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingEmployeesViewController.swift; sourceTree = "<group>"; };
 		F6268C4D200B545A0036FC2B /* FollowingEmployeesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingEmployeesViewController.xib; sourceTree = "<group>"; };
 		F6268C50200B58C70036FC2B /* CustomerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModel.swift; sourceTree = "<group>"; };
+		F6268C52200B5CEC0036FC2B /* BodyStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyStatusTableViewCell.swift; sourceTree = "<group>"; };
+		F6268C53200B5CEC0036FC2B /* BodyStatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyStatusTableViewCell.xib; sourceTree = "<group>"; };
 		F62A68DD1FFA18BB00732FAB /* Snake_Feitian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake_Feitian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68E01FFA18BB00732FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62A68E21FFA18BB00732FAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 		F6268C43200B53B60036FC2B /* DetailCustomer */ = {
 			isa = PBXGroup;
 			children = (
+				F6268C56200B5CF80036FC2B /* Component */,
 				F6268C44200B541D0036FC2B /* ProductsUsingViewController.swift */,
 				F6268C45200B541D0036FC2B /* ProductsUsingViewController.xib */,
 				F6268C48200B54420036FC2B /* BodyStatusViewController.swift */,
@@ -259,6 +264,15 @@
 				F6268C4D200B545A0036FC2B /* FollowingEmployeesViewController.xib */,
 			);
 			path = DetailCustomer;
+			sourceTree = "<group>";
+		};
+		F6268C56200B5CF80036FC2B /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F6268C52200B5CEC0036FC2B /* BodyStatusTableViewCell.swift */,
+				F6268C53200B5CEC0036FC2B /* BodyStatusTableViewCell.xib */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		F62A68D41FFA18BB00732FAB = {
@@ -690,6 +704,7 @@
 				F62A69961FFA263E00732FAB /* ProductManagementViewController.xib in Resources */,
 				F69167B2200A0D5B003D3165 /* ChooseShopViewController.xib in Resources */,
 				F62A69A81FFA286A00732FAB /* RefreshTableViewController.xib in Resources */,
+				F6268C55200B5CEC0036FC2B /* BodyStatusTableViewCell.xib in Resources */,
 				F62A69921FFA263E00732FAB /* AddNewShopViewController.xib in Resources */,
 				F62A69861FFA263E00732FAB /* DetailCustomerTableViewCell.xib in Resources */,
 				F62A69771FFA263E00732FAB /* WorkbenchViewController.xib in Resources */,
@@ -803,6 +818,7 @@
 				F62A69851FFA263E00732FAB /* MineCustomerTableViewCell.swift in Sources */,
 				F62A698D1FFA263E00732FAB /* ShopManagementTableViewCell.swift in Sources */,
 				F62A69931FFA263E00732FAB /* AddNewShopViewController.swift in Sources */,
+				F6268C54200B5CEC0036FC2B /* BodyStatusTableViewCell.swift in Sources */,
 				F62A699D1FFA263E00732FAB /* MessageTableViewCell.swift in Sources */,
 				F62A69971FFA263E00732FAB /* NewsReleaseViewController.swift in Sources */,
 				F62A691F1FFA239500732FAB /* ToolHelper.swift in Sources */,
