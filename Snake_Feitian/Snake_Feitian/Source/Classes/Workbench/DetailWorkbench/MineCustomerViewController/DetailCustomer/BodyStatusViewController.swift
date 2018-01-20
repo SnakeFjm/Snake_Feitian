@@ -18,7 +18,6 @@ class BodyStatusViewController: RefreshTableViewController {
         self.title = "身体状况"
         
         self.navBarAddRightBarButton(title: "添加")
-        
         //
         self.addMJHeaderView()
         self.addMJFooterView()
@@ -116,6 +115,7 @@ class BodyStatusViewController: RefreshTableViewController {
     
     override func navBarRightBarButtonDidTouch(_ sender: Any) {
         let vc = AddBodyStatusViewController()
+        vc.customerModel = self.customerModel
         self.push(vc)
     }
 

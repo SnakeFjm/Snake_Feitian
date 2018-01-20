@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class AddBodyStatusViewController: BaseViewController {
 
+    @IBOutlet weak var bodyStatusTextView: UITextView!
+    
+    var customerModel: CustomerModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "添加身体状况记录"
+        
+        self.bodyStatusTextView.layer.borderWidth = 1
+        self.bodyStatusTextView.layer.borderColor = UIColor.black.cgColor
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +31,33 @@ class AddBodyStatusViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // =================================
+    // MARK:
+    // =================================
+    
+    @IBAction func addButtonDidTouch(_ sender: Any) {
+        
+        if self.bodyStatusTextView.text.isEmpty {
+            self.showErrorTips("内容不能为空")
+            return
+        }
+        
+        let creator = SessionManager.share.userModel.name
+        let customerId = self.customerModel.id
+        let physicalStatus: String = self.bodyStatusTextView.text
+        //
+        let parameters: Parameters = ["creator": creator, "customerId": customerId, "physicalStatus": physicalStatus]
+        let apiName = URLManager.feitian_physicalStatus()
+        //
+        HttpManager.shareManager.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
+            if let _ = HttpManager.parseDataResponse(response: response) {
+                self.back()
+            }
+        }
+        
+        
+        
     }
-    */
+    
 
 }

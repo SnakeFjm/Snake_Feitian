@@ -78,6 +78,7 @@ class FollowingEmployeesViewController: RefreshTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        super.tableView(tableView, didSelectRowAt: indexPath)
         // TODO
     }
     
@@ -86,7 +87,9 @@ class FollowingEmployeesViewController: RefreshTableViewController {
     // =================================
     
     override func navBarRightBarButtonDidTouch(_ sender: Any) {
-        
+        let vc = AddFollowingEmployeesViewController()
+        vc.customerId = self.customerModel.id
+        self.push(vc)
     }
     
 

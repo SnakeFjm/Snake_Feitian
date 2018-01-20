@@ -115,9 +115,16 @@
 		F62A69A71FFA286A00732FAB /* RefreshTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A69A51FFA286A00732FAB /* RefreshTableViewController.swift */; };
 		F62A69A81FFA286A00732FAB /* RefreshTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62A69A61FFA286A00732FAB /* RefreshTableViewController.xib */; };
 		F62A876F1FFBD269003A2F33 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62A876E1FFBD269003A2F33 /* MessageModel.swift */; };
+		F63FB70620132BF500770533 /* AfterSaleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63FB70420132BF500770533 /* AfterSaleDetailViewController.swift */; };
+		F63FB70720132BF500770533 /* AfterSaleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63FB70520132BF500770533 /* AfterSaleDetailViewController.xib */; };
+		F63FB70920132E0300770533 /* AfterSaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63FB70820132E0300770533 /* AfterSaleModel.swift */; };
+		F63FB70C201349C300770533 /* addProductsUsingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63FB70A201349C300770533 /* addProductsUsingViewController.swift */; };
+		F63FB70D201349C300770533 /* addProductsUsingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63FB70B201349C300770533 /* addProductsUsingViewController.xib */; };
 		F69167AE200A06F5003D3165 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69167AD200A06F5003D3165 /* UserModel.swift */; };
 		F69167B1200A0D5B003D3165 /* ChooseShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69167AF200A0D5B003D3165 /* ChooseShopViewController.swift */; };
 		F69167B2200A0D5B003D3165 /* ChooseShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69167B0200A0D5B003D3165 /* ChooseShopViewController.xib */; };
+		F6A0074E201328C9003745E8 /* AfterSaleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A0074C201328C9003745E8 /* AfterSaleTableViewCell.swift */; };
+		F6A0074F201328C9003745E8 /* AfterSaleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A0074D201328C9003745E8 /* AfterSaleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,9 +241,16 @@
 		F62A69A51FFA286A00732FAB /* RefreshTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTableViewController.swift; sourceTree = "<group>"; };
 		F62A69A61FFA286A00732FAB /* RefreshTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefreshTableViewController.xib; sourceTree = "<group>"; };
 		F62A876E1FFBD269003A2F33 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		F63FB70420132BF500770533 /* AfterSaleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSaleDetailViewController.swift; sourceTree = "<group>"; };
+		F63FB70520132BF500770533 /* AfterSaleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AfterSaleDetailViewController.xib; sourceTree = "<group>"; };
+		F63FB70820132E0300770533 /* AfterSaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSaleModel.swift; sourceTree = "<group>"; };
+		F63FB70A201349C300770533 /* addProductsUsingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addProductsUsingViewController.swift; sourceTree = "<group>"; };
+		F63FB70B201349C300770533 /* addProductsUsingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addProductsUsingViewController.xib; sourceTree = "<group>"; };
 		F69167AD200A06F5003D3165 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F69167AF200A0D5B003D3165 /* ChooseShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseShopViewController.swift; sourceTree = "<group>"; };
 		F69167B0200A0D5B003D3165 /* ChooseShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseShopViewController.xib; sourceTree = "<group>"; };
+		F6A0074C201328C9003745E8 /* AfterSaleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterSaleTableViewCell.swift; sourceTree = "<group>"; };
+		F6A0074D201328C9003745E8 /* AfterSaleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AfterSaleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +288,8 @@
 				F6268C56200B5CF80036FC2B /* Component */,
 				F6268C44200B541D0036FC2B /* ProductsUsingViewController.swift */,
 				F6268C45200B541D0036FC2B /* ProductsUsingViewController.xib */,
+				F63FB70A201349C300770533 /* addProductsUsingViewController.swift */,
+				F63FB70B201349C300770533 /* addProductsUsingViewController.xib */,
 				F6268C48200B54420036FC2B /* BodyStatusViewController.swift */,
 				F6268C49200B54420036FC2B /* BodyStatusViewController.xib */,
 				F6268C5B200B64910036FC2B /* AddBodyStatusViewController.swift */,
@@ -502,8 +518,12 @@
 		F62A693E1FFA263E00732FAB /* AfterSalesManagementViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F6A0074B201328AE003745E8 /* Component */,
+				F63FB70820132E0300770533 /* AfterSaleModel.swift */,
 				F62A69401FFA263E00732FAB /* AfterSalesManagementViewController.swift */,
 				F62A693F1FFA263E00732FAB /* AfterSalesManagementViewController.xib */,
+				F63FB70420132BF500770533 /* AfterSaleDetailViewController.swift */,
+				F63FB70520132BF500770533 /* AfterSaleDetailViewController.xib */,
 			);
 			path = AfterSalesManagementViewController;
 			sourceTree = "<group>";
@@ -629,6 +649,15 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		F6A0074B201328AE003745E8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F6A0074C201328C9003745E8 /* AfterSaleTableViewCell.swift */,
+				F6A0074D201328C9003745E8 /* AfterSaleTableViewCell.xib */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -694,6 +723,7 @@
 			files = (
 				F62A698E1FFA263E00732FAB /* ShopManagementTableViewCell.xib in Resources */,
 				F62A697B1FFA263E00732FAB /* EmployeesManagementTableViewCell.xib in Resources */,
+				F63FB70720132BF500770533 /* AfterSaleDetailViewController.xib in Resources */,
 				F611DC482009EBD9009A1203 /* BaseTitleDetailTableViewCell.xib in Resources */,
 				F62A698F1FFA263E00732FAB /* EditShopViewController.xib in Resources */,
 				F611DC442009E07B009A1203 /* ChooseManagerViewController.xib in Resources */,
@@ -728,11 +758,13 @@
 				F6268C3E200B43150036FC2B /* AlterPasswordViewController.xib in Resources */,
 				F62A690D1FFA20DD00732FAB /* YTNibPlaceHolderView.xib in Resources */,
 				F62A68E81FFA18BB00732FAB /* Assets.xcassets in Resources */,
+				F63FB70D201349C300770533 /* addProductsUsingViewController.xib in Resources */,
 				F62A69961FFA263E00732FAB /* ProductManagementViewController.xib in Resources */,
 				F6268C62200B64AF0036FC2B /* AddFollowingEmployeesViewController.xib in Resources */,
 				F69167B2200A0D5B003D3165 /* ChooseShopViewController.xib in Resources */,
 				F62A69A81FFA286A00732FAB /* RefreshTableViewController.xib in Resources */,
 				F6268C55200B5CEC0036FC2B /* BodyStatusTableViewCell.xib in Resources */,
+				F6A0074F201328C9003745E8 /* AfterSaleTableViewCell.xib in Resources */,
 				F62A69921FFA263E00732FAB /* AddNewShopViewController.xib in Resources */,
 				F62A69861FFA263E00732FAB /* DetailCustomerTableViewCell.xib in Resources */,
 				F62A69771FFA263E00732FAB /* WorkbenchViewController.xib in Resources */,
@@ -804,12 +836,14 @@
 				F69167B1200A0D5B003D3165 /* ChooseShopViewController.swift in Sources */,
 				F69167AE200A06F5003D3165 /* UserModel.swift in Sources */,
 				F62A69091FFA209A00732FAB /* StringMd5.swift in Sources */,
+				F6A0074E201328C9003745E8 /* AfterSaleTableViewCell.swift in Sources */,
 				F6268C41200B43290036FC2B /* CheckPersonalInfoViewController.swift in Sources */,
 				F62A697D1FFA263E00732FAB /* EmployeesManagementViewController.swift in Sources */,
 				F62A69891FFA263E00732FAB /* DetailCustomerViewController.swift in Sources */,
 				F62A697A1FFA263E00732FAB /* AfterSalesManagementViewController.swift in Sources */,
 				F62A69751FFA263E00732FAB /* MineViewController.swift in Sources */,
 				F62A68E31FFA18BB00732FAB /* ViewController.swift in Sources */,
+				F63FB70C201349C300770533 /* addProductsUsingViewController.swift in Sources */,
 				F62A69171FFA21CA00732FAB /* BaseViewController.swift in Sources */,
 				F6268C46200B541D0036FC2B /* ProductsUsingViewController.swift in Sources */,
 				F611DC472009EBD9009A1203 /* BaseTitleDetailTableViewCell.swift in Sources */,
@@ -821,6 +855,7 @@
 				F62A699F1FFA263F00732FAB /* DetailMessageViewController.swift in Sources */,
 				F62A690F1FFA20DD00732FAB /* YTNibPlaceHolderView.swift in Sources */,
 				F62A69721FFA263E00732FAB /* MineHeaderView.swift in Sources */,
+				F63FB70920132E0300770533 /* AfterSaleModel.swift in Sources */,
 				F62A69901FFA263E00732FAB /* DetailShopViewController.swift in Sources */,
 				F62A697C1FFA263E00732FAB /* EmployeesManagementTableViewCell.swift in Sources */,
 				F62A69221FFA23FC00732FAB /* ConstantStringDefines.swift in Sources */,
@@ -843,6 +878,7 @@
 				F62A691C1FFA231700732FAB /* UIViewControllerExtension.swift in Sources */,
 				F62A69251FFA245800732FAB /* BaseTableViewCell.swift in Sources */,
 				F62A697F1FFA263E00732FAB /* MoreDetailCustomerViewController.swift in Sources */,
+				F63FB70620132BF500770533 /* AfterSaleDetailViewController.swift in Sources */,
 				F62A69711FFA263E00732FAB /* MineTableViewCell.swift in Sources */,
 				F62A69A01FFA263F00732FAB /* MessageViewController.swift in Sources */,
 				F62A68FD1FFA1BCF00732FAB /* HttpManager.swift in Sources */,
@@ -999,6 +1035,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VU7QDQ3ABP;
 				INFOPLIST_FILE = Snake_Feitian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "snake.Snake-Feitian";
@@ -1017,6 +1054,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VU7QDQ3ABP;
 				INFOPLIST_FILE = Snake_Feitian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "snake.Snake-Feitian";

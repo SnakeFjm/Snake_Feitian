@@ -161,8 +161,43 @@ class URLManager: NSObject {
         return self.apiPath(apiName: "/user/customer/\(customerId)")
     }
     
+    // 获取某个店铺没有跟进某个客户的其他员工
+    static func feitian_userBranchCustomer(branchId: Int, customerId: Int) -> String {
+        return self.apiPath(apiName: "/user/branch/\(branchId)/customer/\(customerId)")
+    }
     
+    // =================================
+    // MARK: 产品管理
+    // =================================
 
+    // 根据产品类别id获取产品列表
+    static func feitian_product() -> String {
+        return self.apiPath(apiName: "/product")
+    }
+    
+    // 给客户添加在用产品
+    static func feitian_productCustomer() -> String {
+        return self.apiPath(apiName: "/product/customer")
+    }
+    
+    // 获取客户在用产品
+    static func feitian_productCustomer(customerId: Int) -> String {
+        return self.apiPath(apiName: "/product/customer/\(customerId)")
+    }
+    
+    // 获取产品类别列表
+    static func feitian_productSeries() -> String {
+        return self.apiPath(apiName: "/product/series")
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

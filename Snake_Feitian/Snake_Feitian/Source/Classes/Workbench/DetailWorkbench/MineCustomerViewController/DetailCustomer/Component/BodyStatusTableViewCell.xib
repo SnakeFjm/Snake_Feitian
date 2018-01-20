@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWR-YZ-4EA">
-                                <rect key="frame" x="5" y="95" width="42" height="21"/>
+                                <rect key="frame" x="74.5" y="95" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -41,14 +41,30 @@
                                 <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记录者：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5i-OU-Uko">
+                                <rect key="frame" x="5" y="95" width="69.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记录时间：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob4-xr-x7W">
+                                <rect key="frame" x="169" y="95" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="w5i-OU-Uko" secondAttribute="bottom" constant="5" id="1lK-eL-ebg"/>
                             <constraint firstItem="232-o7-U7W" firstAttribute="leading" secondItem="oal-Qj-E71" secondAttribute="leading" constant="5" id="4gw-85-w9W"/>
                             <constraint firstAttribute="trailing" secondItem="dpd-5O-TcE" secondAttribute="trailing" constant="5" id="DTg-tP-d2B"/>
                             <constraint firstAttribute="bottom" secondItem="IWR-YZ-4EA" secondAttribute="bottom" constant="5" id="Hx0-3z-Nej"/>
-                            <constraint firstItem="IWR-YZ-4EA" firstAttribute="leading" secondItem="oal-Qj-E71" secondAttribute="leading" constant="5" id="Y9t-qw-t4X"/>
+                            <constraint firstItem="IWR-YZ-4EA" firstAttribute="leading" secondItem="w5i-OU-Uko" secondAttribute="trailing" id="LlS-sL-Rx5"/>
+                            <constraint firstAttribute="bottom" secondItem="Ob4-xr-x7W" secondAttribute="bottom" constant="5" id="MFS-n4-77O"/>
+                            <constraint firstItem="w5i-OU-Uko" firstAttribute="leading" secondItem="oal-Qj-E71" secondAttribute="leading" constant="5" id="VEZ-hc-TjQ"/>
                             <constraint firstAttribute="trailing" secondItem="232-o7-U7W" secondAttribute="trailing" constant="5" id="ZGx-AP-22x"/>
+                            <constraint firstItem="dpd-5O-TcE" firstAttribute="leading" secondItem="Ob4-xr-x7W" secondAttribute="trailing" id="fUt-VX-eqn"/>
                             <constraint firstAttribute="bottom" secondItem="dpd-5O-TcE" secondAttribute="bottom" constant="5" id="hTx-ac-wy7"/>
                             <constraint firstItem="232-o7-U7W" firstAttribute="top" secondItem="oal-Qj-E71" secondAttribute="top" constant="5" id="xSo-KS-vYc"/>
                         </constraints>

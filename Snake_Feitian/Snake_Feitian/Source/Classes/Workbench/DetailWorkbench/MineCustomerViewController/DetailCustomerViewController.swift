@@ -28,7 +28,7 @@ class DetailCustomerViewController: BaseViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "客户详情"
+        self.title = "客户详情"
         
         self.dateFormatter.dateFormat = "yyyy-MM-dd"
         
