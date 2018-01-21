@@ -20,6 +20,8 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var birthdayTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     
+    let role = SessionManager.share.userModel.role
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,9 +52,9 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
             // 员工职位
             let alertVC = UIAlertController.init(title: "请选择员工职位", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
             //
-            let generalManagerAction = UIAlertAction.init(title: "总经理", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "0"
-            })
+//            let generalManagerAction = UIAlertAction.init(title: "总经理", style: UIAlertActionStyle.default, handler: { (_) in
+//                self.genderTextField.text = "0"
+//            })
             //
             let executiveAssistantAction = UIAlertAction.init(title: "经理助理", style: UIAlertActionStyle.default, handler: { (_) in
                 self.genderTextField.text = "1"
@@ -69,11 +71,30 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
             let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
             //
             alertVC.addAction(cancelAction)
-            alertVC.addAction(generalManagerAction)
-            alertVC.addAction(executiveAssistantAction)
-            alertVC.addAction(regionalManagerAction)
-            alertVC.addAction(shopownerAction)
-            alertVC.addAction(clerkAction)
+            
+            // 权限控制
+            if self.role == role_FeiTian.shopowner.rawValue {
+                alertVC.addAction(clerkAction)
+            }
+            
+            if self.role == role_FeiTian.regionalManager.rawValue {
+                alertVC.addAction(shopownerAction)
+                alertVC.addAction(clerkAction)
+            }
+            
+            if self.role == role_FeiTian.executiveAssistant.rawValue {
+                alertVC.addAction(regionalManagerAction)
+                alertVC.addAction(shopownerAction)
+                alertVC.addAction(clerkAction)
+            }
+            
+            if self.role == role_FeiTian.generalManager.rawValue {
+                alertVC.addAction(executiveAssistantAction)
+                alertVC.addAction(regionalManagerAction)
+                alertVC.addAction(shopownerAction)
+                alertVC.addAction(clerkAction)
+            }
+            
             //
             self.present(alertVC, animated: true, completion: nil)
             

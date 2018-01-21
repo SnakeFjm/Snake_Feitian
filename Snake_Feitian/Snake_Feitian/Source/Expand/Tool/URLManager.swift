@@ -83,7 +83,7 @@ class URLManager: NSObject {
     // MARK: 消息
     // =================================
     
-    // 获取工作消息
+    // 获取工作消息，发布消息
     static func feitian_message() -> String {
         return self.apiPath(apiName: "/message")
     }
