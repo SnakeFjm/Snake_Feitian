@@ -13,7 +13,9 @@ class ProductManagementViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "产品管理"
+        self.title = "产品管理"
+        
+        self.navBarAddRightBarButton(title: "添加")
     
     }
 
@@ -23,14 +25,12 @@ class ProductManagementViewController: BaseViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // =================================
+    // MARK:
+    // =================================
+    
+    override func navBarRightBarButtonDidTouch(_ sender: Any) {
+        
     }
-    */
 
 }

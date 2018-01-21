@@ -71,14 +71,14 @@ class AddNewShopViewController: BaseViewController, UITextFieldDelegate {
                 self.shopManagerNameTextField.text = "\(shopManagerId)"
             }
             self.push(chooseManagerVC)
-            
+        } else {
+            //textField.resignFirstResponder()
+        }
+        
 //            let alertVC: UIAlertController = UIAlertController.init(title: "请选择要分配的店长", message: "选择后自动填入对应的id", preferredStyle: .actionSheet)
 //            let cancelAction: UIAlertAction = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
 //            alertVC.addAction(cancelAction)
 //            self.present(alertVC, animated: true, completion: nil)
-        } else {
-            //textField.resignFirstResponder()
-        }
 
     }
     

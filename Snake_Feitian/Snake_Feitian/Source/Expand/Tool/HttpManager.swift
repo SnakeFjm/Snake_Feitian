@@ -26,7 +26,8 @@ class HttpManager: NSObject {
 //        tempHeaders["Authorization"] = SessionManager.share.basicInformation.object(forKey: "token") as? String
         //
         if let token: String = SessionManager.share.basicInformation.object(forKey: "token") as? String {
-            let tempHeaders: HTTPHeaders = ["Authorization": token]
+            let trulyToken = "Bearer " + token
+            let tempHeaders: HTTPHeaders = ["Authorization": trulyToken]
             return tempHeaders
         }
         return nil
@@ -85,13 +86,13 @@ class HttpManager: NSObject {
             paramDict["pageNum"] = pageNum
             paramDict["pageSize"] = pageSize
             //
-            return self.request(url: url, method: .get, parameters: paramDict, encoding: URLEncoding.init(destination: .methodDependent), headers: nil)
+            return self.request(url: url, method: .get, parameters: paramDict, encoding: URLEncoding.init(destination: .methodDependent), headers: self.headers())
         } else {
             //
             let paramDict: Parameters = ["pageNum" : pageNum,
                                          "pageSize" : pageSize]
             //
-            return self.request(url: url, method: .get, parameters: paramDict, encoding: URLEncoding.init(destination: .methodDependent), headers: nil)
+            return self.request(url: url, method: .get, parameters: paramDict, encoding: URLEncoding.init(destination: .methodDependent), headers: self.headers())
         }
     }
     

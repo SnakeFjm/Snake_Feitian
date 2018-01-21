@@ -12,6 +12,8 @@ class AfterSalesManagementViewController: RefreshTableViewController {
         
     let dateFormatter = DateFormatter.init()
     
+    var userId: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,8 +53,8 @@ class AfterSalesManagementViewController: RefreshTableViewController {
     
     override func loadDataFromServer() {
         
-        let userId = SessionManager.share.userId
-        let apiName = URLManager.feitian_followUp_user(userId: userId)
+        self.userId = (self.userId == 0) ? SessionManager.share.userId : self.userId
+        let apiName = URLManager.feitian_followUp_user(userId: self.userId)
         
         HttpManager.shareManager.getRequest(apiName, pageNum: self.currentPage, pageSize: self.pageSize, parameters: nil).responseJSON { (response) in
             if let result = HttpManager.parseDataResponse(response: response) {

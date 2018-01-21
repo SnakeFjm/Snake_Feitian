@@ -32,6 +32,7 @@ class UserModel: NSObject {
     var sex: String = ""
     var contact: String = ""
     var branchId: Int = 0
+    var branchName: String = ""
     //
     var birthday: String = ""
     var address: String = ""
@@ -73,6 +74,10 @@ class UserModel: NSObject {
         
         if let branchId = dict["branchId"] as? Int {
             self.branchId = branchId
+        }
+        
+        if let branchName = dict["branchName"] as? String {
+            self.branchName = branchName
         }
         
         if let birthday = dict["birthday"] as? String {

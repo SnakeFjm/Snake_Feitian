@@ -9,11 +9,14 @@
 import UIKit
 
 //基本信息
+
 let K_BasicInformation = "K_BasicInformation"
 
 let K_UserId =  "id" // id
 let K_UserName = "k_name" // 名字
 let K_Role = "k_role" // 角色
+
+let K_UserModel = "K_UserModel"
 
 //手机号
 let K_LOGIN_MOBILE: String = "K_LOGIN_MOBILE"
@@ -85,6 +88,18 @@ class SessionManager: NSObject {
         self.basicInformation = NSMutableDictionary.init(dictionary: dict)
         //
         self.userModel = UserModel.init(dict: basicInformation)
+
+        if let _ = (self.basicInformation["remark"]) as? String {
+            
+        } else {
+            self.basicInformation["remark"] = ""
+        }
+        
+        if let _ = (self.basicInformation["birthday"]) as? String {
+            
+        } else {
+            self.basicInformation["birthday"] = ""
+        }
         
         UserDefaults.standard.set(self.basicInformation, forKey: K_BasicInformation)
         UserDefaults.standard.synchronize()
@@ -98,13 +113,18 @@ class SessionManager: NSObject {
     //清除
     func cleanBasicInformation() {
         self.basicInformation = NSMutableDictionary.init()
+        UserDefaults.standard.removeObject(forKey: K_BasicInformation)
+        UserDefaults.standard.synchronize()
     }
     
     // 用户UserId
     var userId: Int {
         get {
-            let uid: Int = self.basicInformation.object(forKey: K_UserId) as! Int
-            return uid
+            if let uid: Int = self.basicInformation.object(forKey: K_UserId) as? Int {
+                return uid
+            } else {
+                return 0
+            }
         }
     }
 }

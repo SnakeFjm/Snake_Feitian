@@ -38,15 +38,15 @@ class AddNewCustomerViewController: BaseViewController, UITextFieldDelegate, UIT
 
         if !self.checkIfEmpty() {
             
-            let userId = SessionManager.share.userId
+            let userId = SessionManager.share.userModel.id
             let apiName = URLManager.feitian_customer()
             //"http://123.207.68.190:21026/api/v1/customer"
             
             let name = self.nameTextField.text!
-            let contact = self.contactTextField.text!
-            let birthday = self.birthdayTextField.text!
+            let contact = self.contactTextField.text ?? ""
+            let birthday = self.birthdayTextField.text ?? ""
             let physicalStatus = self.bodySituationTextView.text!
-            let remarkName = self.remarksTextView.text!
+            let remarkName = self.remarksTextView.text ?? ""
             let sex = 1
             
             let parameters: Parameters = ["adderId": userId,
@@ -60,7 +60,7 @@ class AddNewCustomerViewController: BaseViewController, UITextFieldDelegate, UIT
             HttpManager.shareManager.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { (response) in
                 if let _ = HttpManager.parseDataResponse(response: response) {
                     let alertVC = showConfirmAlertViewVC(titleVC: "新增成功", message: "返回上一页面", confirmHandler: { (_) in
-                        self.navigationController?.popViewController(animated: true)
+                        self.back()
                     })
                     self.present(alertVC, animated: true, completion: nil)
                 } else {
@@ -73,9 +73,9 @@ class AddNewCustomerViewController: BaseViewController, UITextFieldDelegate, UIT
     
     func checkIfEmpty() -> Bool {
         
-        if self.nameTextField.text?.isEmpty ?? false || self.contactTextField.text?.isEmpty ?? false || self.birthdayTextField.text?.isEmpty ?? false || self.bodySituationTextView.text.isEmpty || self.remarksTextView.text.isEmpty {
+        if self.nameTextField.text?.isEmpty ?? false || self.bodySituationTextView.text.isEmpty {
             
-            let alertVC = showConfirmAlertViewVC(titleVC: "提示", message: "内容不能为空", confirmHandler: nil)
+            let alertVC = showConfirmAlertViewVC(titleVC: "提示", message: "联系方式和备注不能为空", confirmHandler: nil)
             self.present(alertVC, animated: true, completion: nil)
             
             return true

@@ -81,5 +81,14 @@ class EmployeesManagementViewController: RefreshTableViewController {
         cell.updateCellUI(result: self.dataArray[indexPath.row])
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        super.tableView(tableView, didSelectRowAt: indexPath)
+        //
+        let vc = DetailEmployeesManagementViewController()
+        vc.userId = self.dataArray[indexPath.row]["id"].intValue
+        self.push(vc)
+        
+    }
 
 }
