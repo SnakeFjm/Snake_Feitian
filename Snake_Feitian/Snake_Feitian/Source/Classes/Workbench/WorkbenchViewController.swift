@@ -70,9 +70,67 @@ class WorkbenchViewController: BaseViewController, UITableViewDelegate, UITableV
         cell.setSelected(false, animated: true)
         
         let indexVC: Int = indexPath.section * 2 + indexPath.row
+        // 权限控制
+        if self.authorityControl(indexVC: indexVC) == false {
+            self.showErrorTips("你没有权限")
+            self.perform(#selector(hideTips), with: self, afterDelay: 1)
+            return
+        }
+        //
         let detailWorkbenchVC = self.arrayVC[indexVC]
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailWorkbenchVC, animated: true)
 
     }
+    
+    // =================================
+    // MARK:
+    // =================================
+    
+    // 权限控制
+    func authorityControl(indexVC: Int) -> Bool {
+        
+        let role = SessionManager.share.userModel.role
+        
+        // 员工
+        if role == role_FeiTian.clerk.rawValue {
+            if indexVC > 1 {
+                return false
+            }
+        }
+        
+        if role == role_FeiTian.shopowner.rawValue || role == role_FeiTian.regionalManager.rawValue {
+            if indexVC == 2 {
+                return false
+            }
+        }
+        
+        if role == role_FeiTian.executiveAssistant.rawValue || role == role_FeiTian.generalManager.rawValue {
+            return true
+        }
+        
+        return true
+    }
+    
+    
 }
+
+//一、工作台
+//普通员工可见：
+    //我的客户
+    //售后管理
+//店长可见：
+    //我的客户
+    //售后管理
+    //员工管理
+    //店铺管理
+    //消息发布
+//区域经理可见
+    //我的客户
+    //售后管理
+    //员工管理
+    //店铺管理
+    //消息发布
+//总经理/经理助理：
+    //所有
+
