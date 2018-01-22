@@ -89,8 +89,13 @@ class URLManager: NSObject {
     }
     
     // 获取某一条消息详情
-    static func feitian_message(messageId: Int) -> String {
-        return self.apiPath(apiName: "/message/\(messageId)")
+    static func feitian_message(messageId: Int, userId: Int) -> String {
+        return self.apiPath(apiName: "/message/\(messageId)/user/\(userId)")
+    }
+    
+    // 获取已发布的消息列表
+    static func feitian_messagePublishedUser(userId: Int) -> String {
+        return self.apiPath(apiName: "/message/published/user/\(userId)")
     }
     
     // =================================
@@ -191,9 +196,14 @@ class URLManager: NSObject {
     }
     
     
+    // =================================
+    // MARK: 区域
+    // =================================
     
-    
-    
+    // 获取区域列表
+    static func feitian_area() -> String {
+        return self.apiPath(apiName: "/area")
+    }
     
     
     

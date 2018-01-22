@@ -1,30 +1,27 @@
 //
-//  ChooseShopViewController.swift
+//  ChooseAreaViewController.swift
 //  Snake_Feitian
 //
-//  Created by Snake on 2018/1/13.
+//  Created by Snake on 2018/1/21.
 //  Copyright © 2018年 Snake. All rights reserved.
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
-class ChooseShopViewController: RefreshTableViewController {
+class ChooseAreaViewController: RefreshTableViewController {
 
-    var chooseShopCallback = {(branchId: Int, branchName: String) -> () in}
+    var chooseAreaCallback = {(areaId: Int, areaName: String) -> () in}
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "选择店铺"
+        self.title = "选择区域"
         
-        self.registerCellNib(nibName: "ShopManagementTableViewCell")
-        self.tableView.rowHeight = 80
+        self.registerCellNib(nibName: "BaseTitleDetailTableViewCell")
         self.tableView.tableFooterView = UIView()
         //
         self.loadDataFromServer()
-
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,11 +34,9 @@ class ChooseShopViewController: RefreshTableViewController {
     // =================================
     
     override func loadDataFromServer() {
-        
-        let apiName: String = URLManager.Feitian_branch()
-        let parameters: Parameters = ["userId": SessionManager.share.userModel.id]
+        let apiName: String = URLManager.feitian_area()
         //
-        HttpManager.shareManager.getRequest(apiName, parameters: parameters).responseJSON { (response) in
+        HttpManager.shareManager.getRequest(apiName).responseJSON { (response) in
             if let result = HttpManager.parseDataResponse(response: response) {
                 //
                 self.dataArray = result.arrayValue
@@ -60,18 +55,17 @@ class ChooseShopViewController: RefreshTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ShopManagementTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ShopManagementTableViewCell", for: indexPath) as! ShopManagementTableViewCell
-        
-        let result = self.dataArray[indexPath.row]
-        cell.updateCellUI(result: result)
+        let cell: BaseTitleDetailTableViewCell = tableView.dequeueReusableCell(withIdentifier: "BaseTitleDetailTableViewCell", for: indexPath) as! BaseTitleDetailTableViewCell
+
+        cell.title.text = self.dataArray[indexPath.row]["name"].stringValue
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let branchId = self.dataArray[indexPath.row]["id"].intValue
-        let branchName = self.dataArray[indexPath.row]["name"].stringValue
-        self.chooseShopCallback(branchId, branchName)
+        let areaId = self.dataArray[indexPath.row]["id"].intValue
+        let areaName = self.dataArray[indexPath.row]["name"].stringValue
+        self.chooseAreaCallback(areaId, areaName)
         self.back()
     }
 

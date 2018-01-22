@@ -127,15 +127,27 @@ class AddNewsReleaseViewController: BaseViewController, UITextFieldDelegate, UIT
     
     @IBAction func chooseShopButtonDidTouch(_ sender: Any) {
         // 所在店铺
-        let chooseShopVC = ChooseShopViewController()
-        chooseShopVC.chooseShopCallback = {
-            (branchId: Int) in
-            self.shopTextField.text = "\(branchId)"
-            self.toId = branchId
+        if self.scope == 3 {
+            let chooseShopVC = ChooseShopViewController()
+            chooseShopVC.chooseShopCallback = {
+                (branchId: Int, branchName: String) in
+                self.shopTextField.text = "\(branchName)"
+                self.toId = branchId
+            }
+            self.push(chooseShopVC)
         }
-        self.push(chooseShopVC)
         
         // 所在区域
+        if self.scope == 2 {
+            let chooseAreaVC = ChooseAreaViewController()
+            chooseAreaVC.chooseAreaCallback = {
+                (areaId: Int, areaName: String) in
+                self.shopTextField.text = "\(areaName)"
+                self.toId = areaId
+            }
+            self.push(chooseAreaVC)
+        }
+        
     }
     
     

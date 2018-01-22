@@ -55,8 +55,8 @@ class NewsReleaseViewController: RefreshTableViewController {
     override func loadDataFromServer() {
         
         let userId = SessionManager.share.userId
-        let parameters: Parameters = ["userId": userId]
-        let apiName = URLManager.feitian_message()
+        let parameters: Parameters = ["userId": userId]     
+        let apiName = URLManager.feitian_messagePublishedUser(userId: userId)
         
         HttpManager.shareManager.getRequest(apiName, pageNum: self.currentPage, pageSize: self.pageSize, parameters: parameters).responseJSON { (response) in
             if let result = HttpManager.parseDataResponse(response: response) {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		477988A8B7626992B8A8AA5C /* Pods_Snake_Feitian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F196A3E7F6A3179653236CD4 /* Pods_Snake_Feitian.framework */; };
+		F60DA1C62014E1FB00E0812A /* ChooseAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DA1C42014E1FB00E0812A /* ChooseAreaViewController.swift */; };
+		F60DA1C72014E1FB00E0812A /* ChooseAreaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60DA1C52014E1FB00E0812A /* ChooseAreaViewController.xib */; };
 		F611DC432009E07B009A1203 /* ChooseManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611DC412009E07B009A1203 /* ChooseManagerViewController.swift */; };
 		F611DC442009E07B009A1203 /* ChooseManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F611DC422009E07B009A1203 /* ChooseManagerViewController.xib */; };
 		F611DC472009EBD9009A1203 /* BaseTitleDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611DC452009EBD9009A1203 /* BaseTitleDetailTableViewCell.swift */; };
@@ -134,6 +136,8 @@
 		35B2270EBECD62CF3B8FD52E /* Pods-Snake_Feitian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake_Feitian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian.debug.xcconfig"; sourceTree = "<group>"; };
 		563B6C29904E0D01D0C23E19 /* Pods-Snake_Feitian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake_Feitian.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian.release.xcconfig"; sourceTree = "<group>"; };
 		F196A3E7F6A3179653236CD4 /* Pods_Snake_Feitian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snake_Feitian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F60DA1C42014E1FB00E0812A /* ChooseAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAreaViewController.swift; sourceTree = "<group>"; };
+		F60DA1C52014E1FB00E0812A /* ChooseAreaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseAreaViewController.xib; sourceTree = "<group>"; };
 		F611DC412009E07B009A1203 /* ChooseManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseManagerViewController.swift; sourceTree = "<group>"; };
 		F611DC422009E07B009A1203 /* ChooseManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseManagerViewController.xib; sourceTree = "<group>"; };
 		F611DC452009EBD9009A1203 /* BaseTitleDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTitleDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -547,6 +551,8 @@
 				F611DC522009FDD7009A1203 /* RegisterEmployeeViewController.xib */,
 				F69167AF200A0D5B003D3165 /* ChooseShopViewController.swift */,
 				F69167B0200A0D5B003D3165 /* ChooseShopViewController.xib */,
+				F60DA1C42014E1FB00E0812A /* ChooseAreaViewController.swift */,
+				F60DA1C52014E1FB00E0812A /* ChooseAreaViewController.xib */,
 			);
 			path = EmployeesManagementViewController;
 			sourceTree = "<group>";
@@ -738,6 +744,7 @@
 				F611DC442009E07B009A1203 /* ChooseManagerViewController.xib in Resources */,
 				F62A69981FFA263E00732FAB /* NewsReleaseViewController.xib in Resources */,
 				F62A69311FFA260400732FAB /* LoginViewController.xib in Resources */,
+				F60DA1C72014E1FB00E0812A /* ChooseAreaViewController.xib in Resources */,
 				F62A699B1FFA263E00732FAB /* DetailMessageViewController.xib in Resources */,
 				F6268C4F200B545A0036FC2B /* FollowingEmployeesViewController.xib in Resources */,
 				F62A69261FFA245800732FAB /* BaseTableViewCell.xib in Resources */,
@@ -879,6 +886,7 @@
 				F6268C4A200B54420036FC2B /* BodyStatusViewController.swift in Sources */,
 				F62A68FF1FFA1BE500732FAB /* SessionManager.swift in Sources */,
 				F6268C61200B64AF0036FC2B /* AddFollowingEmployeesViewController.swift in Sources */,
+				F60DA1C62014E1FB00E0812A /* ChooseAreaViewController.swift in Sources */,
 				F611DC432009E07B009A1203 /* ChooseManagerViewController.swift in Sources */,
 				F6268C5D200B64910036FC2B /* AddBodyStatusViewController.swift in Sources */,
 				F6268C4E200B545A0036FC2B /* FollowingEmployeesViewController.swift in Sources */,

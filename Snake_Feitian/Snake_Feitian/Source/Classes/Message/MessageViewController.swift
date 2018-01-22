@@ -102,7 +102,7 @@ class MessageViewController: RefreshTableViewController {
         cell.contentLabel.text = self.dataArray[indexPath.row]["content"].stringValue
         
         //
-        let date = self.dataArray[indexPath.row]["modifyTime"].intValue
+        let date = self.dataArray[indexPath.row]["createTime"].intValue
         let dateValue = self.dateFormatter.string(from: Date.init(timeIntervalSince1970: TimeInterval.init(date/1000)))
         cell.dateLabel.text = dateValue
         
@@ -117,8 +117,9 @@ class MessageViewController: RefreshTableViewController {
         //
         detailMessageVC.titleValue = self.dataArray[indexPath.row]["title"].stringValue
         detailMessageVC.contentValue = self.dataArray[indexPath.row]["content"].stringValue
+        detailMessageVC.messageId = self.dataArray[indexPath.row]["id"].intValue
         //
-        let date = self.dataArray[indexPath.row]["modifyTime"].intValue
+        let date = self.dataArray[indexPath.row]["createTime"].intValue
         let dateValue = self.dateFormatter.string(from: Date.init(timeIntervalSince1970: TimeInterval.init(date/1000)))
         detailMessageVC.dateValue = dateValue
     

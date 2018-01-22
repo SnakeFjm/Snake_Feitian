@@ -48,8 +48,9 @@ class ShopManagementViewController: BaseViewController, UITableViewDelegate, UIT
     func loadDataFromServer() {
         
         let apiName: String = URLManager.Feitian_branch()
+        let parameters: Parameters = ["userId": SessionManager.share.userModel.id]
         //
-        HttpManager.shareManager.getRequest(apiName).responseJSON { (response) in
+        HttpManager.shareManager.getRequest(apiName, parameters: parameters).responseJSON { (response) in
             if let result = HttpManager.parseDataResponse(response: response) {
                 //
                 self.shopManagementJson = result.arrayValue

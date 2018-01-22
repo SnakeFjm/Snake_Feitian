@@ -22,6 +22,9 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
     
     let role = SessionManager.share.userModel.role
     
+    var branchId: Int = 0
+    var positionId: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,8 +46,9 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
             // 所在店铺
             let chooseShopVC = ChooseShopViewController()
             chooseShopVC.chooseShopCallback = {
-                (branchId: Int) in
-                self.branchNameTextField.text = "\(branchId)"
+                (branchId: Int, branchName) in
+                self.branchNameTextField.text = branchName
+                self.branchId = branchId
             }
             self.push(chooseShopVC)
             
@@ -57,16 +61,20 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
 //            })
             //
             let executiveAssistantAction = UIAlertAction.init(title: "经理助理", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "1"
+                self.genderTextField.text = "经理助理"
+                self.positionId = 1
             })
             let regionalManagerAction = UIAlertAction.init(title: "区域经理", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "2"
+                self.genderTextField.text = "区域经理"
+                self.positionId = 2
             })
             let shopownerAction = UIAlertAction.init(title: "店长", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "3"
+                self.genderTextField.text = "店长"
+                self.positionId = 3
             })
             let clerkAction = UIAlertAction.init(title: "店员", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "4"
+                self.genderTextField.text = "店员"
+                self.positionId = 4
             })
             let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
             //
@@ -154,11 +162,11 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
         let apiName = URLManager.feitian_user()
         let parameters: Parameters = ["address": self.addressTextField.text!,
                                       "birthday": self.birthdayTextField.text!,
-                                      "branchId": Int(self.branchNameTextField.text!) ?? 0,
+                                      "branchId": self.branchId,
                                       "contact": self.mobileTextField.text!,
                                       "name": self.nameTextField.text!,
                                       "remark": "",
-                                      "role": Int(self.staffPositionsTextField.text!) ?? 0,
+                                      "role": self.positionId,
                                       "sex": self.genderTextField.text!]
         //
         HttpManager.shareManager.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
