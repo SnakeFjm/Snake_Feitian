@@ -1,28 +1,26 @@
 //
-//  ProductsUsingViewController.swift
+//  ChooseSeriesViewController.swift
 //  Snake_Feitian
 //
-//  Created by Snake on 2018/1/14.
+//  Created by Snake on 2018/1/23.
 //  Copyright © 2018年 Snake. All rights reserved.
 //
 
 import UIKit
 
-class ProductsUsingViewController: RefreshTableViewController {
+class ChooseSeriesViewController: RefreshTableViewController {
 
-    var customerModel: CustomerModel!
-
+    var chooseSeriesCallback = {(seriesId: Int, seriesName: String) -> () in}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "在用产品"
+        self.title = "选择产品系列"
         
-        self.navBarAddRightBarButton(title: "添加")
-        
-        //
         self.registerCellNib(nibName: "BaseTitleDetailTableViewCell")
-        self.tableView.separatorStyle = .singleLine
-        self.tableView.tableFooterView = UIView.init()
+        self.tableView.tableFooterView = UIView()
+        //
+        self.loadDataFromServer()
         
     }
 
@@ -30,27 +28,19 @@ class ProductsUsingViewController: RefreshTableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.loadDataFromServer()
-    }
-    
+
     // =================================
     // MARK:
     // =================================
     
     override func loadDataFromServer() {
-        
-        let customerId = self.customerModel.id
-        let apiName = URLManager.feitian_productCustomer(customerId: customerId)
-        
+        let apiName: String = URLManager.feitian_productSeries()
+        //
         HttpManager.shareManager.getRequest(apiName).responseJSON { (response) in
-            if let resutl = HttpManager.parseDataResponse(response: response) {
+            if let result = HttpManager.parseDataResponse(response: response) {
                 //
-                self.dataArray = resutl.arrayValue
-                
+                self.dataArray = result.arrayValue
+                //
                 self.reloadTableViewData()
             }
         }
@@ -60,26 +50,24 @@ class ProductsUsingViewController: RefreshTableViewController {
     // MARK:
     // =================================
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return self.dataArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: BaseTitleDetailTableViewCell = tableView.dequeueReusableCell(withIdentifier: "BaseTitleDetailTableViewCell", for: indexPath) as! BaseTitleDetailTableViewCell
-
+        
         cell.title.text = self.dataArray[indexPath.row]["name"].stringValue
         
         return cell
     }
     
-    // =================================
-    // MARK:
-    // =================================
-    
-    override func navBarRightBarButtonDidTouch(_ sender: Any) {
-        let vc = addProductsUsingViewController()
-        vc.customerModel = self.customerModel
-        self.push(vc)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        super.tableView(tableView, didSelectRowAt: indexPath)
+        let seriesId = self.dataArray[indexPath.row]["id"].intValue
+        let seriesName = self.dataArray[indexPath.row]["name"].stringValue
+        self.chooseSeriesCallback(seriesId, seriesName)
+        self.back()
     }
 
 }

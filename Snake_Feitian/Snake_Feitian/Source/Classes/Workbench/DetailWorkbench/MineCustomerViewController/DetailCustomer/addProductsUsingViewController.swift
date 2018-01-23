@@ -10,9 +10,7 @@ import UIKit
 
 class addProductsUsingViewController: UIViewController {
 
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var seriesTextField: UITextField!
-    @IBOutlet weak var contentTextView: UITextView!
+
     
     var customerModel: CustomerModel!
 
@@ -31,8 +29,6 @@ class addProductsUsingViewController: UIViewController {
     // MARK:
     // =================================
     
-    @IBAction func confirmButtonDidTouch(_ sender: Any) {
-        
-    }
+
     
 }

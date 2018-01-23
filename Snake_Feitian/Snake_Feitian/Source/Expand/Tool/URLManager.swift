@@ -175,7 +175,7 @@ class URLManager: NSObject {
     // MARK: 产品管理
     // =================================
 
-    // 根据产品类别id获取产品列表
+    // 根据产品类别id获取产品列表， 新增产品
     static func feitian_product() -> String {
         return self.apiPath(apiName: "/product")
     }

@@ -30,7 +30,8 @@ class ProductManagementViewController: BaseViewController {
     // =================================
     
     override func navBarRightBarButtonDidTouch(_ sender: Any) {
-        
+        let vc = AddProductViewController()
+        self.push(vc)
     }
 
 }

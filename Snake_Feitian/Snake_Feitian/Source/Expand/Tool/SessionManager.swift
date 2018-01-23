@@ -89,17 +89,7 @@ class SessionManager: NSObject {
         //
         self.userModel = UserModel.init(dict: basicInformation)
 
-        if let _ = (self.basicInformation["remark"]) as? String {
-            
-        } else {
-            self.basicInformation["remark"] = ""
-        }
-        
-        if let _ = (self.basicInformation["birthday"]) as? String {
-            
-        } else {
-            self.basicInformation["birthday"] = ""
-        }
+        self.parseDict(dict: self.basicInformation)
         
         UserDefaults.standard.set(self.basicInformation, forKey: K_BasicInformation)
         UserDefaults.standard.synchronize()
@@ -127,6 +117,59 @@ class SessionManager: NSObject {
             }
         }
     }
+    
+    func parseDict(dict: NSMutableDictionary) {
+        
+        if let _ = (self.basicInformation["remark"]) as? String {
+            
+        } else {
+            self.basicInformation["remark"] = ""
+        }
+        
+        if let _ = (self.basicInformation["birthday"]) as? String {
+            
+        } else {
+            self.basicInformation["birthday"] = ""
+        }
+        
+        if let _ = (self.basicInformation["branchId"]) as? Int {
+            
+        } else {
+            self.basicInformation["branchId"] = 0
+        }
+        
+        if let _ = (self.basicInformation["branchName"]) as? String {
+            
+        } else {
+            self.basicInformation["branchName"] = ""
+        }
+        
+        if let _ = (self.basicInformation["contact"]) as? String {
+            
+        } else {
+            self.basicInformation["contact"] = ""
+        }
+        
+        if let _ = (self.basicInformation["name"]) as? String {
+            
+        } else {
+            self.basicInformation["name"] = ""
+        }
+        
+        if let _ = (self.basicInformation["sex"]) as? String {
+            
+        } else {
+            self.basicInformation["sex"] = ""
+        }
+        
+        if let _ = (self.basicInformation["address"]) as? String {
+            
+        } else {
+            self.basicInformation["address"] = ""
+        }
+        
+    }
+    
 }
 
 
