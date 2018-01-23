@@ -18,6 +18,7 @@ class ChooseSeriesViewController: RefreshTableViewController {
         self.title = "选择产品系列"
         
         self.registerCellNib(nibName: "BaseTitleDetailTableViewCell")
+        self.tableView.separatorStyle = .singleLine
         self.tableView.tableFooterView = UIView()
         //
         self.loadDataFromServer()
@@ -50,7 +51,7 @@ class ChooseSeriesViewController: RefreshTableViewController {
     // MARK:
     // =================================
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArray.count
     }
     

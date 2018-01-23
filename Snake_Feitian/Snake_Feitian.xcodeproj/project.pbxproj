@@ -129,6 +129,8 @@
 		F6665C802016D75600B043BA /* AddProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6665C7E2016D75600B043BA /* AddProductViewController.xib */; };
 		F6665C832016DADA00B043BA /* ChooseSeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6665C812016DADA00B043BA /* ChooseSeriesViewController.swift */; };
 		F6665C842016DADA00B043BA /* ChooseSeriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6665C822016DADA00B043BA /* ChooseSeriesViewController.xib */; };
+		F6665C872017214E00B043BA /* ChooseProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6665C852017214E00B043BA /* ChooseProductViewController.swift */; };
+		F6665C882017214E00B043BA /* ChooseProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6665C862017214E00B043BA /* ChooseProductViewController.xib */; };
 		F69167AE200A06F5003D3165 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69167AD200A06F5003D3165 /* UserModel.swift */; };
 		F69167B1200A0D5B003D3165 /* ChooseShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69167AF200A0D5B003D3165 /* ChooseShopViewController.swift */; };
 		F69167B2200A0D5B003D3165 /* ChooseShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F69167B0200A0D5B003D3165 /* ChooseShopViewController.xib */; };
@@ -264,6 +266,8 @@
 		F6665C7E2016D75600B043BA /* AddProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddProductViewController.xib; sourceTree = "<group>"; };
 		F6665C812016DADA00B043BA /* ChooseSeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSeriesViewController.swift; sourceTree = "<group>"; };
 		F6665C822016DADA00B043BA /* ChooseSeriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseSeriesViewController.xib; sourceTree = "<group>"; };
+		F6665C852017214E00B043BA /* ChooseProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProductViewController.swift; sourceTree = "<group>"; };
+		F6665C862017214E00B043BA /* ChooseProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseProductViewController.xib; sourceTree = "<group>"; };
 		F69167AD200A06F5003D3165 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F69167AF200A0D5B003D3165 /* ChooseShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseShopViewController.swift; sourceTree = "<group>"; };
 		F69167B0200A0D5B003D3165 /* ChooseShopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseShopViewController.xib; sourceTree = "<group>"; };
@@ -639,6 +643,8 @@
 				F6665C7E2016D75600B043BA /* AddProductViewController.xib */,
 				F6665C812016DADA00B043BA /* ChooseSeriesViewController.swift */,
 				F6665C822016DADA00B043BA /* ChooseSeriesViewController.xib */,
+				F6665C852017214E00B043BA /* ChooseProductViewController.swift */,
+				F6665C862017214E00B043BA /* ChooseProductViewController.xib */,
 			);
 			path = ProductManagementViewController;
 			sourceTree = "<group>";
@@ -777,6 +783,7 @@
 				F6665C842016DADA00B043BA /* ChooseSeriesViewController.xib in Resources */,
 				F62A68EB1FFA18BB00732FAB /* LaunchScreen.storyboard in Resources */,
 				F6268C47200B541D0036FC2B /* ProductsUsingViewController.xib in Resources */,
+				F6665C882017214E00B043BA /* ChooseProductViewController.xib in Resources */,
 				F62A699C1FFA263E00732FAB /* MessageViewController.xib in Resources */,
 				F62A69A31FFA278A00732FAB /* Common.xcassets in Resources */,
 				F62A699E1FFA263E00732FAB /* MessageTableViewCell.xib in Resources */,
@@ -919,6 +926,7 @@
 				F62A68FD1FFA1BCF00732FAB /* HttpManager.swift in Sources */,
 				F611DC532009FDD7009A1203 /* RegisterEmployeeViewController.swift in Sources */,
 				F62A69851FFA263E00732FAB /* MineCustomerTableViewCell.swift in Sources */,
+				F6665C872017214E00B043BA /* ChooseProductViewController.swift in Sources */,
 				F62A698D1FFA263E00732FAB /* ShopManagementTableViewCell.swift in Sources */,
 				F62A69931FFA263E00732FAB /* AddNewShopViewController.swift in Sources */,
 				F6268C54200B5CEC0036FC2B /* BodyStatusTableViewCell.swift in Sources */,

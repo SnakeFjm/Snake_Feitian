@@ -17,6 +17,8 @@ class AddNewShopViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var shopPlaceTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
+    var shopManagerId: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,14 +35,28 @@ class AddNewShopViewController: BaseViewController, UITextFieldDelegate {
     // MARK:
     // =================================
     
+    @IBAction func chooseShopownerButtonDidTouch(_ sender: Any) {
+        let chooseManagerVC = ChooseManagerViewController()
+        chooseManagerVC.choooseMangerCallback = { (shopManagerId: Int, shopManagerName: String) in
+            self.shopManagerNameTextField.text = shopManagerName
+            self.shopManagerId = shopManagerId
+        }
+        self.push(chooseManagerVC)
+    }
+    
+    
     @IBAction func confirmButtonDidTouch(_ sender: UIButton) {
         
-//        let shopManagerName = self.shopManagerNameTextField.text
-
+        if (self.shopNameTextField.text?.isEmpty)! || (self.shopPlaceTextField.text?.isEmpty)! || (self.shopManagerNameTextField.text?.isEmpty)! || (self.phoneTextField.text?.isEmpty)! {
+            self.showErrorTips("内容不能为空")
+            self.perform(#selector(hideTips), with: self, afterDelay: 1)
+            return
+        }
+        
         let shopName: String = self.shopNameTextField.text!
         let shopPlace: String = self.shopPlaceTextField.text!
         let phone: String = self.phoneTextField.text!
-        let shopManagerId: Int = Int(self.shopManagerNameTextField.text!) ?? 0
+        let shopManagerId: Int = self.shopManagerId
         
         let parameters: Parameters = [ "address": shopPlace,
                                        "contact": phone,
@@ -61,26 +77,6 @@ class AddNewShopViewController: BaseViewController, UITextFieldDelegate {
     // =================================
     // MARK:
     // =================================
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-        if textField == self.shopManagerNameTextField {
-            
-            let chooseManagerVC = ChooseManagerViewController()
-            chooseManagerVC.choooseMangerCallback = { (shopManagerId: Int) in
-                self.shopManagerNameTextField.text = "\(shopManagerId)"
-            }
-            self.push(chooseManagerVC)
-        } else {
-            //textField.resignFirstResponder()
-        }
-        
-//            let alertVC: UIAlertController = UIAlertController.init(title: "请选择要分配的店长", message: "选择后自动填入对应的id", preferredStyle: .actionSheet)
-//            let cancelAction: UIAlertAction = UIAlertAction.init(title: "取消", style: .cancel, handler: nil)
-//            alertVC.addAction(cancelAction)
-//            self.present(alertVC, animated: true, completion: nil)
-
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

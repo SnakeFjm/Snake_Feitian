@@ -20,6 +20,8 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var birthdayTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     
+    let dateFormatter = DateFormatter.init()
+    
     let role = SessionManager.share.userModel.role
     
     var branchId: Int = 0
@@ -29,6 +31,8 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         self.title = "员工注册"
+        //
+        self.dateFormatter.dateFormat = "yyyy-MM-dd"
         
     }
 
@@ -41,94 +45,6 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
     // MARK:
     // =================================
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == self.branchNameTextField {
-            // 所在店铺
-            let chooseShopVC = ChooseShopViewController()
-            chooseShopVC.chooseShopCallback = {
-                (branchId: Int, branchName) in
-                self.branchNameTextField.text = branchName
-                self.branchId = branchId
-            }
-            self.push(chooseShopVC)
-            
-        } else if textField == self.staffPositionsTextField {
-            // 员工职位
-            let alertVC = UIAlertController.init(title: "请选择员工职位", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
-            //
-//            let generalManagerAction = UIAlertAction.init(title: "总经理", style: UIAlertActionStyle.default, handler: { (_) in
-//                self.genderTextField.text = "0"
-//            })
-            //
-            let executiveAssistantAction = UIAlertAction.init(title: "经理助理", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "经理助理"
-                self.positionId = 1
-            })
-            let regionalManagerAction = UIAlertAction.init(title: "区域经理", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "区域经理"
-                self.positionId = 2
-            })
-            let shopownerAction = UIAlertAction.init(title: "店长", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "店长"
-                self.positionId = 3
-            })
-            let clerkAction = UIAlertAction.init(title: "店员", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "店员"
-                self.positionId = 4
-            })
-            let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
-            //
-            alertVC.addAction(cancelAction)
-            
-            // 权限控制
-            if self.role == role_FeiTian.shopowner.rawValue {
-                alertVC.addAction(clerkAction)
-            }
-            
-            if self.role == role_FeiTian.regionalManager.rawValue {
-                alertVC.addAction(shopownerAction)
-                alertVC.addAction(clerkAction)
-            }
-            
-            if self.role == role_FeiTian.executiveAssistant.rawValue {
-                alertVC.addAction(regionalManagerAction)
-                alertVC.addAction(shopownerAction)
-                alertVC.addAction(clerkAction)
-            }
-            
-            if self.role == role_FeiTian.generalManager.rawValue {
-                alertVC.addAction(executiveAssistantAction)
-                alertVC.addAction(regionalManagerAction)
-                alertVC.addAction(shopownerAction)
-                alertVC.addAction(clerkAction)
-            }
-            
-            //
-            self.present(alertVC, animated: true, completion: nil)
-            
-        } else if textField == self.genderTextField {
-            // 性别
-            let alertVC = UIAlertController.init(title: "请选择性别", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
-            //
-            let maleAction = UIAlertAction.init(title: "男", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "男"
-            })
-            //
-            let femaleAction = UIAlertAction.init(title: "女", style: UIAlertActionStyle.default, handler: { (_) in
-                self.genderTextField.text = "女"
-            })
-            let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
-            //
-            alertVC.addAction(cancelAction)
-            alertVC.addAction(maleAction)
-            alertVC.addAction(femaleAction)
-            //
-            self.present(alertVC, animated: true, completion: nil)
-        }
-        
-        
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -137,6 +53,117 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
     // =================================
     // MARK:
     // =================================
+    
+    @IBAction func chooseSexButtonDidTouch(_ sender: Any) {
+        // 性别
+        let alertVC = UIAlertController.init(title: "请选择性别", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+        //
+        let maleAction = UIAlertAction.init(title: "男", style: UIAlertActionStyle.default, handler: { (_) in
+            self.genderTextField.text = "男"
+        })
+        //
+        let femaleAction = UIAlertAction.init(title: "女", style: UIAlertActionStyle.default, handler: { (_) in
+            self.genderTextField.text = "女"
+        })
+        let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        //
+        alertVC.addAction(cancelAction)
+        alertVC.addAction(maleAction)
+        alertVC.addAction(femaleAction)
+        //
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func chooseShopButtonDidTouch(_ sender: Any) {
+        // 所在店铺
+        let chooseShopVC = ChooseShopViewController()
+        chooseShopVC.chooseShopCallback = {
+            (branchId: Int, branchName) in
+            self.branchNameTextField.text = branchName
+            self.branchId = branchId
+        }
+        self.push(chooseShopVC)
+    }
+    
+    @IBAction func chooseRoleButtonDidTouch(_ sender: Any) {
+        // 员工职位
+        let alertVC = UIAlertController.init(title: "请选择员工职位", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
+        //
+        let executiveAssistantAction = UIAlertAction.init(title: "经理助理", style: UIAlertActionStyle.default, handler: { (_) in
+            self.staffPositionsTextField.text = "经理助理"
+            self.positionId = 1
+        })
+        let regionalManagerAction = UIAlertAction.init(title: "区域经理", style: UIAlertActionStyle.default, handler: { (_) in
+            self.staffPositionsTextField.text = "区域经理"
+            self.positionId = 2
+        })
+        let shopownerAction = UIAlertAction.init(title: "店长", style: UIAlertActionStyle.default, handler: { (_) in
+            self.staffPositionsTextField.text = "店长"
+            self.positionId = 3
+        })
+        let clerkAction = UIAlertAction.init(title: "店员", style: UIAlertActionStyle.default, handler: { (_) in
+            self.staffPositionsTextField.text = "店员"
+            self.positionId = 4
+        })
+        let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        //
+        alertVC.addAction(cancelAction)
+        // 权限控制
+        if self.role == role_FeiTian.shopowner.rawValue {
+            alertVC.addAction(clerkAction)
+        }
+        if self.role == role_FeiTian.regionalManager.rawValue {
+            alertVC.addAction(shopownerAction)
+            alertVC.addAction(clerkAction)
+        }
+        if self.role == role_FeiTian.executiveAssistant.rawValue {
+            alertVC.addAction(regionalManagerAction)
+            alertVC.addAction(shopownerAction)
+            alertVC.addAction(clerkAction)
+        }
+        if self.role == role_FeiTian.generalManager.rawValue {
+            alertVC.addAction(executiveAssistantAction)
+            alertVC.addAction(regionalManagerAction)
+            alertVC.addAction(shopownerAction)
+            alertVC.addAction(clerkAction)
+        }
+        //
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func chooseBirthdayButtonDidTouch(_ sender: Any) {
+        //
+        let customView = UIView()
+        customView.translatesAutoresizingMaskIntoConstraints = false
+        customView.addConstraint(NSLayoutConstraint(item: customView,
+                                                    attribute: .height,
+                                                    relatedBy: .equal,
+                                                    toItem: nil,
+                                                    attribute: .notAnAttribute,
+                                                    multiplier: 1,
+                                                    constant: 100))
+        //
+        let datePicker = UIDatePicker.init(frame: CGRect.init(x: 0, y: 0, width: customView.bounds.size.width, height: customView.bounds.size.height))
+        customView.addSubview(datePicker)
+        //将日期选择器区域设置为中文，则选择器日期显示为中文
+        datePicker.locale = Locale.init(identifier: "zh_CN")
+        // 设置样式，当前设为同时显示日期和时间
+        datePicker.datePickerMode = UIDatePickerMode.date
+        // 设置默认时间
+        datePicker.date = Date()
+        //
+        let alert = UIAlertController(title: "选择生日时间",customView: customView,fallbackMessage: "",preferredStyle: .actionSheet)
+        //
+        alert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.default){
+            (alertAction)->Void in
+            let currentDate = datePicker.date
+            let dateString = self.dateFormatter.string(from: currentDate)
+            self.birthdayTextField.text = dateString
+        })
+        alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel,handler:nil))
+        //
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func confirmButtonDidtouch(_ sender: Any) {
         //
@@ -171,7 +198,10 @@ class RegisterEmployeeViewController: BaseViewController, UITextFieldDelegate {
         //
         HttpManager.shareManager.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
             if let _ = HttpManager.parseDataResponse(response: response) {
+                self.showSuccessTips("注册成功")
                 self.back()
+            } else {
+                self.showErrorTips("注册失败")
             }
         }
     }

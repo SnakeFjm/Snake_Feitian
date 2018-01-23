@@ -119,7 +119,9 @@ class ShopManagementViewController: BaseViewController, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        //
+        tableView.deselectRow(at: indexPath, animated: true)
+        //
         let detailShopVC: DetailShopViewController = DetailShopViewController()
         detailShopVC.branchId = self.shopManagementJson[indexPath.row]["id"].intValue
         //

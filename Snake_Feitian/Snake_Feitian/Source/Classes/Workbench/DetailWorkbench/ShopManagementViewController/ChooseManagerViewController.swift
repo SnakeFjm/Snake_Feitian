@@ -11,7 +11,7 @@ import Alamofire
 
 class ChooseManagerViewController: RefreshTableViewController {
 
-    var choooseMangerCallback = {(managerId: Int) -> () in}
+    var choooseMangerCallback = {(shooManagerId: Int, shopManagerName: String) -> () in}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,8 @@ class ChooseManagerViewController: RefreshTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let shopManagerId: Int = self.dataArray[indexPath.row]["id"].intValue
-        choooseMangerCallback(shopManagerId)
+        let shopManagerName: String = self.dataArray[indexPath.row]["name"].stringValue
+        choooseMangerCallback(shopManagerId, shopManagerName)
         self.back()
     }
     

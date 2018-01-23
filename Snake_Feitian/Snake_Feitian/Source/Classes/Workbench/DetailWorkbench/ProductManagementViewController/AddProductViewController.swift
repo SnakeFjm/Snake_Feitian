@@ -61,7 +61,6 @@ class AddProductViewController: BaseViewController {
         HttpManager.shareManager.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
             if let _ = HttpManager.parseDataResponse(response: response) {
                 self.showSuccessTips("新增成功")
-                self.perform(#selector(self.hideTips), with: self, afterDelay: 1)
                 self.back()
             } else {
                 self.showErrorTips("新增失败")

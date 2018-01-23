@@ -79,13 +79,23 @@
                                                         <outlet property="delegate" destination="-1" id="FCl-sp-oMj"/>
                                                     </connections>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGV-3T-TrN">
+                                                    <rect key="frame" x="118" y="10" width="237" height="30"/>
+                                                    <connections>
+                                                        <action selector="chooseShopownerButtonDidTouch:" destination="-1" eventType="touchUpInside" id="dsS-9l-Yx6"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="dGV-3T-TrN" firstAttribute="trailing" secondItem="D3y-cL-dAx" secondAttribute="trailing" id="29B-PF-mHq"/>
                                                 <constraint firstItem="3NN-7l-dno" firstAttribute="centerY" secondItem="lzw-B9-2mr" secondAttribute="centerY" id="8EN-bw-oJV"/>
+                                                <constraint firstItem="dGV-3T-TrN" firstAttribute="leading" secondItem="D3y-cL-dAx" secondAttribute="leading" id="CnT-yW-N7m"/>
                                                 <constraint firstItem="D3y-cL-dAx" firstAttribute="leading" secondItem="3NN-7l-dno" secondAttribute="trailing" constant="10" id="DG7-Es-ZMq"/>
+                                                <constraint firstItem="dGV-3T-TrN" firstAttribute="top" secondItem="D3y-cL-dAx" secondAttribute="top" id="K2R-m8-W75"/>
                                                 <constraint firstAttribute="trailing" secondItem="D3y-cL-dAx" secondAttribute="trailing" constant="20" id="SE6-Jm-T8w"/>
                                                 <constraint firstItem="D3y-cL-dAx" firstAttribute="centerY" secondItem="lzw-B9-2mr" secondAttribute="centerY" id="iaG-tM-ZZd"/>
+                                                <constraint firstItem="dGV-3T-TrN" firstAttribute="bottom" secondItem="D3y-cL-dAx" secondAttribute="bottom" id="po1-aS-4MR"/>
                                                 <constraint firstItem="3NN-7l-dno" firstAttribute="leading" secondItem="lzw-B9-2mr" secondAttribute="leading" constant="20" id="tX9-Bg-656"/>
                                             </constraints>
                                         </view>
@@ -217,7 +227,7 @@
                 <constraint firstItem="GRY-Ka-D1B" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ooX-ao-cVi"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="6" y="-9"/>
+            <point key="canvasLocation" x="-191" y="-61"/>
         </view>
     </objects>
 </document>
