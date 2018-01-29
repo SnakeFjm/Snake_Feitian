@@ -184,7 +184,6 @@
 		F6268C60200B64AF0036FC2B /* AddFollowingEmployeesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFollowingEmployeesViewController.xib; sourceTree = "<group>"; };
 		F6268C63200B698A0036FC2B /* AddNewsReleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsReleaseViewController.swift; sourceTree = "<group>"; };
 		F6268C64200B698A0036FC2B /* AddNewsReleaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewsReleaseViewController.xib; sourceTree = "<group>"; };
-		F627762C201BB3F300ED87C7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68DD1FFA18BB00732FAB /* Snake_Feitian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake_Feitian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68E01FFA18BB00732FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62A68E21FFA18BB00732FAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -304,7 +303,6 @@
 		1EE8A4A7EE0E79EFD8D1C073 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F627762C201BB3F300ED87C7 /* Alamofire.framework */,
 				2A0A849796A493DA78E03B19 /* Pods_Snake_Feitian.framework */,
 			);
 			name = Frameworks;
