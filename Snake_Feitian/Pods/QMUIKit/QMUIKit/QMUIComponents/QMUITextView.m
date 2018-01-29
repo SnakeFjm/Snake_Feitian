@@ -2,7 +2,7 @@
 //  QMUITextView.m
 //  qmui
 //
-//  Created by QQMail on 14-8-5.
+//  Created by QMUI Team on 14-8-5.
 //  Copyright (c) 2014年 QMUI Team. All rights reserved.
 //
 #import "QMUITextView.h"
@@ -58,6 +58,9 @@ const UIEdgeInsets kSystemTextViewFixTextInsets = {0, 5, 0, 5};
     self.autoResizable = NO;
     self.maximumTextLength = NSUIntegerMax;
     self.shouldResponseToProgrammaticallyTextChanges = YES;
+    if (@available(iOS 11, *)) {
+        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     
     self.placeholderLabel = [[UILabel alloc] init];
     self.placeholderLabel.font = UIFontMake(kSystemTextViewDefaultFontPointSize);
@@ -183,6 +186,16 @@ const UIEdgeInsets kSystemTextViewFixTextInsets = {0, 5, 0, 5};
     [self updatePlaceholderStyle];
 }
 
+- (void)setTextContainerInset:(UIEdgeInsets)textContainerInset {
+    [super setTextContainerInset:textContainerInset];
+    if (@available(iOS 11, *)) {
+    } else {
+        // iOS 11 以下修改 textContainerInset 的时候无法自动触发 layoutSubview，导致 placeholderLabel 无法更新布局
+        [self setNeedsLayout];
+    }
+}
+
+
 - (void)setPlaceholder:(NSString *)placeholder {
     _placeholder = placeholder;
     self.placeholderLabel.attributedText = [[NSAttributedString alloc] initWithString:_placeholder attributes:self.typingAttributes];
@@ -276,6 +289,26 @@ const UIEdgeInsets kSystemTextViewFixTextInsets = {0, 5, 0, 5};
 
 - (NSUInteger)lengthWithString:(NSString *)string {
     return self.shouldCountingNonASCIICharacterAsTwo ? string.qmui_lengthWhenCountingNonASCIICharacterAsTwo : string.length;
+}
+
+#pragma mark - <UIResponderStandardEditActions>
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+    BOOL superReturnValue = [super canPerformAction:action withSender:sender];
+    if (action == @selector(paste:) && self.canPerformPasteActionBlock) {
+        return self.canPerformPasteActionBlock(sender, superReturnValue);
+    }
+    return superReturnValue;
+}
+
+- (void)paste:(id)sender {
+    BOOL shouldCallSuper = YES;
+    if (self.pasteBlock) {
+        shouldCallSuper = self.pasteBlock(sender);
+    }
+    if (shouldCallSuper) {
+        [super paste:sender];
+    }
 }
 
 #pragma mark - <QMUITextViewDelegate>

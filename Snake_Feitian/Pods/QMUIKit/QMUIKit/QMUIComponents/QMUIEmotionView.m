@@ -16,8 +16,6 @@
 
 @implementation QMUIEmotion
 
-@synthesize image = _image;
-
 + (instancetype)emotionWithIdentifier:(NSString *)identifier displayName:(NSString *)displayName {
     QMUIEmotion *emotion = [[QMUIEmotion alloc] init];
     emotion.identifier = identifier;
@@ -27,13 +25,6 @@
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@, identifier: %@, displayName: %@", [super description], self.identifier, self.displayName];
-}
-
-- (UIImage *)image {
-    if (!_image) {
-        _image = [QMUIHelper imageInBundle:[QMUIHelper resourcesBundleWithName:QMUIResourcesQQEmotionBundleName] withName:self.identifier];
-    }
-    return _image;
 }
 
 @end
@@ -179,7 +170,7 @@
                 [self.delegate emotionPageView:self didSelectEmotion:emotion atIndex:i];
             }
             if (self.debug) {
-                NSLog(@"最终确定了点击的是当前页里的第 %@ 个表情，%@", @(i), emotion);
+                NSLog(@"点击的是当前页里的第 %@ 个表情，%@", @(i), emotion);
             }
             return;
         }
@@ -228,7 +219,7 @@
     self.collectionViewLayout.minimumInteritemSpacing = 0;
     self.collectionViewLayout.sectionInset = UIEdgeInsetsZero;
     
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMakeWithSize(frame.size) collectionViewLayout:self.collectionViewLayout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(self.qmui_safeAreaInsets.left, self.qmui_safeAreaInsets.top, CGRectGetWidth(frame) - UIEdgeInsetsGetHorizontalValue(self.qmui_safeAreaInsets), CGRectGetHeight(frame) - UIEdgeInsetsGetVerticalValue(self.qmui_safeAreaInsets)) collectionViewLayout:self.collectionViewLayout];
     self.collectionView.backgroundColor = UIColorClear;
     self.collectionView.scrollsToTop = NO;
     self.collectionView.pagingEnabled = YES;
@@ -256,18 +247,22 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    BOOL collectionViewSizeChanged = !CGSizeEqualToSize(self.bounds.size, self.collectionView.bounds.size);
-    self.collectionView.frame = self.bounds;
+    CGRect collectionViewFrame = CGRectInsetEdges(self.bounds, self.qmui_safeAreaInsets);
+    BOOL collectionViewSizeChanged = !CGSizeEqualToSize(collectionViewFrame.size, self.collectionView.bounds.size);
+    self.collectionView.frame = collectionViewFrame;
     self.collectionViewLayout.itemSize = self.collectionView.bounds.size;
     
     if (collectionViewSizeChanged) {
         [self pageEmotions];
     }
     
-    CGFloat pageControlHeight = 16;
-    self.pageControl.frame = CGRectMake(0, CGRectGetHeight(self.bounds) - self.pageControlMarginBottom - pageControlHeight, CGRectGetWidth(self.bounds), pageControlHeight);
+    self.sendButton.qmui_right = self.qmui_width - self.qmui_safeAreaInsets.right - self.sendButtonMargins.right;
+    self.sendButton.qmui_bottom = self.qmui_height - self.qmui_safeAreaInsets.bottom - self.sendButtonMargins.bottom;
     
-    self.sendButton.frame = CGRectSetXY(self.sendButton.frame, CGRectGetWidth(self.bounds) - self.sendButtonMargins.right - CGRectGetWidth(self.sendButton.frame), CGRectGetHeight(self.bounds) - self.sendButtonMargins.bottom - CGRectGetHeight(self.sendButton.frame));
+    CGFloat pageControlHeight = 16;
+    CGFloat pageControlMaxX = self.sendButton.qmui_left;
+    CGFloat pageControlMinX = self.qmui_width - pageControlMaxX;
+    self.pageControl.frame = CGRectMake(pageControlMinX, self.qmui_height - self.qmui_safeAreaInsets.bottom - self.pageControlMarginBottom - pageControlHeight, pageControlMaxX - pageControlMinX, pageControlHeight);
 }
 
 - (void)pageEmotions {

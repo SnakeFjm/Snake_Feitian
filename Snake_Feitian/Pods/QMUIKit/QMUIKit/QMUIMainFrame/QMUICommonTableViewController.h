@@ -2,7 +2,7 @@
 //  QMUICommonTableViewController.h
 //  qmui
 //
-//  Created by QQMail on 14-6-24.
+//  Created by QMUI Team on 14-6-24.
 //  Copyright (c) 2014年 QMUI Team. All rights reserved.
 //
 
@@ -14,6 +14,9 @@
  *  @see tableViewInitialContentInset
  */
 extern const UIEdgeInsets QMUICommonTableViewControllerInitialContentInsetNotSet;
+
+extern NSString *const QMUICommonTableViewControllerSectionHeaderIdentifier;
+extern NSString *const QMUICommonTableViewControllerSectionFooterIdentifier;
 
 /**
  *  可作为项目内所有 `UITableViewController` 的基类，注意是继承自 `QMUICommonViewController` 而不是 `UITableViewController`。
@@ -48,7 +51,7 @@ extern const UIEdgeInsets QMUICommonTableViewControllerInitialContentInsetNotSet
 
 /**
  *  列表使用自定义的contentInset，不使用系统默认计算的，默认为QMUICommonTableViewControllerInitialContentInsetNotSet。<br/>
- *  当更改了这个值后，会把self.automaticallyAdjustsScrollViewInsets = NO
+ *  @warning 当更改了这个值后，在 iOS 11 及以后里，会把 self.tableView.contentInsetAdjustmentBehavior 改为 UIScrollViewContentInsetAdjustmentNever，而在 iOS 11 以前，会把 self.automaticallyAdjustsScrollViewInsets 改为 NO。
  */
 @property(nonatomic, assign) UIEdgeInsets tableViewInitialContentInset;
 
@@ -72,6 +75,12 @@ extern const UIEdgeInsets QMUICommonTableViewControllerInitialContentInsetNotSet
  *  一般情况下，有关tableView的设置属性的代码都应该写在这里。
  */
 - (void)initTableView;
+
+/**
+ *  布局 tableView 的方法独立抽取出来，方便子类在需要自定义 tableView.frame 时能重写并且屏蔽掉 super 的代码。如果不独立一个方法而是放在 viewDidLayoutSubviews 里，子类就很难屏蔽 super 里对 tableView.frame 的修改。
+ *  默认的实现是撑满 self.view，如果要自定义，可以写在这里而不调用 super，或者干脆重写这个方法但留空
+ */
+- (void)layoutTableView;
 
 /**
  *  是否需要在第一次进入界面时将tableHeaderView隐藏（通过调整self.tableView.contentOffset实现）

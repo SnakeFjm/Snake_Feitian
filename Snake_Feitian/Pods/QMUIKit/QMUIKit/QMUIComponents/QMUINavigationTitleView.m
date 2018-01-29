@@ -2,7 +2,7 @@
 //  QMUINavigationTitleView.m
 //  qmui
 //
-//  Created by QQMail on 14-7-2.
+//  Created by QMUI Team on 14-7-2.
 //  Copyright (c) 2014年 QMUI Team. All rights reserved.
 //
 
@@ -44,7 +44,7 @@
         }
         
         // iOS 11 之后（iOS 11 Beta 5 测试过） titleView 的布局发生了一些变化，如果不主动设置宽度，titleView 里的内容就可能无法完整展示
-        if (IOS_VERSION >= 11.0) {
+        if (@available(iOS 11, *)) {
             if (CGRectGetWidth(titleView.bounds) != titleViewSize.width) {
                 titleView.frame = CGRectSetWidth(titleView.frame, titleViewSize.width);
             }
@@ -64,10 +64,10 @@
 
 @interface QMUINavigationTitleView ()
 
-@property(nonatomic, assign) BOOL accessoryViewAnimating;
 @property(nonatomic, assign) CGSize titleLabelSize;
 @property(nonatomic, assign) CGSize subtitleLabelSize;
 @property(nonatomic, strong) UIImageView *accessoryTypeView;
+
 @end
 
 @implementation QMUINavigationTitleView
@@ -107,6 +107,7 @@
         self.accessoryType = QMUINavigationTitleViewAccessoryTypeNone;
         
         QMUINavigationTitleView *appearance = [QMUINavigationTitleView appearance];
+        self.maximumWidth = appearance.maximumWidth;
         self.loadingViewSize = appearance.loadingViewSize;
         self.loadingViewMarginRight = appearance.loadingViewMarginRight;
         self.horizontalTitleFont = appearance.horizontalTitleFont;
@@ -223,17 +224,13 @@
 
 - (CGSize)sizeThatFits:(CGSize)size {
     CGSize resultSize = [self contentSize];
+    resultSize.width = fmin(resultSize.width, self.maximumWidth);
     return resultSize;
 }
 
 - (void)layoutSubviews {
     
     if (CGSizeIsEmpty(self.bounds.size)) {
-        NSLog(@"%@, layoutSubviews, size = %@", NSStringFromClass([self class]), NSStringFromCGSize(self.bounds.size));
-        return;
-    }
-    
-    if (self.accessoryViewAnimating) {
         return;
     }
     
@@ -338,6 +335,11 @@
 
 
 #pragma mark - setter / getter
+
+- (void)setMaximumWidth:(CGFloat)maximumWidth {
+    _maximumWidth = maximumWidth;
+    [self refreshLayout];
+}
 
 - (void)setContentHorizontalAlignment:(UIControlContentHorizontalAlignment)contentHorizontalAlignment {
     [super setContentHorizontalAlignment:contentHorizontalAlignment];
@@ -508,19 +510,15 @@
         [self.delegate didChangedActive:active forTitleView:self];
     }
     if (self.accessoryType == QMUINavigationTitleViewAccessoryTypeDisclosureIndicator) {
-        // 目前只对默认的accessoryView添加动画
-        self.accessoryViewAnimating = YES;
         if (active) {
             [UIView animateWithDuration:.25f delay:0 options:QMUIViewAnimationOptionsCurveIn animations:^(void){
                 self.accessoryTypeView.transform = CGAffineTransformMakeRotation(AngleWithDegrees(-180));
             } completion:^(BOOL finished) {
-                self.accessoryViewAnimating = NO;
             }];
         } else {
             [UIView animateWithDuration:.25f delay:0 options:QMUIViewAnimationOptionsCurveIn animations:^(void){
                 self.accessoryTypeView.transform = CGAffineTransformMakeRotation(AngleWithDegrees(0.1));
             } completion:^(BOOL finished) {
-                self.accessoryViewAnimating = NO;
             }];
         }
     }
@@ -588,6 +586,7 @@
 
 + (void)setDefaultAppearance {
     QMUINavigationTitleView *appearance = [QMUINavigationTitleView appearance];
+    appearance.maximumWidth = CGFLOAT_MAX;
     appearance.loadingViewSize = CGSizeMake(18, 18);
     appearance.loadingViewMarginRight = 3;
     appearance.horizontalTitleFont = NavBarTitleFont;

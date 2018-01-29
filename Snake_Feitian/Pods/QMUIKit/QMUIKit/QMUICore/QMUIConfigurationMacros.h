@@ -2,7 +2,7 @@
 //  QMUIConfigurationMacros.h
 //  qmui
 //
-//  Created by QQMail on 14-7-2.
+//  Created by QMUI Team on 14-7-2.
 //  Copyright (c) 2014年 QMUI Team. All rights reserved.
 //
 
@@ -18,7 +18,7 @@
 
 // 单例的宏
 
-#define QMUICMI [QMUIConfiguration sharedInstance]
+#define QMUICMI ({[[QMUIConfiguration sharedInstance] applyInitialTemplate];[QMUIConfiguration sharedInstance];})
 
 
 #pragma mark - Global Color
@@ -92,6 +92,8 @@
 #define NavBarTintColor                                 [QMUICMI navBarTintColor]
 #define NavBarTitleColor                                [QMUICMI navBarTitleColor]
 #define NavBarTitleFont                                 [QMUICMI navBarTitleFont]
+#define NavBarLargeTitleColor                           [QMUICMI navBarLargeTitleColor]
+#define NavBarLargeTitleFont                            [QMUICMI navBarLargeTitleFont]
 #define NavBarBarBackButtonTitlePositionAdjustment      [QMUICMI navBarBackButtonTitlePositionAdjustment]
 #define NavBarBackIndicatorImage                        [QMUICMI navBarBackIndicatorImage]                          // 自定义的返回按钮，尺寸建议与系统的返回按钮尺寸一致（iOS8下实测系统大小是(13, 21)），可提高性能
 #define NavBarCloseButtonImage                          [QMUICMI navBarCloseButtonImage]
@@ -143,6 +145,8 @@
 
 #pragma mark - TableView / TableViewCell
 
+#define TableViewEstimatedHeightEnabled            [QMUICMI tableViewEstimatedHeightEnabled]            // 是否要开启全局 UITableView 的 estimatedRow(Section/Footer)Height
+
 #define TableViewBackgroundColor                   [QMUICMI tableViewBackgroundColor]                   // 普通列表的背景色
 #define TableViewGroupedBackgroundColor            [QMUICMI tableViewGroupedBackgroundColor]            // Grouped类型的列表的背景色
 #define TableSectionIndexColor                     [QMUICMI tableSectionIndexColor]                     // 列表右边索引条的文字颜色，iOS6及以后生效
@@ -165,6 +169,8 @@
 #define TableViewSectionFooterFont                 [QMUICMI tableViewSectionFooterFont]
 #define TableViewSectionHeaderTextColor            [QMUICMI tableViewSectionHeaderTextColor]
 #define TableViewSectionFooterTextColor            [QMUICMI tableViewSectionFooterTextColor]
+#define TableViewSectionHeaderAccessoryMargins     [QMUICMI tableViewSectionHeaderAccessoryMargins]
+#define TableViewSectionFooterAccessoryMargins     [QMUICMI tableViewSectionFooterAccessoryMargins]
 #define TableViewSectionHeaderContentInset         [QMUICMI tableViewSectionHeaderContentInset]
 #define TableViewSectionFooterContentInset         [QMUICMI tableViewSectionFooterContentInset]
 
@@ -172,17 +178,24 @@
 #define TableViewGroupedSectionFooterFont          [QMUICMI tableViewGroupedSectionFooterFont]
 #define TableViewGroupedSectionHeaderTextColor     [QMUICMI tableViewGroupedSectionHeaderTextColor]
 #define TableViewGroupedSectionFooterTextColor     [QMUICMI tableViewGroupedSectionFooterTextColor]
+#define TableViewGroupedSectionHeaderAccessoryMargins   [QMUICMI tableViewGroupedSectionHeaderAccessoryMargins]
+#define TableViewGroupedSectionFooterAccessoryMargins   [QMUICMI tableViewGroupedSectionFooterAccessoryMargins]
 #define TableViewGroupedSectionHeaderDefaultHeight [QMUICMI tableViewGroupedSectionHeaderDefaultHeight]
 #define TableViewGroupedSectionFooterDefaultHeight [QMUICMI tableViewGroupedSectionFooterDefaultHeight]
 #define TableViewGroupedSectionHeaderContentInset  [QMUICMI tableViewGroupedSectionHeaderContentInset]
 #define TableViewGroupedSectionFooterContentInset  [QMUICMI tableViewGroupedSectionFooterContentInset]
 
-#define TableViewCellTitleLabelColor               [QMUICMI tableViewCellTitleLabelColor]               //cell的title颜色
-#define TableViewCellDetailLabelColor              [QMUICMI tableViewCellDetailLabelColor]              //cell的detailTitle颜色
+#define TableViewCellTitleLabelColor               [QMUICMI tableViewCellTitleLabelColor]               // cell的title颜色
+#define TableViewCellDetailLabelColor              [QMUICMI tableViewCellDetailLabelColor]              // cell的detailTitle颜色
 
 #pragma mark - UIWindowLevel
 #define UIWindowLevelQMUIAlertView                  [QMUICMI windowLevelQMUIAlertView]
 #define UIWindowLevelQMUIImagePreviewView           [QMUICMI windowLevelQMUIImagePreviewView]
+
+#pragma mark - QMUILog
+#define ShouldPrintDefaultLog                       [QMUICMI shouldPrintDefaultLog]
+#define ShouldPrintInfoLog                          [QMUICMI shouldPrintInfoLog]
+#define ShouldPrintWarnLog                          [QMUICMI shouldPrintWarnLog]
 
 #pragma mark - Others
 
@@ -191,5 +204,6 @@
 #define StatusbarStyleLightInitially                    [QMUICMI statusbarStyleLightInitially]      // 默认的状态栏内容是否使用白色，默认为NO，也即黑色
 #define NeedsBackBarButtonItemTitle                     [QMUICMI needsBackBarButtonItemTitle]       // 全局是否需要返回按钮的title，不需要则只显示一个返回image
 #define HidesBottomBarWhenPushedInitially               [QMUICMI hidesBottomBarWhenPushedInitially] // QMUICommonViewController.hidesBottomBarWhenPushed 的初始值，默认为 NO，以保持与系统默认值一致，但通常建议改为 YES，因为一般只有 tabBar 首页那几个界面要求为 NO
-#define NavigationBarHiddenInitially                    [QMUICMI navigationBarHiddenInitially]      // NavigationBarHiddenInitially : preferredNavigationBarHidden 的初始值，默认为NO
+#define NavigationBarHiddenInitially                    [QMUICMI navigationBarHiddenInitially]      // preferredNavigationBarHidden 的初始值，默认为NO
+#define ShouldFixTabBarTransitionBugInIPhoneX           [QMUICMI shouldFixTabBarTransitionBugInIPhoneX] // 是否需要自动修复 iOS 11 下，iPhone X 的设备在 push 界面时，tabBar 会瞬间往上跳的 bug
 

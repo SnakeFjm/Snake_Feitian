@@ -2,7 +2,7 @@
 //  QMUICommonViewController.m
 //  qmui
 //
-//  Created by QQMail on 14-6-22.
+//  Created by QMUI Team on 14-6-22.
 //  Copyright (c) 2014年 QMUI Team. All rights reserved.
 //
 
@@ -101,10 +101,6 @@
     [super viewWillAppear:animated];
     [self setNavigationItemsIsInEditMode:NO animated:NO];
     [self setToolbarItemsIsInEditMode:NO animated:NO];
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 

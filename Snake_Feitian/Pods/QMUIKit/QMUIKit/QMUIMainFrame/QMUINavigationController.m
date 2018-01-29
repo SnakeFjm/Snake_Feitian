@@ -2,7 +2,7 @@
 //  QMUINavigationController.m
 //  qmui
 //
-//  Created by QQMail on 14-6-24.
+//  Created by QMUI Team on 14-6-24.
 //  Copyright (c) 2014年 QMUI Team. All rights reserved.
 //
 
@@ -263,12 +263,17 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.isViewControllerTransiting || !viewController) {
-        QMUILog(@"%@, 上一次界面切换的动画尚未结束就试图进行新的 push 操作，为了避免产生 bug，拦截了这次 push。\n%s, isViewControllerTransiting = %@, viewController = %@, self.viewControllers = %@", NSStringFromClass(self.class),  __func__, StringFromBOOL(self.isViewControllerTransiting), viewController, self.viewControllers);
+        QMUILogInfo(@"%@, 上一次界面切换的动画尚未结束就试图进行新的 push 操作，为了避免产生 bug，拦截了这次 push。\n%s, isViewControllerTransiting = %@, viewController = %@, self.viewControllers = %@", NSStringFromClass(self.class),  __func__, StringFromBOOL(self.isViewControllerTransiting), viewController, self.viewControllers);
         return;
     }
     
-    if (animated) {
+    // 增加一个 presentedViewController 作为判断条件是因为这个 issue：https://github.com/QMUI/QMUI_iOS/issues/261
+    if (!self.presentedViewController && animated) {
         self.isViewControllerTransiting = YES;
+    }
+    
+    if (self.presentedViewController) {
+        QMUILogInfo(@"push 的时候 navigationController 存在一个盖在上面的 presentedViewController，可能导致一些 UINavigationControllerDelegate 不会被调用");
     }
     
     UIViewController *currentViewController = self.topViewController;
@@ -306,9 +311,9 @@
     } else if (state == UIGestureRecognizerStateEnded) {
         if (CGRectGetMinX(self.topViewController.view.superview.frame) < 0) {
             // by molice:只是碰巧发现如果是手势返回取消时，不管在哪个位置取消，self.topViewController.view.superview.frame.orgin.x必定是-124，所以用这个<0的条件来判断
-            QMUILog(@"手势返回放弃了");
+            QMUILogInfo(@"手势返回放弃了");
         } else {
-            QMUILog(@"执行手势返回");
+            QMUILogInfo(@"执行手势返回");
         }
     }
 }

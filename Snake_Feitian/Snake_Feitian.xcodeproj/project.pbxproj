@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		477988A8B7626992B8A8AA5C /* Pods_Snake_Feitian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F196A3E7F6A3179653236CD4 /* Pods_Snake_Feitian.framework */; };
+		F50D17AE031BF5D9240E8CCB /* Pods_Snake_Feitian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0A849796A493DA78E03B19 /* Pods_Snake_Feitian.framework */; };
 		F60DA1C62014E1FB00E0812A /* ChooseAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60DA1C42014E1FB00E0812A /* ChooseAreaViewController.swift */; };
 		F60DA1C72014E1FB00E0812A /* ChooseAreaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60DA1C52014E1FB00E0812A /* ChooseAreaViewController.xib */; };
 		F611DC432009E07B009A1203 /* ChooseManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611DC412009E07B009A1203 /* ChooseManagerViewController.swift */; };
@@ -138,10 +138,23 @@
 		F6A0074F201328C9003745E8 /* AfterSaleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A0074D201328C9003745E8 /* AfterSaleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F6277627201BAD1E00ED87C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		35B2270EBECD62CF3B8FD52E /* Pods-Snake_Feitian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake_Feitian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian.debug.xcconfig"; sourceTree = "<group>"; };
-		563B6C29904E0D01D0C23E19 /* Pods-Snake_Feitian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake_Feitian.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian.release.xcconfig"; sourceTree = "<group>"; };
-		F196A3E7F6A3179653236CD4 /* Pods_Snake_Feitian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snake_Feitian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A0A849796A493DA78E03B19 /* Pods_Snake_Feitian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snake_Feitian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F196B7C35B5572A89892231 /* Pods-Snake_Feitian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake_Feitian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian.debug.xcconfig"; sourceTree = "<group>"; };
+		8FF36FDCC371A7D529329BE4 /* Pods-Snake_Feitian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snake_Feitian.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian.release.xcconfig"; sourceTree = "<group>"; };
 		F60DA1C42014E1FB00E0812A /* ChooseAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAreaViewController.swift; sourceTree = "<group>"; };
 		F60DA1C52014E1FB00E0812A /* ChooseAreaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseAreaViewController.xib; sourceTree = "<group>"; };
 		F611DC412009E07B009A1203 /* ChooseManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseManagerViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +184,7 @@
 		F6268C60200B64AF0036FC2B /* AddFollowingEmployeesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFollowingEmployeesViewController.xib; sourceTree = "<group>"; };
 		F6268C63200B698A0036FC2B /* AddNewsReleaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewsReleaseViewController.swift; sourceTree = "<group>"; };
 		F6268C64200B698A0036FC2B /* AddNewsReleaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewsReleaseViewController.xib; sourceTree = "<group>"; };
+		F627762C201BB3F300ED87C7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68DD1FFA18BB00732FAB /* Snake_Feitian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snake_Feitian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62A68E01FFA18BB00732FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F62A68E21FFA18BB00732FAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -280,26 +294,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				477988A8B7626992B8A8AA5C /* Pods_Snake_Feitian.framework in Frameworks */,
+				F50D17AE031BF5D9240E8CCB /* Pods_Snake_Feitian.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		57790387DE68FC49BD08609A /* Frameworks */ = {
+		1EE8A4A7EE0E79EFD8D1C073 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F196A3E7F6A3179653236CD4 /* Pods_Snake_Feitian.framework */,
+				F627762C201BB3F300ED87C7 /* Alamofire.framework */,
+				2A0A849796A493DA78E03B19 /* Pods_Snake_Feitian.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C66615876CDECC84B198FDDD /* Pods */ = {
+		D288D0A043554222CCF82C69 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				35B2270EBECD62CF3B8FD52E /* Pods-Snake_Feitian.debug.xcconfig */,
-				563B6C29904E0D01D0C23E19 /* Pods-Snake_Feitian.release.xcconfig */,
+				6F196B7C35B5572A89892231 /* Pods-Snake_Feitian.debug.xcconfig */,
+				8FF36FDCC371A7D529329BE4 /* Pods-Snake_Feitian.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -340,8 +355,8 @@
 			children = (
 				F62A68DF1FFA18BB00732FAB /* Snake_Feitian */,
 				F62A68DE1FFA18BB00732FAB /* Products */,
-				C66615876CDECC84B198FDDD /* Pods */,
-				57790387DE68FC49BD08609A /* Frameworks */,
+				D288D0A043554222CCF82C69 /* Pods */,
+				1EE8A4A7EE0E79EFD8D1C073 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -698,12 +713,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F62A68EF1FFA18BB00732FAB /* Build configuration list for PBXNativeTarget "Snake_Feitian" */;
 			buildPhases = (
-				79871A9AB060104E69D5BD03 /* [CP] Check Pods Manifest.lock */,
+				2CDA47A953712F0A1ED7E91C /* [CP] Check Pods Manifest.lock */,
 				F62A68D91FFA18BB00732FAB /* Sources */,
 				F62A68DA1FFA18BB00732FAB /* Frameworks */,
 				F62A68DB1FFA18BB00732FAB /* Resources */,
-				53A4841F1DA8CCFD92F0A510 /* [CP] Embed Pods Frameworks */,
-				227D583E0BBF3614A37C3A0A /* [CP] Copy Pods Resources */,
+				F6277627201BAD1E00ED87C7 /* Embed Frameworks */,
+				A286849F8292079B166A17DC /* [CP] Embed Pods Frameworks */,
+				2A3C977BDDB5B5C97B1B8F80 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -727,7 +743,7 @@
 					F62A68DC1FFA18BB00732FAB = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0910;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -817,7 +833,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		227D583E0BBF3614A37C3A0A /* [CP] Copy Pods Resources */ = {
+		2A3C977BDDB5B5C97B1B8F80 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -832,22 +848,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		53A4841F1DA8CCFD92F0A510 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		79871A9AB060104E69D5BD03 /* [CP] Check Pods Manifest.lock */ = {
+		2CDA47A953712F0A1ED7E91C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -860,6 +861,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A286849F8292079B166A17DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snake_Feitian/Pods-Snake_Feitian-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1074,16 +1090,23 @@
 		};
 		F62A68F01FFA18BB00732FAB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35B2270EBECD62CF3B8FD52E /* Pods-Snake_Feitian.debug.xcconfig */;
+			baseConfigurationReference = 6F196B7C35B5572A89892231 /* Pods-Snake_Feitian.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VU7QDQ3ABP;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 75LAZ92Z5Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Snake_Feitian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "snake.Snake-Feitian";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.snake.Snake-Feitian";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dcb461c8-8b55-4b94-9c4d-2ec85a2eb579";
+				PROVISIONING_PROFILE_SPECIFIER = addhoc_1;
 				SWIFT_OBJC_BRIDGING_HEADER = "Snake_Feitian/Snake_Feitian-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1093,16 +1116,23 @@
 		};
 		F62A68F11FFA18BB00732FAB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 563B6C29904E0D01D0C23E19 /* Pods-Snake_Feitian.release.xcconfig */;
+			baseConfigurationReference = 8FF36FDCC371A7D529329BE4 /* Pods-Snake_Feitian.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VU7QDQ3ABP;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 75LAZ92Z5Q;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Snake_Feitian/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "snake.Snake-Feitian";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.snake.Snake-Feitian";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "dcb461c8-8b55-4b94-9c4d-2ec85a2eb579";
+				PROVISIONING_PROFILE_SPECIFIER = addhoc_1;
 				SWIFT_OBJC_BRIDGING_HEADER = "Snake_Feitian/Snake_Feitian-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

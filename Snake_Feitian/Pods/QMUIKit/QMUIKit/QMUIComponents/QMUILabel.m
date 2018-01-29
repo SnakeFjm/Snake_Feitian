@@ -2,7 +2,7 @@
 //  QMUILabel.m
 //  qmui
 //
-//  Created by QQMail on 14-7-3.
+//  Created by QMUI Team on 14-7-3.
 //  Copyright (c) 2014年 QMUI Team. All rights reserved.
 //
 
@@ -11,7 +11,7 @@
 
 @interface QMUILabel ()
 
-@property(nonatomic, strong) UIColor *tempBackgroundColor;
+@property(nonatomic, strong) UIColor *originalBackgroundColor;
 @property(nonatomic, strong) UILongPressGestureRecognizer *longGestureRecognizer;
 @end
 
@@ -34,21 +34,31 @@
     return size;
 }
 
+- (CGSize)intrinsicContentSize {
+    CGFloat preferredMaxLayoutWidth = self.preferredMaxLayoutWidth;
+    if (preferredMaxLayoutWidth <= 0) {
+        preferredMaxLayoutWidth = CGFLOAT_MAX;
+    }
+    return [self sizeThatFits:CGSizeMake(preferredMaxLayoutWidth, CGFLOAT_MAX)];
+}
+
 - (void)drawTextInRect:(CGRect)rect {
     return [super drawTextInRect:UIEdgeInsetsInsetRect(rect, self.contentEdgeInsets)];
 }
 
 - (void)setHighlightedBackgroundColor:(UIColor *)highlightedBackgroundColor {
+    _highlightedBackgroundColor = highlightedBackgroundColor;
+    
     if (highlightedBackgroundColor) {
-        self.tempBackgroundColor = self.backgroundColor;
-        _highlightedBackgroundColor = highlightedBackgroundColor;
+        self.originalBackgroundColor = self.backgroundColor;
     }
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
     [super setHighlighted:highlighted];
+    
     if (self.highlightedBackgroundColor) {
-        self.backgroundColor = highlighted ? self.highlightedBackgroundColor : self.tempBackgroundColor;
+        self.backgroundColor = highlighted ? self.highlightedBackgroundColor : self.originalBackgroundColor;
     }
 }
 
@@ -107,9 +117,9 @@
         [menuController setTargetRect:self.frame inView:self.superview];
         [menuController setMenuVisible:YES animated:YES];
         
-        // 默认背景色
-        self.tempBackgroundColor = self.backgroundColor;
-        self.backgroundColor = self.highlightedBackgroundColor;
+        [self setHighlighted:YES];
+    } else if (gestureRecognizer.state == UIGestureRecognizerStatePossible) {
+        [self setHighlighted:NO];
     }
 }
 
@@ -117,9 +127,8 @@
     if (!self.canPerformCopyAction) {
         return;
     }
-    if (self.tempBackgroundColor) {
-        self.backgroundColor = self.tempBackgroundColor;
-    }
+    
+    [self setHighlighted:NO];
 }
 
 @end

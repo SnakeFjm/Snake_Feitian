@@ -2,7 +2,7 @@
 //  QMUINavigationTitleView.h
 //  qmui
 //
-//  Created by QQMail on 14-7-2.
+//  Created by QMUI Team on 14-7-2.
 //  Copyright (c) 2014年 QMUI Team. All rights reserved.
 //
 
@@ -63,6 +63,7 @@ typedef NS_ENUM(NSInteger, QMUINavigationTitleViewAccessoryType) {
 @property(nonatomic, weak) id<QMUINavigationTitleViewDelegate> delegate;
 @property(nonatomic, assign) QMUINavigationTitleViewStyle style;
 @property(nonatomic, assign, getter=isActive) BOOL active;
+@property(nonatomic, assign) CGFloat maximumWidth UI_APPEARANCE_SELECTOR;
 
 #pragma mark - Titles
 

@@ -6,6 +6,10 @@
 #import "CALayer+QMUI.h"
 #endif
 
+#if __has_include("NSArray+QMUI.h")
+#import "NSArray+QMUI.h"
+#endif
+
 #if __has_include("NSAttributedString+QMUI.h")
 #import "NSAttributedString+QMUI.h"
 #endif
@@ -80,6 +84,10 @@
 
 #if __has_include("QMUIDialogViewController.h")
 #import "QMUIDialogViewController.h"
+#endif
+
+#if __has_include("QMUIEmotionInputManager.h")
+#import "QMUIEmotionInputManager.h"
 #endif
 
 #if __has_include("QMUIEmotionView.h")
@@ -170,10 +178,6 @@
 #import "QMUIPopupMenuView.h"
 #endif
 
-#if __has_include("QMUIQQEmotionManager.h")
-#import "QMUIQQEmotionManager.h"
-#endif
-
 #if __has_include("QMUISearchBar.h")
 #import "QMUISearchBar.h"
 #endif
@@ -208,6 +212,10 @@
 
 #if __has_include("QMUITableViewCell.h")
 #import "QMUITableViewCell.h"
+#endif
+
+#if __has_include("QMUITableViewHeaderFooterView.h")
+#import "QMUITableViewHeaderFooterView.h"
 #endif
 
 #if __has_include("QMUITableViewProtocols.h")

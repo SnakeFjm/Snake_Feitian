@@ -19,8 +19,11 @@
 @implementation UITableView (QMUI_StaticCell)
 
 + (void)load {
-    ReplaceMethod([UITableView class], @selector(setDataSource:), @selector(staticCell_setDataSource:));
-    ReplaceMethod([UITableView class], @selector(setDelegate:), @selector(staticCell_setDelegate:));
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        ReplaceMethod([UITableView class], @selector(setDataSource:), @selector(staticCell_setDataSource:));
+        ReplaceMethod([UITableView class], @selector(setDelegate:), @selector(staticCell_setDelegate:));
+    });
 }
 
 static char kAssociatedObjectKey_staticCellDataSource;
@@ -44,7 +47,7 @@ static NSMutableSet<NSString *> *QMUI_staticTableViewAddedClass;
         }
         NSString *identifier = [NSString stringWithFormat:@"%@%@", NSStringFromClass(object.class), NSStringFromSelector(selector)];
         if (![QMUI_staticTableViewAddedClass containsObject:identifier]) {
-            QMUILog(@"%@, 尝试为 %@ 添加方法 %@ 失败，可能该类里已经实现了这个方法", NSStringFromClass(self.class), NSStringFromClass(object.class), NSStringFromSelector(selector));
+            QMUILogInfo(@"%@, 尝试为 %@ 添加方法 %@ 失败，可能该类里已经实现了这个方法", NSStringFromClass(self.class), NSStringFromClass(object.class), NSStringFromSelector(selector));
             [QMUI_staticTableViewAddedClass addObject:identifier];
         }
     }
