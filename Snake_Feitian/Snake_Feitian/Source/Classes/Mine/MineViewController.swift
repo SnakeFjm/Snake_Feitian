@@ -17,7 +17,7 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "我的"
+        self.title = "我的"
         
         self.setTableView()
     }
@@ -38,6 +38,7 @@ class MineViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         let headView = MineHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120))
         headView.updateUI(dict: [:])
+        headView.iconNameLabel.text = String.init(SessionManager.share.userModel.name.last!)
         self.mineTableView.tableHeaderView = headView
         //
         self.mineTableView.tableHeaderView?.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(checkPersonalInfo)))

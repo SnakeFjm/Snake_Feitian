@@ -18,11 +18,14 @@ class AddNewCustomerViewController: BaseViewController, UITextFieldDelegate, UIT
     @IBOutlet weak var bodySituationTextView: UITextView!
     @IBOutlet weak var remarksTextView: UITextView!
     
+    let dateFormatter = DateFormatter.init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "新增客户"
-        
+        //
+        self.dateFormatter.dateFormat = "yyyy-MM-dd"
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,7 +59,7 @@ class AddNewCustomerViewController: BaseViewController, UITextFieldDelegate, UIT
                                           "physicalStatus": physicalStatus,
                                           "remarkName": remarkName,
                                           "sex": sex]
-            
+            //
             HttpManager.shareManager.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON(completionHandler: { (response) in
                 if let _ = HttpManager.parseDataResponse(response: response) {
                     let alertVC = showConfirmAlertViewVC(titleVC: "新增成功", message: "返回上一页面", confirmHandler: { (_) in
@@ -110,5 +113,42 @@ class AddNewCustomerViewController: BaseViewController, UITextFieldDelegate, UIT
         return true
     }
     
+    // =================================
+    // MARK:
+    // =================================
+    
+    @IBAction func chooseBirthdayButtonDidTouch(_ sender: Any) {
+        //
+        let customView = UIView()
+        customView.translatesAutoresizingMaskIntoConstraints = false
+        customView.addConstraint(NSLayoutConstraint(item: customView,
+                                                    attribute: .height,
+                                                    relatedBy: .equal,
+                                                    toItem: nil,
+                                                    attribute: .notAnAttribute,
+                                                    multiplier: 1,
+                                                    constant: 100))
+        //
+        let datePicker = UIDatePicker.init(frame: CGRect.init(x: 0, y: 0, width: customView.bounds.size.width, height: customView.bounds.size.height))
+        customView.addSubview(datePicker)
+        //将日期选择器区域设置为中文，则选择器日期显示为中文
+        datePicker.locale = Locale.init(identifier: "zh_CN")
+        // 设置样式，当前设为同时显示日期和时间
+        datePicker.datePickerMode = UIDatePickerMode.date
+        // 设置默认时间
+        datePicker.date = Date()
+        //
+        let alert = UIAlertController(title: "选择生日时间",customView: customView,fallbackMessage: "",preferredStyle: .actionSheet)
+        //
+        alert.addAction(UIAlertAction(title: "确定", style: UIAlertActionStyle.default){
+            (alertAction)->Void in
+            let currentDate = datePicker.date
+            let dateString = self.dateFormatter.string(from: currentDate)
+            self.birthdayTextField.text = dateString
+        })
+        alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel,handler:nil))
+        //
+        self.present(alert, animated: true, completion: nil)
+    }
     
 }

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Snake_OrderSystem" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Snake_Feitian" customModuleProvider="target">
             <connections>
                 <outlet property="passwordTextField" destination="VdF-oM-fla" id="6ts-eA-d4x"/>
                 <outlet property="phoneTextField" destination="grT-qz-OKY" id="Yue-Lk-Xrv"/>
@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCT-nV-4BX">
-                    <rect key="frame" x="30" y="200" width="315" height="160"/>
+                    <rect key="frame" x="30" y="230" width="315" height="160"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXP-wg-ef8">
                             <rect key="frame" x="0.0" y="0.0" width="315" height="50"/>
@@ -124,7 +124,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrA-qi-OfM">
-                    <rect key="frame" x="30" y="390" width="315" height="44"/>
+                    <rect key="frame" x="30" y="420" width="315" height="44"/>
                     <color key="backgroundColor" red="0.19215686269999999" green="0.60784313729999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="GMq-EJ-Qal"/>
@@ -142,15 +142,24 @@
                         <action selector="loginButtonDidTouch:" destination="-1" eventType="touchUpInside" id="8IZ-6K-zhz"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_icon_feitian" translatesAutoresizingMaskIntoConstraints="NO" id="dPe-YZ-dLf">
+                    <rect key="frame" x="107" y="50" width="160" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="aWK-oW-XS4"/>
+                        <constraint firstAttribute="height" constant="160" id="jyq-Ui-Ye6"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="cCT-nV-4BX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="180" id="3fs-u2-D5h"/>
+                <constraint firstItem="dPe-YZ-dLf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="0is-X9-bJT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cCT-nV-4BX" secondAttribute="trailing" constant="30" id="EaU-dS-Yuh"/>
                 <constraint firstItem="zrA-qi-OfM" firstAttribute="width" secondItem="cCT-nV-4BX" secondAttribute="width" id="HeV-0h-6E4"/>
                 <constraint firstItem="zrA-qi-OfM" firstAttribute="top" secondItem="cCT-nV-4BX" secondAttribute="bottom" constant="30" id="Ifg-no-6Ib"/>
                 <constraint firstItem="zrA-qi-OfM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Rfb-oe-u4z"/>
+                <constraint firstItem="dPe-YZ-dLf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UFS-PG-sQr"/>
                 <constraint firstItem="cCT-nV-4BX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="e5a-Fz-xaQ"/>
+                <constraint firstItem="cCT-nV-4BX" firstAttribute="top" secondItem="dPe-YZ-dLf" secondAttribute="bottom" constant="20" id="nsW-8m-CTX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="39.5" y="54.5"/>
@@ -159,6 +168,7 @@
     <resources>
         <image name="checkbox_1" width="13" height="13"/>
         <image name="checkbox_selected_1" width="13" height="13"/>
+        <image name="login_icon_feitian" width="1024" height="1024"/>
         <image name="login_mobile" width="28" height="28"/>
         <image name="login_pw" width="28" height="28"/>
     </resources>

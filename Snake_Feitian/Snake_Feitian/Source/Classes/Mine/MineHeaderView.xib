@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineHeaderView" customModule="Snake_OrderSystem" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MineHeaderView" customModule="Snake_Feitian" customModuleProvider="target">
             <connections>
                 <outlet property="headImageView" destination="WSX-gY-ePy" id="MgV-tL-hxV"/>
+                <outlet property="iconNameLabel" destination="hWP-dn-Tpd" id="1xu-e0-LRn"/>
                 <outlet property="nameLabel" destination="QKB-XH-Q5o" id="tPN-y3-skf"/>
                 <outlet property="phoneLabel" destination="Ti5-46-Bp1" id="UmQ-Pf-tGp"/>
                 <outlet property="placeLabel" destination="xAa-Mj-pOO" id="82g-ap-BPW"/>
@@ -62,10 +63,18 @@
                         <constraint firstItem="xAa-Mj-pOO" firstAttribute="leading" secondItem="QKB-XH-Q5o" secondAttribute="leading" id="k0m-A7-hVl"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWP-dn-Tpd">
+                    <rect key="frame" x="39" y="50" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="hWP-dn-Tpd" firstAttribute="centerX" secondItem="WSX-gY-ePy" secondAttribute="centerX" id="0f1-yr-QwY"/>
                 <constraint firstItem="3Gd-ao-0Nt" firstAttribute="leading" secondItem="WSX-gY-ePy" secondAttribute="trailing" constant="20" id="3yj-V6-0lT"/>
+                <constraint firstItem="hWP-dn-Tpd" firstAttribute="centerY" secondItem="WSX-gY-ePy" secondAttribute="centerY" id="GhW-bx-lw6"/>
                 <constraint firstItem="WSX-gY-ePy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="I3W-0y-MJd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3Gd-ao-0Nt" secondAttribute="trailing" id="IAU-IN-2tL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3Gd-ao-0Nt" secondAttribute="bottom" id="aJ6-2k-X2x"/>

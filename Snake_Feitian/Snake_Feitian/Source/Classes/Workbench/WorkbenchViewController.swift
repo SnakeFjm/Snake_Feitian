@@ -20,7 +20,7 @@ class WorkbenchViewController: BaseViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "工作台"
+        self.title = "工作台"
         
         self.workbenchTableView.register(workbenchTableViewCell.classForCoder(), forCellReuseIdentifier: "workbenchCell")
         self.workbenchTableView.tableFooterView = UIView.init()

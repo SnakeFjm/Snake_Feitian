@@ -13,6 +13,7 @@ import Alamofire
 class ShopManagementTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var headImageView: UIImageView!
+    @IBOutlet weak var iconNameLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var statusNumberLabel: UILabel!
@@ -29,7 +30,7 @@ class ShopManagementTableViewCell: BaseTableViewCell {
     override func updateCellUI(result: JSON) {
         self.headImageView.layer.cornerRadius = self.headImageView.frame.size.width/2
         self.headImageView.layer.masksToBounds = true
-        self.headImageView.backgroundColor = UIColor.green
+        self.headImageView.backgroundColor = UIColor.init(red: 241/255, green: 194/255, blue: 55/255, alpha: 1)
         
         let place: String = result["name"].stringValue
         let status: String = result["status"].stringValue
@@ -37,6 +38,8 @@ class ShopManagementTableViewCell: BaseTableViewCell {
         self.placeLabel.text = place
         self.statusLabel.text = status
         self.statusNumberLabel.text = ""
+        //
+        self.iconNameLabel.text = String.init(describing: place.last!)
     }
     
 }

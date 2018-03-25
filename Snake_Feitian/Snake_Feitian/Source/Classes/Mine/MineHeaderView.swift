@@ -12,6 +12,8 @@ class MineHeaderView: YTNibPlaceHolderView {
 
     @IBOutlet weak var headImageView: UIImageView!
     
+    @IBOutlet weak var iconNameLabel: UILabel!
+    
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var placeLabel: UILabel!
@@ -24,7 +26,7 @@ class MineHeaderView: YTNibPlaceHolderView {
         self.headImageView.layer.cornerRadius = self.headImageView.frame.size.width/2
         self.headImageView.layer.masksToBounds = true
         
-        self.headImageView.backgroundColor = UIColor.red
+        self.headImageView.backgroundColor = UIColor.init(red: 241/255, green: 194/255, blue: 55/255, alpha: 1)
         self.nameLabel.text = "查看个人信息"
         self.placeLabel.text = ""
         self.phoneLabel.text = ""

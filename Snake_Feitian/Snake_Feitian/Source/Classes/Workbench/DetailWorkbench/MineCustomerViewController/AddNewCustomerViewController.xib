@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNewCustomerViewController" customModule="Snake_OrderSystem" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNewCustomerViewController" customModule="Snake_Feitian" customModuleProvider="target">
             <connections>
                 <outlet property="birthdayTextField" destination="V8y-gi-yB6" id="RXl-eN-iGv"/>
                 <outlet property="bodySituationTextView" destination="C6f-7x-VTz" id="FdX-I4-Q9d"/>
@@ -116,6 +116,12 @@
                                                 <outlet property="delegate" destination="-1" id="vbu-YX-PDh"/>
                                             </connections>
                                         </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCK-eu-61Q">
+                                            <rect key="frame" x="106.5" y="15" width="258.5" height="40"/>
+                                            <connections>
+                                                <action selector="chooseBirthdayButtonDidTouch:" destination="-1" eventType="touchUpInside" id="TWo-R5-uZX"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
@@ -124,7 +130,11 @@
                                         <constraint firstItem="yKc-eU-ej2" firstAttribute="leading" secondItem="NEP-2X-cPd" secondAttribute="leading" constant="20" id="RFZ-dh-Chd"/>
                                         <constraint firstAttribute="trailing" secondItem="V8y-gi-yB6" secondAttribute="trailing" constant="10" id="aTr-fP-C3K"/>
                                         <constraint firstItem="V8y-gi-yB6" firstAttribute="centerY" secondItem="NEP-2X-cPd" secondAttribute="centerY" id="ayZ-u8-KKv"/>
+                                        <constraint firstItem="tCK-eu-61Q" firstAttribute="bottom" secondItem="V8y-gi-yB6" secondAttribute="bottom" id="bTT-Ui-GHs"/>
+                                        <constraint firstItem="tCK-eu-61Q" firstAttribute="leading" secondItem="V8y-gi-yB6" secondAttribute="leading" id="eVK-Jl-Nz5"/>
                                         <constraint firstItem="yKc-eU-ej2" firstAttribute="centerY" secondItem="NEP-2X-cPd" secondAttribute="centerY" id="lwQ-41-m3j"/>
+                                        <constraint firstItem="tCK-eu-61Q" firstAttribute="trailing" secondItem="V8y-gi-yB6" secondAttribute="trailing" id="nLt-6X-0kx"/>
+                                        <constraint firstItem="tCK-eu-61Q" firstAttribute="top" secondItem="V8y-gi-yB6" secondAttribute="top" id="oOy-0C-d0z"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2FJ-Gd-hNJ">

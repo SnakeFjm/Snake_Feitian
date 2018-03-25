@@ -78,6 +78,12 @@
                                     <constraint firstAttribute="height" constant="80" id="zjL-sA-KM6"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bao-FD-kDh">
+                                <rect key="frame" x="39" y="52" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -85,6 +91,8 @@
                             <constraint firstItem="8PO-7q-WLc" firstAttribute="centerY" secondItem="Sdg-Nh-TzV" secondAttribute="centerY" id="Bjl-y3-u0l"/>
                             <constraint firstAttribute="trailing" secondItem="8PO-7q-WLc" secondAttribute="trailing" id="C2y-0p-FWx"/>
                             <constraint firstItem="8PO-7q-WLc" firstAttribute="top" secondItem="Sdg-Nh-TzV" secondAttribute="top" id="GEV-3u-IrN"/>
+                            <constraint firstItem="Bao-FD-kDh" firstAttribute="centerY" secondItem="8hS-Qh-qu1" secondAttribute="centerY" id="IMN-4H-xn8"/>
+                            <constraint firstItem="Bao-FD-kDh" firstAttribute="centerX" secondItem="8hS-Qh-qu1" secondAttribute="centerX" id="Rqt-kh-P8U"/>
                             <constraint firstAttribute="bottom" secondItem="8PO-7q-WLc" secondAttribute="bottom" id="SSI-88-tXO"/>
                             <constraint firstItem="8PO-7q-WLc" firstAttribute="leading" secondItem="8hS-Qh-qu1" secondAttribute="trailing" constant="10" id="juU-MU-ekU"/>
                             <constraint firstItem="8hS-Qh-qu1" firstAttribute="centerY" secondItem="Sdg-Nh-TzV" secondAttribute="centerY" id="mwt-GC-0UE"/>
@@ -101,6 +109,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="headImageView" destination="8hS-Qh-qu1" id="bum-bF-orJ"/>
+                <outlet property="iconNameLabel" destination="Bao-FD-kDh" id="GcC-6b-VVQ"/>
                 <outlet property="latestSaleLabel" destination="OTu-yN-xXl" id="WhY-Oe-FIP"/>
                 <outlet property="nameLabel" destination="h7G-et-a8D" id="n3t-ni-2FK"/>
                 <outlet property="remarkLabel" destination="4EE-Wp-EgZ" id="O8L-UC-eur"/>
