@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OmW-19-VZf">
-                        <rect key="frame" x="110" y="0.0" width="231" height="99"/>
+                        <rect key="frame" x="70" y="0.0" width="271" height="99"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ix-cO-BBf">
                                 <rect key="frame" x="10" y="63" width="42" height="21"/>
@@ -53,14 +53,14 @@
                         <viewLayoutGuide key="safeArea" id="tYE-cP-Ols"/>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dxl-gx-OFB">
-                        <rect key="frame" x="20" y="10" width="80" height="80"/>
+                        <rect key="frame" x="20" y="30" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="pUp-2j-Fou"/>
-                            <constraint firstAttribute="height" constant="80" id="vGr-IS-71H"/>
+                            <constraint firstAttribute="width" constant="40" id="pUp-2j-Fou"/>
+                            <constraint firstAttribute="height" constant="40" id="vGr-IS-71H"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCT-Fr-XRj">
-                        <rect key="frame" x="39" y="39" width="42" height="21"/>
+                        <rect key="frame" x="19" y="39" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>

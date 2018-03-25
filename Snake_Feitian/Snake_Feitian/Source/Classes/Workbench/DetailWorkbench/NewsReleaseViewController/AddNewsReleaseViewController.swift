@@ -94,12 +94,14 @@ class AddNewsReleaseViewController: BaseViewController, UITextFieldDelegate, UIT
         let areaAction = UIAlertAction.init(title: "区域", style: UIAlertActionStyle.default, handler: { (_) in
             // 当“发送范围”选定为“区域”时，下方的“具体店铺”变为可见，供用户选择具体区域
             self.scopeTextField.text = "区域"
+            self.scope = 2
             self.isHiddenShopView.isHidden = false
         })
         //
         let shopAction = UIAlertAction.init(title: "店铺", style: UIAlertActionStyle.default, handler: { (_) in
             // 当“发送范围”选定为店的时候，下方的“具体店铺”从不可见变为可见，供用户选择具体店铺
             self.scopeTextField.text = "店铺"
+            self.scope = 3
             self.isHiddenShopView.isHidden = false
         })
         //

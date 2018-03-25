@@ -33,7 +33,7 @@ class ShopManagementTableViewCell: BaseTableViewCell {
         self.headImageView.backgroundColor = UIColor.init(red: 241/255, green: 194/255, blue: 55/255, alpha: 1)
         
         let place: String = result["name"].stringValue
-        let status: String = result["status"].stringValue
+        let status: String = result["shopManagerName"].stringValue
         
         self.placeLabel.text = place
         self.statusLabel.text = status

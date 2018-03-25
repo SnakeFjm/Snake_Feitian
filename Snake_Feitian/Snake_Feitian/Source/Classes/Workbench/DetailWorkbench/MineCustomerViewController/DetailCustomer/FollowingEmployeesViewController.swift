@@ -17,8 +17,12 @@ class FollowingEmployeesViewController: RefreshTableViewController {
 
         self.title = "跟进员工"
         
-        self.navBarAddRightBarButton(title: "添加")
-        
+        // 如果该用户的身份不是店员或者店长，不显示右上角的“添加”按钮
+        let role = SessionManager.share.userModel.role
+        if role == 3 || role == 4 {
+            self.navBarAddRightBarButton(title: "添加")
+        }
+        //
         self.registerCellNib(nibName: "EmployeesManagementTableViewCell")
         self.tableView.separatorStyle = .singleLine
         self.tableView.rowHeight = 100

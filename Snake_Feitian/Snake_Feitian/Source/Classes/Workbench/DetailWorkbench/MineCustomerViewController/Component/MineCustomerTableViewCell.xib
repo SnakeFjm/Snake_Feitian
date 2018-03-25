@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="404" height="125.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PO-7q-WLc">
-                                <rect key="frame" x="110" y="0.0" width="294" height="125.5"/>
+                                <rect key="frame" x="70" y="0.0" width="334" height="125.5"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最近售后：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuT-ff-Isj">
                                         <rect key="frame" x="10" y="89.5" width="87" height="21"/>
@@ -72,14 +72,14 @@
                                 <viewLayoutGuide key="safeArea" id="Nne-Rb-jhN"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8hS-Qh-qu1">
-                                <rect key="frame" x="20" y="23" width="80" height="80"/>
+                                <rect key="frame" x="20" y="43" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="wwb-Ql-qNF"/>
-                                    <constraint firstAttribute="height" constant="80" id="zjL-sA-KM6"/>
+                                    <constraint firstAttribute="width" constant="40" id="wwb-Ql-qNF"/>
+                                    <constraint firstAttribute="height" constant="40" id="zjL-sA-KM6"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bao-FD-kDh">
-                                <rect key="frame" x="39" y="52" width="42" height="21"/>
+                                <rect key="frame" x="19" y="52" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>

@@ -12,6 +12,7 @@ import SwiftyJSON
 class EmployeesManagementTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var headImageView: UIImageView!
+    @IBOutlet weak var iconNameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
@@ -32,6 +33,8 @@ class EmployeesManagementTableViewCell: BaseTableViewCell {
         
         let place: String = result["name"].stringValue
         self.nameLabel.text = place
+        //
+        self.iconNameLabel.text = String.init(describing: place.last!)
     }
     
 }

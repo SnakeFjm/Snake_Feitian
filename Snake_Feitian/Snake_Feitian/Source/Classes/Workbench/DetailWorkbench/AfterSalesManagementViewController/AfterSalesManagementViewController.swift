@@ -19,7 +19,7 @@ class AfterSalesManagementViewController: RefreshTableViewController {
 
         self.title = "售后管理"
         //
-        self.navBarAddRightBarButton(title: "新增记录")
+//        self.navBarAddRightBarButton(title: "新增记录")
         //
         self.dateFormatter.dateFormat = "yyyy-MM-dd"
         
