@@ -162,6 +162,9 @@ class HttpManager: NSObject {
             //
             if let code = result["code"].int, code != 0, let msg: String = result["message"].string {
                 self.handlerError(code: code, msg: msg)
+                if code != 401 {
+                    return result
+                }
             } else {
                 return result
             }

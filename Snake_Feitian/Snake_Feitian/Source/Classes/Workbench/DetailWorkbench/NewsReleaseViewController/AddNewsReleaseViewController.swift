@@ -159,14 +159,18 @@ class AddNewsReleaseViewController: BaseViewController, UITextFieldDelegate, UIT
         let content = self.contentTextView.text ?? ""
         let title = self.titleTextField.text ?? ""
         
+        let userId = SessionManager.share.userId
+        
         let parameters: Parameters = ["content": content,
                                       "scope": self.scope,
                                       "title": title,
                                       "toId": self.toId,
-                                      "type": self.type]
+                                      "type": self.type,
+                                      "userId": userId]
         //
         HttpManager.shareManager.postRequest(apiName, parameters: parameters, encoding: JSONEncoding.default).responseJSON { (response) in
             if let _ = HttpManager.parseDataResponse(response: response) {
+                //
                 self.back()
                 self.showSuccessTips("新增成功")
             } else {
